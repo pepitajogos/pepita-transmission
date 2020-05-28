@@ -1,0 +1,56 @@
+body, html {
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+	@include font-size(18);
+	-webkit-font-smoothing: initial;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+	background-color: $bg-color;
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	font-family: $regular;
+	color: $darker;
+	background-color: #fff;
+	margin: 0;
+	overflow: hidden;
+	user-select: none;
+	// min-width: 1024px;
+	// overflow-x: hidden;
+	// height: 100vh;
+	// @include scrollbar(0, rgba(0,0,0,0), rgba(0,0,0,0), "");
+	
+	@include maxWidth(1023) {
+		min-width: 100%;
+	}
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+.box-justify{
+	display: flex;
+  	justify-content: space-between;
+}
+
+a {
+	text-decoration: none;
+}
+
+.text-warning{
+  color: #ff123e;
+}
+
+b, strong{
+	// font-family: $bold;
+}
+
+.clear {
+	clear: both;
+}

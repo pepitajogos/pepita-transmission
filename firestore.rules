@@ -1,0 +1,65 @@
+rules_version = '2';
+
+function stringLengthBetween(val, from, to) {
+  return val is string
+    && val.size() >= from
+    && val.size() <= to;
+}
+
+function isEmailValid(val) {
+  return val is string
+    && val.matches('.+@[^.]+(?:[.][^.]+)+')
+}
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /stories/{story} {
+      allow create: if true
+        // user is logged in
+        && request.auth.uid != null
+        // id of the id must be the same as the user`s
+        && request.auth.uid == story
+         // disable overrides
+        && !exists(request.resource.__name__)
+        // only allowed fields
+        && request.resource.data.keys().hasOnly([
+          'uid',
+          'email',
+          'name',
+          'story',
+          'created_at',
+        ])
+        // data validation
+        && stringLengthBetween(request.resource.data.name, 3, 200)
+        && stringLengthBetween(request.resource.data.email, 3, 200)
+        && stringLengthBetween(request.resource.data.email, 3, 1000)
+        && isEmailValid(request.resource.data.email)
+        && request.resource.data.created_at == request.time
+      ;
+    }
+    
+    match /results/{result} {
+      allow create: if true
+        && request.auth.uid != null
+        // id of the story must be the same as the user`s
+        && request.auth.uid == result
+         // disable overrides
+        && !exists(request.resource.__name__)
+        // data validation
+        && request.resource.data.keys().hasOnly([
+          'ending',
+          'country',
+          'created_at',
+        ])
+        && exists(/databases/$(database)/documents/endings/$(request.resource.data.ending))
+        && stringLengthBetween(request.resource.data.country, 2, 2)
+        && request.resource.data.created_at == request.time
+      ;
+    }
+
+    match /stats/{id} {
+      allow read: if true;
+    }
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "transmission-hml",
+    "prod": "transmission-ec8b4"
+  }
+}
