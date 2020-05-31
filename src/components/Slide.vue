@@ -40,7 +40,7 @@ export default {
     computed: {
         finalGame: function () {
             this.result = this.slide.ending
-            //this.addResultToBase(this.result);
+            this.addResultToBase(this.result);
             localStorage.result=this.result;
             return this.result
         },

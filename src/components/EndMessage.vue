@@ -1,24 +1,36 @@
 <template>
   <article class="slide">
-    <div class="slide__content" :style="backgroundStyle">
-      <div class="center">
-        <p class="message">{{$t(endingMessage)}}</p>
-
-        <div class="map__info">
-          <ul class="table">
-            <li
-              class="table__text"
-              v-for="(ending, index) in orderEndings.slice(0, 9)"
-              :key="ending.id"
-            >
-              <span class="table__numbers">{{index + 1}} - {{ ending[1] }}%</span>
-              {{ ending[0] }}
-            </li>
-          </ul>
+    <div class="background__image" :style="backgroundStyle">
+      <div class="ending__center">
+        <div class="message__row">
+          <div class="message__column">
+            <div class="share__button" @click="share()">
+              <div class="share_img">
+                <img src="../../public/assets/share.png" />
+              </div>
+              <div class="ending__portrait">
+                <img :src="endingImage" />
+              </div>
+              <div class="ending__message">
+                <h1>{{$t(endingMessage)}}</h1>
+              </div>
+            </div>
+          </div>
+          <div class="message__column">
+            <div class="map__info">
+              <ul class="table">
+                <li
+                  class="table__text"
+                  v-for="(ending) in orderEndings.slice(0, 9)"
+                  :key="ending.id"
+                >
+                  <span class="table__numbers">{{ ending[1] }}%</span>
+                  {{ ending[0] }}
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="slide__default" @click="share()">
-        <img src="../../public/assets/share.png" />
       </div>
     </div>
     <web-social-share show="false" class="social">
@@ -115,6 +127,27 @@ export default {
         return "VOCÊ É UM OCIDENTAL NUMA LAVANDERIA ORIENTAL\nSomos todos iguais, não importa a diferença.";
       } else if (localStorage.result == "ENDING_TURISTA") {
         return "VOCÊ É UM TURISTA NO AEROPORTO\nVocê pode se abrir para novas oportunidades.";
+      }
+    },
+    endingImage: function() {
+      if (localStorage.result == "ENDING_BORBOLETA") {
+        return "assets/slides/images/06_02_05.jpg";
+      } else if (localStorage.result == "ENDING_CASA") {
+        return "assets/slides/images/06_018_04.jpg";
+      } else if (localStorage.result == "ENDING_ENFERMEIRA") {
+        return "assets/slides/images/06_10_04.jpg";
+      } else if (localStorage.result == "ENDING_HOMEM") {
+        return "assets/slides/images/06_022_04.jpg";
+      } else if (localStorage.result == "ENDING_LAGO") {
+        return "assets/slides/images/06_021_04.jpg";
+      } else if (localStorage.result == "ENDING_LENDO") {
+        return "assets/slides/images/06_09_04.jpg";
+      } else if (localStorage.result == "ENDING_MEDITANDO") {
+        return "assets/slides/images/06_08_04.jpg";
+      } else if (localStorage.result == "ENDING_OCIDENTAL") {
+        return "assets/slides/images/06_06_04.jpg";
+      } else if (localStorage.result == "ENDING_TURISTA") {
+        return "assets/slides/images/06_01_04.jpg";
       }
     }
   },
@@ -238,43 +271,13 @@ export default {
 </script>
 
 <style lang="scss">
-.message {
-  font-family: $regular;
-  font-weight: bold;
-  @include font-scale(10, 30);
-  color: $white;
-  white-space: pre-wrap;
-}
-
-.center {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -25%);
-}
-
-.slide {
-  background: $darker;
-  color: $white;
-  width: 100vw;
-  height: 100vh;
-}
-
-.slide__content {
-  width: 100vw;
-  height: 57vw;
-  max-height: 100vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  @include center(relative);
-}
 .map__info {
   width: 100%;
+  height: 100%;
 }
 .table {
   @include font-scale(10, 16);
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
 }
@@ -299,22 +302,87 @@ export default {
   //   width: 100%;
   // }
 }
-.slide__default {
+
+.ending__portrait {
+  width: auto;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: $white;
-  cursor: pointer;
+}
+.ending__portrait img {
+  width: 100%;
+  max-width: 60vw;
+  height: auto;
+}
+.ending__center {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 10vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.background__image {
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.message__column {
+  float: left;
+  width: 50%;
+  padding: 1em;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.message__row {
+  width: 100%;
+}
+.message__row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 800px) {
+  .message__column {
+    width: 100%;
+  }
+}
+.share__button {
+  width: 100%;
+  height: auto;
   border: 1px solid $border-link;
   background-color: rgba(0, 0, 0, 0.6);
-  max-width: 29vw;
+  cursor: pointer;
+}
+.share__button div {
+  padding: 1em;
+  height: 100%;
+}
+.share_img {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4em;
+  float: right;
+  width: 20%;
+}
+.share_img img {
+  width: 100%;
+  height: auto;
+}
+.ending__message {
+  height: 100%;
+}
+.ending__message h1 {
   @include font-scale(10, 30);
-  font-weight: 100;
+  color: $white;
+  font-family: $regular;
   white-space: pre-wrap;
-
-  position: absolute;
-  right: 5%;
-  bottom: 20%;
 }
 </style>

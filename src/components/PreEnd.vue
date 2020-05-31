@@ -2,23 +2,28 @@
   <article class="form">
     <div class="form__content">
       <div class="form__center">
-        <div>
-          <img src="../../public/assets/logo.png" class="form__logo" alt="Pepita" />
-          <h1>{{$t("Obrigado por participar!")}}</h1>
-          <p>{{$t("Criamos TRANSMISSION para passar mensagens positivas neste momento mundialmente desafiador!")}}</p>
-          <p>{{$t("Estamos preparando uma segunda versão com histórias reais da quarentena!")}}</p>
-          <p>{{$t("Apoie o projeto! Parte da nossa receita será repassada para instituições que precisam do nosso apoio nesse momento! Escolha como contribuir")}}</p>
+        <div class="manifest__panel">
+          <div class="message">
+            <img src="../../public/assets/logo.png" class="form__logo" alt="Pepita" />
+            <h1>{{$t("Manifesto TRANSMISSION")}}</h1>
+            <p>{{$t("Nossas escolhas definem o que vivemos. E escolhemos o que é melhor para gente quando estamos em equilíbrio.")}}</p>
+            <p>{{$t("TRANSMISSION nasceu para espalhar mensagens positivas em um momento que desafia nossas emoções.")}}</p>
+            <p>{{$t("Após a experiência, você recebe uma mensagem sob medida, que dialoga com suas escolhas.")}}</p>
+            <p>{{$t("Compartilhando mensagens positivas, podemos mudar o nosso olhar sobre o mundo.")}}</p>
+            <p>{{$t("Na próxima versão do TRANSMISSION, trabalharemos com histórias reais do mundo todo.")}}</p>
+            <p>{{$t("Contribua contando uma escolha sua na quarentena, ou deixe sua contribuição para uma CAUSA que ajuda a mudar o mundo. Estamos conectados com diversas iniciativas no mundo todo e você pode escolher como contribuir.")}}</p>
+          </div>
         </div>
+        <div class="slide__default" id="next-button" @click="nextPage()">Avançar</div>
       </div>
-      <div class="slide__default" @click="nextPage()">></div>
     </div>
   </article>
 </template>
 
 <script>
 export default {
-  methods:{
-     nextPage() {
+  methods: {
+    nextPage() {
       this.$emit("clicked");
     }
   }
@@ -26,19 +31,28 @@ export default {
 </script>
 
 <style lang="scss">
-h1 {
-  font-family: $regular;
+.message {
+  width: 100%;
+}
+.message h1 {
   font-weight: bold;
   @include font-scale(10, 30);
   color: $white;
+  text-align: center;
+  white-space: pre-wrap;
 }
-p {
-  font-family: $regular;
-  font-weight: 100;
-  @include font-scale(8,24);
+.message h2 {
+  @include font-scale(10, 30);
   color: $white;
+  white-space: pre-wrap;
 }
-.slide__default {
+.message p {
+  font-family: $regular;
+  @include font-scale(8, 24);
+  color: $white;
+  white-space: pre-wrap;
+}
+.button__right__bottom {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,32 +71,32 @@ p {
   right: 5%;
   bottom: 20%;
 }
-.form {
-  background: url("../../public/assets/form_background.jpg") center;
-  background-size: cover;
-  color: $white;
-  width: 100vw;
-  height: 100vh;
+.manifest__panel {
+  width: 60%;
 }
-.form__content {
-  background: url("../../public/assets/equipe.png") bottom no-repeat;
-  width: 100vw;
-  height: 100%;
-  max-height: 100vh;
-  background-size: contain;
-}
-
-.form__center {
-  @media (max-width: 1023px) {
-    width: 90%;
-    margin: auto;
-    @include center(absolute);
+@media screen and (max-width: 800px) {
+  .manifest__panel {
+    width: 80%;
   }
-
-  @media (min-width: 1024px) {
-    @include center(absolute);
-    width: 90%;
-    max-width: 1000px;
+}
+#next-button {
+  position: absolute;
+  max-width: 20vw;
+  bottom: 30%;
+  top: inherit;
+  &.center {
+    transform: translateX(-50%) translateY(0);
+  }
+  right: 5%;
+  &.center {
+    transform: translateX(0) translateY(-50%);
+  }
+}
+@media screen and (max-width: 800px) {
+  #next-button {
+    position: static;
+     bottom: 5%;
+      max-width: 100vw;
   }
 }
 </style>

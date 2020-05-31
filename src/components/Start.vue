@@ -3,6 +3,7 @@
     <div class="start__content">
       <h1 class="start__title">Trans.Mission</h1>
       <p class="start__text">{{ $t('Quem é você na quarentena?') }}</p>
+      <Map/>
       <a href="javascript:void(0);" class="start__new" @click="startGame">{{ $t('Novo Jogo') }}</a>
     </div>
     <a href="javascript:void(0);" class="start__back" @click="selectLanguage"></a>
@@ -11,11 +12,15 @@
 
 <script>
 import {Howl, Howler} from 'howler';
+import Map from "@/components/Map";
 
 export default {
   name: 'Start',
   data: () => ({
-  }),
+  }),  
+  components: {
+    Map
+  },
   methods: {
     show(){
       // console.log('Show Start');

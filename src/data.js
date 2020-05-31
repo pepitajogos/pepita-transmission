@@ -66,6 +66,7 @@ export async function signIn() {
  * Recupera a contagem de resultados por país.
  */
 export async function getCountByCountry() {
+  
   const db = firebase.firestore();
 
   const doc = await db
