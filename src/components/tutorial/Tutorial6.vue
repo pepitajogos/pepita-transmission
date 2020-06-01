@@ -28,7 +28,7 @@ export default {
 }
 
 .tutorial6__content {
-  background: url('../../../public/assets/tutorial/tutorial-1-2.jpg');
+  background: url('../../../src/assets/tutorial/tutorial-1-2.jpg');
   width: 100vw;
   height: 57vw;
   max-height: 100vh;

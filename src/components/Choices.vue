@@ -21,7 +21,7 @@ export default {
 
 <style lang="scss">
 .choices {
-  background: url('../../public/assets/08_02_escolhas.jpg') no-repeat center;
+  background: url('../../src/assets/08_02_escolhas.jpg') no-repeat center;
   cursor: pointer;
   background-size: cover;
   color: $white;

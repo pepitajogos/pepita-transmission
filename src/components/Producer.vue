@@ -28,7 +28,7 @@ export default {
 }
 
 .producer__content {
-  background: url('../../public/assets/08_3_produtora.jpg');
+  background: url('../../src/assets/08_3_produtora.jpg');
   width: 100vw;
   height: 57vw;
   max-height: 100vh;

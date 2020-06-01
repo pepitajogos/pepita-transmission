@@ -3,7 +3,7 @@
     <div class="form__content">
       <div class="form__center">
         <div>
-          <img src="../../public/assets/logo.png" class="form__logo" alt="Pepita" />
+          <img src="../../src/assets/logo.png" class="form__logo" alt="Pepita" />
           <p
             class="form__p"
           >"Transmission 2.0" {{ $t('contará histórias reais da quarentena! Conte a sua!') }}</p>
@@ -47,7 +47,7 @@
               </form>
             </div>
             <div class="button__big" @click="share()">
-              <img src="../../public/assets/share.png" />
+              <img src="../../src/assets/share.png" />
             </div>
             <div class="button__big" @click="worldStats()">
               <p>World Stats</p>
@@ -258,7 +258,7 @@ export default {
   font-size: 80%;
 }
 .form {
-  background: url("../../public/assets/form_background.jpg") center;
+  background: url("../../src/assets/form_background.jpg") center;
   background-size: cover;
   color: $white;
   width: 100vw;
@@ -284,7 +284,7 @@ export default {
 
 // .form__share {
 //   cursor:pointer;
-//   background: url('../../public/assets/share.png') center no-repeat;
+//   background: url('../../src/assets/share.png') center no-repeat;
 //   background-size: contain;
 //   width: 150px;
 //   background-size: 100%;
@@ -295,7 +295,7 @@ export default {
 // }
 
 .form__content {
-  background: url("../../public/assets/equipe.png") bottom no-repeat;
+  background: url("../../src/assets/equipe.png") bottom no-repeat;
   width: 100vw;
   height: 100%;
   max-height: 100vh;

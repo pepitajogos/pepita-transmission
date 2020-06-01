@@ -1,67 +1,79 @@
 <template>
   <article class="slide">
     <div class="background__image" :style="backgroundStyle">
-      <div class="ending__center">
-        <div class="message__row">
-          <div class="message__column">
-            <div class="share__button" @click="share()">
-              <div class="share_img">
-                <img src="../../public/assets/share.png" />
-              </div>
-              <div class="ending__portrait">
-                <img :src="endingImage" />
-              </div>
-              <div class="ending__message">
-                <h1>{{$t(endingMessage)}}</h1>
+      <div @click="goToEnding2()" v-show="ending1">
+        <div class="ending__center">
+          <div class="ending__full">
+          </div>
+          <div class="slide__default" id="next-button">{{$t("Avançar")}}</div>
+        </div>
+      </div>
+      <div v-show="ending2">
+        <div class="ending__center">
+          <div class="message__row">
+            <div class="message__column">
+              <div class="share__button" @click="share()">
+                <div class="share_img">
+                  <img src="../../src/assets/share.png" />
+                </div>
+                <div class="ending__message">
+                  <h1>{{$t('Conte para seus amigos quem você é')}}</h1>
+                </div>
+                <div class="ending__portrait">
+                  <img :src="endingImage" />
+                </div>
+                <div class="ending__message">
+                  <h1>{{$t(endingMessage)}}</h1>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="message__column">
-            <div class="map__info">
-              <ul class="table">
-                <li
-                  class="table__text"
-                  v-for="(ending) in orderEndings.slice(0, 9)"
-                  :key="ending.id"
-                >
-                  <span class="table__numbers">{{ ending[1] }}%</span>
-                  {{ ending[0] }}
-                </li>
-              </ul>
+            <div class="message__column">
+              <div class="map__info">
+                <ul class="table">
+                  <li
+                    class="table__text"
+                    v-for="(ending) in orderEndings.slice(0, 9)"
+                    :key="ending.id"
+                  >
+                    <span class="table__numbers">{{ ending[1] }}%</span>
+                    {{ ending[0] }}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <web-social-share show="false" class="social">
+        <ion-icon
+          name="logo-twitter"
+          slot="twitter"
+          style="color: #00aced; width: 1.4rem; display: block;"
+        ></ion-icon>
+        <ion-icon
+          name="logo-facebook"
+          slot="facebook"
+          style="color: #3b5998; width: 1.4rem; display: block;"
+        ></ion-icon>
+        <ion-icon name="copy" slot="copy" style="color: #000000; width: 1.4rem; display: block;"></ion-icon>
+        <ion-icon name="mail" slot="email" style="color: #00aced; width: 1.4rem; display: block;"></ion-icon>
+        <ion-icon
+          name="logo-linkedin"
+          slot="linkedin"
+          style="color: #0e76a8; width: 1.4rem; display: block;"
+        ></ion-icon>
+        <ion-icon
+          name="logo-pinterest"
+          slot="pinterest"
+          style="color: #c8232c; width: 1.4rem; display: block;"
+        ></ion-icon>
+        <ion-icon
+          name="logo-whatsapp"
+          slot="whatsapp"
+          style="color: #075e54; width: 1.4rem; display: block;"
+        ></ion-icon>
+      </web-social-share>
     </div>
-    <web-social-share show="false" class="social">
-      <ion-icon
-        name="logo-twitter"
-        slot="twitter"
-        style="color: #00aced; width: 1.4rem; display: block;"
-      ></ion-icon>
-      <ion-icon
-        name="logo-facebook"
-        slot="facebook"
-        style="color: #3b5998; width: 1.4rem; display: block;"
-      ></ion-icon>
-      <ion-icon name="copy" slot="copy" style="color: #000000; width: 1.4rem; display: block;"></ion-icon>
-      <ion-icon name="mail" slot="email" style="color: #00aced; width: 1.4rem; display: block;"></ion-icon>
-      <ion-icon
-        name="logo-linkedin"
-        slot="linkedin"
-        style="color: #0e76a8; width: 1.4rem; display: block;"
-      ></ion-icon>
-      <ion-icon
-        name="logo-pinterest"
-        slot="pinterest"
-        style="color: #c8232c; width: 1.4rem; display: block;"
-      ></ion-icon>
-      <ion-icon
-        name="logo-whatsapp"
-        slot="whatsapp"
-        style="color: #075e54; width: 1.4rem; display: block;"
-      ></ion-icon>
-    </web-social-share>
   </article>
 </template>
 
@@ -74,6 +86,8 @@ import {
 
 export default {
   data: () => ({
+    ending1: true,
+    ending2: false,
     countryTotal: 0,
     players: 0,
     countryMap: {},
@@ -152,6 +166,10 @@ export default {
     }
   },
   methods: {
+    goToEnding2() {
+      this.ending1 = false;
+      this.ending2 = true;
+    },
     playMouseClickSoundEffect() {
       const mouse = new Howl({
         src: "assets/slides/audios/Transmission_Click1.mp3"
@@ -319,7 +337,6 @@ export default {
   display: flex;
   min-height: 100vh;
   width: 100vw;
-  padding: 10vw;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -341,6 +358,8 @@ export default {
 }
 .message__row {
   width: 100%;
+
+  padding: 10vw;
 }
 .message__row:after {
   content: "";
@@ -348,11 +367,6 @@ export default {
   clear: both;
 }
 
-@media screen and (max-width: 800px) {
-  .message__column {
-    width: 100%;
-  }
-}
 .share__button {
   width: 100%;
   height: auto;
@@ -368,7 +382,6 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 4em;
   float: right;
   width: 20%;
 }
@@ -384,5 +397,21 @@ export default {
   color: $white;
   font-family: $regular;
   white-space: pre-wrap;
+}
+.ending__full {
+  width: 100vw;
+  cursor: pointer;
+}
+.ending__full h1 {
+  width: 100%;
+  text-align: center;
+  @include font-scale(20, 40);
+  white-space: pre-wrap;
+}
+
+@media screen and (max-width: 800px) {
+  .message__column {
+    width: 100%;
+  }
 }
 </style>

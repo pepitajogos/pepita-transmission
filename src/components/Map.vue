@@ -1,16 +1,24 @@
 <template>
-  <div class="map__chart">
-    <MapChart
-      :countryData="countryMap"
-      highColor="#0099ff"
-      lowColor="#a7ccf1"
-      countryStrokeColor="#909090"
-      defaultCountryFillColor="#dadada"
-    />
-  </div>
+  <article class="map">
+    <div class="map__bg">
+      <div class="map__content" @click="next()">
+        <p>{{$t('Até o momento, XX pessoas jogaram Transmissions em XX países.')}}</p>
+        <MapChart
+          class="map__chart"
+          :countryData="countryMap"
+          highColor="#0099ff"
+          lowColor="#a7ccf1"
+          countryStrokeColor="#909090"
+          defaultCountryFillColor="#dadada"
+        />
+        <p>{{$t('Boa Sorte')}}</p>
+      </div>
+    </div>
+  </article>
 </template>
 
 <script>
+import axios from "axios";
 import MapChart from "vue-map-chart";
 import * as data from "@/data";
 
@@ -29,6 +37,9 @@ export default {
     this.getResults();
   },
   methods: {
+    next() {
+      this.$emit("clicked");
+    },
     async getResults() {
       const countryList = await data.getCountByCountry();
       const players = [];
@@ -66,8 +77,63 @@ export default {
 </script>
 
 <style lang="scss">
+.map {
+  background: $darker;
+  color: $white;
+  width: 100vw;
+  height: 100vh;
+}
+.map__bg {
+  background: url("../../src/assets/tutorial/tutorial-1.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  max-height: 100vh;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.map__content {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.map__content p {
+  text-align: center;
+  color: $white;
+  @include font-scale(10, 30);
+  font-weight: 100;
+}
 .map__chart {
-  color: $black;
-  width: 100%;
+  width: 40vw;
+}
+.vue-map-legend {
+  width: auto !important;
+  background: whitesmoke !important;
+  border: none !important;
+  border-radius: 1em 1em 1em 1em !important;
+}
+.vue-map-legend-header {
+  background-color: none !important;
+  border: none !important;
+}
+.vue-map-legend-header span {
+  font-family: $regular !important;
+  @include font-scale(16, 24);
+  color: black !important;
+}
+.vue-map-legend-content {
+  background: none !important;
+  border: none !important;
+}
+.vue-map-legend-content span {
+  font-family: $regular !important;
+  @include font-scale(16, 24);
+  color: black !important;
 }
 </style>

@@ -4,17 +4,17 @@
       <div class="form__center">
         <div class="manifest__panel">
           <div class="message">
-            <img src="../../public/assets/logo.png" class="form__logo" alt="Pepita" />
-            <h1>{{$t("Manifesto TRANSMISSION")}}</h1>
-            <p>{{$t("Nossas escolhas definem o que vivemos. E escolhemos o que é melhor para gente quando estamos em equilíbrio.")}}</p>
-            <p>{{$t("TRANSMISSION nasceu para espalhar mensagens positivas em um momento que desafia nossas emoções.")}}</p>
-            <p>{{$t("Após a experiência, você recebe uma mensagem sob medida, que dialoga com suas escolhas.")}}</p>
-            <p>{{$t("Compartilhando mensagens positivas, podemos mudar o nosso olhar sobre o mundo.")}}</p>
-            <p>{{$t("Na próxima versão do TRANSMISSION, trabalharemos com histórias reais do mundo todo.")}}</p>
-            <p>{{$t("Contribua contando uma escolha sua na quarentena, ou deixe sua contribuição para uma CAUSA que ajuda a mudar o mundo. Estamos conectados com diversas iniciativas no mundo todo e você pode escolher como contribuir.")}}</p>
+            <img src="../../src/assets/logo.png" class="form__logo" alt="Pepita" />
+            <h1>{{$t('Manifesto TRANSMISSION')}}</h1>
+            <p>{{$t('Nossas escolhas definem o que vivemos. E escolhemos o que é melhor para gente quando estamos em equilíbrio.')}}</p>
+            <p>{{$t('TRANSMISSION nasceu para espalhar mensagens positivas em um momento que desafia nossas emoções.')}}</p>
+            <p>{{$t('Após a experiência, você recebe uma mensagem sob medida, que dialoga com suas escolhas.')}}</p>
+            <p>{{$t('Compartilhando mensagens positivas, podemos mudar o nosso olhar sobre o mundo.')}}</p>
+            <p>{{$t('Na próxima versão do TRANSMISSION, trabalharemos com histórias reais do mundo todo.')}}</p>
+            <p>{{$t('Contribua contando uma escolha sua na quarentena, ou deixe sua contribuição para uma CAUSA que ajuda a mudar o mundo. Estamos conectados com diversas iniciativas no mundo todo e você pode escolher como contribuir.')}}</p>
           </div>
         </div>
-        <div class="slide__default" id="next-button" @click="nextPage()">Avançar</div>
+        <div class="slide__default" id="next-button" @click="nextPage()">{{$t('Avançar')}}</div>
       </div>
     </div>
   </article>
@@ -51,6 +51,7 @@ export default {
   @include font-scale(8, 24);
   color: $white;
   white-space: pre-wrap;
+  font-weight: 100;
 }
 .button__right__bottom {
   display: flex;

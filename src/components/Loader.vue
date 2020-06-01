@@ -248,7 +248,7 @@ export default {
 
 <style lang="scss">
 .loader {
-  // background: url(../../public/assets/background-loading.jpg) #000;
+  // background: url(../../src/assets/background-loading.jpg) #000;
   background: $darker;
   background-size: cover;
   top: 0;
@@ -274,7 +274,7 @@ export default {
 }
 
 .loader__content {
-  background: url(../../public/assets/loader.gif) no-repeat center;
+  background: url(../../src/assets/loader.gif) no-repeat center;
   background-size: 8vw;
   width: 40vw;
   border-radius: 50%;

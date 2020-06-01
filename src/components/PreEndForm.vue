@@ -112,7 +112,7 @@ export default {
 
 <style lang="scss">
 .form {
-  background: url("../../public/assets/form_background.jpg") center;
+  background: url("../../src/assets/form_background.jpg") center;
   background-size: cover;
   color: $white;
   width: 100vw;
@@ -130,7 +130,7 @@ export default {
   justify-content: center;
 }
 .form__content {
-  background: url("../../public/assets/equipe.png") bottom no-repeat;
+  background: url("../../src/assets/equipe.png") bottom no-repeat;
   width: 100vw;
   height: 100%;
   max-height: 100vh;
@@ -148,6 +148,18 @@ export default {
   border: 1px solid $border-link;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 1em;
+}
+.form__panel h1{
+  font-weight: bold;
+  @include font-scale(10, 24);
+  color: $white;
+  text-align: center;
+}
+@media screen and (max-width: 800px) {
+  .form__panel {
+    width: 90%;
+    //transform:scale(0.7);
+  }
 }
 
 .form .full-screen {

@@ -76,6 +76,11 @@ export default {
   components: {
     RangeSlider
   },
+  watch: {
+    totalValue: function(val) {
+      if (val < 0.1) this.totalValue = 0.1;
+    }
+  },
   methods: {
     percentageFormat(val) {
       return (
@@ -170,13 +175,13 @@ export default {
 }
 .humble__bundle__panel p {
   font-weight: 100;
-  @include font-scale(8, 18);
+  @include font-scale(10, 18);
   color: $white;
   text-align: center;
 }
 .humble__bundle__panel span {
   font-weight: 100;
-  @include font-scale(8, 18);
+  @include font-scale(10, 18);
   color: $white;
 }
 .currency {
@@ -271,7 +276,7 @@ $knob-shadow: 0px !default;
 .bundle__column {
   float: left;
   width: 50%;
-  padding: 0.2em;
+  padding: 0.5em;
 }
 
 .bundle__container:after {

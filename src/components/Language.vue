@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss">
 .language {
-  background: url('../../public/assets/language.jpg') no-repeat $black center;
+  background: url('../../src/assets/language.jpg') no-repeat $black center;
   background-size: cover;
   width: 100vw;
   height: 100vh;
