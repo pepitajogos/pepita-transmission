@@ -2,14 +2,14 @@
   <article class="humble__bundle__panel">
     <div class="bundle__container">
       <div class="bundle__column">
-        <h1>{{$t("Contribua!")}}</h1>
+        <h1>{{$t('Contribua!')}}</h1>
         <currency-input class="currency__input" id="totalValue" v-model="totalValue" />
         <div class="paypal__panel">
           <div ref="paypal"></div>
         </div>
       </div>
       <div class="bundle__column">
-        <p>{{$t("Você escolhe o destino da sua contribuição")}}</p>
+        <p>{{$t('Você escolhe o destino da sua contribuição')}}</p>
         <div class="slider__bg">
           <div class="slider__panel">
             <span style="float:left">Elemento 1</span>
@@ -156,7 +156,7 @@ export default {
   mounted() {
     const script = document.createElement("script");
     script.src =
-      "https://www.paypal.com/sdk/js?client-id=ASCNE_yzVshXYeTw5rQqdlRwq9EQrhT12Dc5LbJPGcR2hH2O2xI_cyamdSdlDGqUXY9_VDKkO2ZS3jDq";
+      "https://www.paypal.com/sdk/js?client-id=ASCNE_yzVshXYeTw5rQqdlRwq9EQrhT12Dc5LbJPGcR2hH2O2xI_cyamdSdlDGqUXY9_VDKkO2ZS3jDq&currency=USD&locale=en_US&commit=true";
     script.addEventListener("load", this.setLoaded);
     document.body.appendChild(script);
   }

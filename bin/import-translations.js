@@ -3,7 +3,7 @@ const path = require("path");
 const fetch = require("node-fetch");
 const FormData = require("form-data");
 
-const API_KEY = "30ea466d28a6d399b1e45c8bf5bcb0d6";
+const API_KEY = "91392db5d1ab7be19a858f0dae2e28ef";
 const PROJECT_ID = "340981";
 const TARGET_DIR = path.join(__dirname, "../src/locales");
 

@@ -31,11 +31,10 @@
                     :key="network.key"
                     :style="{backgroundColor: network.color}"
                     :url="sharing.url"
-                    :title="sharing.title"
-                    :description="sharing.description"
-                    :quote="sharing.quote"
+                    :title="network.title"
+                    :description="network.description"
+                    :quote="network.quote"
                     :hashtags="sharing.hashtags"
-                    :twitterUser="sharing.twitterUser"
                   >
                     <font-awesome-icon :icon="network.icon"></font-awesome-icon>
                     {{ network.name }}
@@ -77,51 +76,95 @@ export default {
     orderEndings: [],
     sharing: {
       url: "https://transmission.earth",
-      title: "Eu sou XX! E você?",
-      description: "Eu sou XX! E você?",
-      quote: "Eu sou XX! E você?",
       hashtags: "transmission"
-    },
-    networks: [
-      {
-        network: "facebook",
-        name: "Facebook",
-        icon: ["fab", "facebook-square"],
-        color: "#1877f2"
-      },
-      {
-        network: "twitter",
-        name: "Twitter",
-        icon: ["fab", "twitter"],
-        color: "#1da1f2"
-      },
-      {
-        network: "linkedin",
-        name: "LinkedIn",
-        icon: ["fab", "linkedin"],
-        color: "#007bb5"
-      },
-      {
-        network: "whatsapp",
-        name: "Whatsapp",
-        icon: ["fab", "whatsapp"],
-        color: "#25d366"
-      },
-      {
-        network: "pinterest",
-        name: "Pinterest",
-        icon: ["fab", "pinterest"],
-        color: "#bd081c"
-      },
-      {
-        network: "email",
-        name: "Email",
-        icon: ["fas", "envelope"],
-        color: "#333333"
-      }
-    ]
+    }
   }),
   computed: {
+    networks: function() {
+      return [
+        {
+          network: "facebook",
+          name: "Facebook",
+          icon: ["fab", "facebook-square"],
+          color: "#1877f2",
+
+          title: "",
+          description: "",
+          quote: this.$i18n.t(this.shareMessage)
+        },
+        {
+          network: "twitter",
+          name: "Twitter",
+          icon: ["fab", "twitter"],
+          color: "#1da1f2",
+
+          title: this.$i18n.t(this.shareMessage),
+          description: "",
+          quote: ""
+        },
+        {
+          network: "linkedin",
+          name: "LinkedIn",
+          icon: ["fab", "linkedin"],
+          color: "#007bb5",
+
+          title: this.$i18n.t(this.shareMessage),
+          description: "",
+          quote: ""
+        },
+        {
+          network: "whatsapp",
+          name: "Whatsapp",
+          icon: ["fab", "whatsapp"],
+          color: "#25d366",
+
+          title: this.$i18n.t(this.shareMessage),
+          description: "",
+          quote: ""
+        },
+        {
+          network: "pinterest",
+          name: "Pinterest",
+          icon: ["fab", "pinterest"],
+          color: "#bd081c",
+
+          title: this.$i18n.t(this.shareMessage),
+          description: "",
+          quote: ""
+        },
+        {
+          network: "email",
+          name: "Email",
+          icon: ["fas", "envelope"],
+          color: "#333333",
+
+          title: this.$i18n.t(this.shareMessage),
+          description: "",
+          quote: ""
+        }
+      ];
+    },
+    shareMessage: function() {
+      if (localStorage.result == "ENDING_BORBOLETA") {
+        return "Na pandemia, sou uma borboleta saindo do casulo. E você?";
+      } else if (localStorage.result == "ENDING_CASA") {
+        return "Estou pronto para descobrir um mundo novo após a pandemia. E você?";
+      } else if (localStorage.result == "ENDING_ENFERMEIRA") {
+        return "Na pandemia, eu sou altruísta. E você?";
+      } else if (localStorage.result == "ENDING_HOMEM") {
+        return "Na pandemia, eu estou em equilíbrio. E você?";
+      } else if (localStorage.result == "ENDING_LAGO") {
+        return "Na pandemia, eu sou um lago banhado pelo luar. E você?";
+      } else if (localStorage.result == "ENDING_LENDO") {
+        return "Na pandemia, eu sou como um grande leitor de livros. E você?";
+      } else if (localStorage.result == "ENDING_MEDITANDO") {
+        return "Na pandemia, eu sou um meditador. E você?";
+      } else if (localStorage.result == "ENDING_OCIDENTAL") {
+        return "Na pandemia, eu sou um ocidental numa lavanderia. E você?";
+      } else if (localStorage.result == "ENDING_TURISTA") {
+        return "Na pandemia, eu sou um turista no aeroporto. E você?";
+      }
+    },
     endingMessage: function() {
       if (localStorage.result == "ENDING_BORBOLETA") {
         return "VOCÊ É UMA BORBOLETA SAINDO DO CASULO\nSe você enfrentar seus medos, vai se transformar.";
