@@ -1,19 +1,21 @@
 <template>
   <article class="slide">
-    <div class="background__image" :style="backgroundStyle">
-      <div @click="goToEnding2()" v-show="ending1">
+    <div @click="goToEnding2()" v-show="!ending1">
+      <div class="background__image" :style="backgroundStyle('light')">
         <div class="ending__center">
           <div class="ending__full"></div>
           <div class="slide__default" id="next-button">{{$t('Avançar')}}</div>
         </div>
       </div>
-      <div v-show="ending2">
+    </div>
+    <div v-show="!ending2&&ending1">
+      <div class="background__image" :style="backgroundStyle('dark')">
         <div class="ending__center">
           <div class="message__row">
             <div class="message__column">
               <div class="share__button">
                 <div class="ending__portrait">
-                  <img :src="endingImage" />
+                  <img :src="lightEndingImage" />
                 </div>
                 <div class="ending__message">
                   <h1>{{$t(endingMessage)}}</h1>
@@ -67,7 +69,8 @@ import * as data from "@/data";
 
 export default {
   data: () => ({
-    ending1: true,
+    loaded: false,
+    ending1: false,
     ending2: false,
     countryTotal: 0,
     players: 0,
@@ -119,27 +122,6 @@ export default {
     ]
   }),
   computed: {
-    backgroundStyle: function() {
-      if (localStorage.result == "ENDING_BORBOLETA") {
-        return `background-image: url('assets/slides/images/06_02_06.jpg')`;
-      } else if (localStorage.result == "ENDING_CASA") {
-        return `background-image: url('assets/slides/images/06_018_05.jpg')`;
-      } else if (localStorage.result == "ENDING_ENFERMEIRA") {
-        return `background-image: url('assets/slides/images/06_10_05.jpg')`;
-      } else if (localStorage.result == "ENDING_HOMEM") {
-        return `background-image: url('assets/slides/images/06_022_05.jpg')`;
-      } else if (localStorage.result == "ENDING_LAGO") {
-        return `background-image: url('assets/slides/images/06_021_05.jpg')`;
-      } else if (localStorage.result == "ENDING_LENDO") {
-        return `background-image: url('assets/slides/images/06_09_05.jpg')`;
-      } else if (localStorage.result == "ENDING_MEDITANDO") {
-        return `background-image: url('assets/slides/images/06_08_05.jpg')`;
-      } else if (localStorage.result == "ENDING_OCIDENTAL") {
-        return `background-image: url('assets/slides/images/06_06_05.jpg')`;
-      } else if (localStorage.result == "ENDING_TURISTA") {
-        return `background-image: url('assets/slides/images/06_01_05.jpg')`;
-      }
-    },
     endingMessage: function() {
       if (localStorage.result == "ENDING_BORBOLETA") {
         return "VOCÊ É UMA BORBOLETA SAINDO DO CASULO\nSe você enfrentar seus medos, vai se transformar.";
@@ -161,7 +143,7 @@ export default {
         return "VOCÊ É UM TURISTA NO AEROPORTO\nVocê pode se abrir para novas oportunidades.";
       }
     },
-    endingImage: function() {
+    lightEndingImage: function() {
       if (localStorage.result == "ENDING_BORBOLETA") {
         return "assets/slides/images/06_02_05.jpg";
       } else if (localStorage.result == "ENDING_CASA") {
@@ -181,15 +163,45 @@ export default {
       } else if (localStorage.result == "ENDING_TURISTA") {
         return "assets/slides/images/06_01_04.jpg";
       }
+    },
+    darkEndingImage: function() {
+      if (localStorage.result == "ENDING_BORBOLETA") {
+        return "assets/slides/images/06_02_06.jpg";
+      } else if (localStorage.result == "ENDING_CASA") {
+        return "assets/slides/images/06_018_05.jpg";
+      } else if (localStorage.result == "ENDING_ENFERMEIRA") {
+        return "assets/slides/images/06_10_05.jpg";
+      } else if (localStorage.result == "ENDING_HOMEM") {
+        return "assets/slides/images/06_022_05.jpg";
+      } else if (localStorage.result == "ENDING_LAGO") {
+        return "assets/slides/images/06_021_05.jpg";
+      } else if (localStorage.result == "ENDING_LENDO") {
+        return "assets/slides/images/06_09_05.jpg";
+      } else if (localStorage.result == "ENDING_MEDITANDO") {
+        return "assets/slides/images/06_08_05.jpg";
+      } else if (localStorage.result == "ENDING_OCIDENTAL") {
+        return "assets/slides/images/06_06_05.jpg";
+      } else if (localStorage.result == "ENDING_TURISTA") {
+        return "assets/slides/images/06_01_05.jpg";
+      }
     }
   },
-  mounted(){
-    this.getResults();
+  updated() {
+    if (!this.loaded) {
+      this.getResults();
+      this.loaded = true;
+    }
   },
   methods: {
+    backgroundStyle(type) {
+      if (type == "light") {
+        return "background-image: url(" + this.lightEndingImage + ")";
+      } else if (type == "dark") {
+        return "background-image: url(" + this.darkEndingImage + ")";
+      }
+    },
     goToEnding2() {
-      this.ending1 = false;
-      this.ending2 = true;
+      this.ending1 = true;
     },
     playMouseClickSoundEffect() {
       const mouse = new Howl({
@@ -345,7 +357,7 @@ export default {
 .ending__message h1 {
   @include font-scale(10, 30);
   color: $white;
-    text-align: center;
+  text-align: center;
   font-family: $regular;
   white-space: pre-wrap;
 }
@@ -360,12 +372,12 @@ export default {
   cursor: pointer;
 }
 .ending__full h1 {
-    font-family: $regular;
+  font-family: $regular;
   text-align: center;
   @include font-scale(20, 40);
   white-space: pre-wrap;
 }
-.ending__full p{  
+.ending__full p {
   text-align: center;
   font-family: $regular;
   @include font-scale(10, 30);
@@ -382,7 +394,7 @@ export default {
   font-family: $regular;
   @include font-scale(10, 20);
   font-weight: bold;
-    text-align: center;
+  text-align: center;
 }
 @media screen and (max-width: 800px) {
   .message__column {
