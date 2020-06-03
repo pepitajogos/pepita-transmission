@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <router-view />
+    <!-- <End/> -->
     <transition  v-on:enter="enter">
       <Language v-show="!langSelected" @clicked="selectedLanguage" ref="Language"/> 
     </transition>
@@ -19,14 +20,15 @@ import Start from '@/components/Start'
 import Game from '@/components/Game'
 import Slide from '@/components/Slide'
 import { TweenMax } from 'gsap';
-
+//import End from '@/views/End'
 export default {
   name: 'App',
   components: {
     Language,
     Start,
     Game,
-    Slide
+    Slide,
+    //End
   },
   data: () => ({
     loaded: false,
@@ -75,9 +77,7 @@ export default {
         });
       }
     },
-  },
-  mounted() {
-  },
+  }
 }
 </script>
 

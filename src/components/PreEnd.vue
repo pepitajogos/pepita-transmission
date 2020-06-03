@@ -11,7 +11,7 @@
             <p>{{$t('Após a experiência, você recebe uma mensagem sob medida, que dialoga com suas escolhas.')}}</p>
             <p>{{$t('Compartilhando mensagens positivas, podemos mudar o nosso olhar sobre o mundo.')}}</p>
             <p>{{$t('Na próxima versão do TRANSMISSION, trabalharemos com histórias reais do mundo todo.')}}</p>
-            <p>{{$t('Contribua contando uma escolha sua na quarentena, ou deixe sua contribuição para uma CAUSA que ajuda a mudar o mundo. Estamos conectados com diversas iniciativas no mundo todo e você pode escolher como contribuir.')}}</p>
+            <p>{{$t('Contribua contando uma escolha sua na quarentena, ou deixe sua contribuição para uma CAUSA que ajuda a mudar o mundo.\nEstamos conectados com diversas iniciativas no mundo todo e você pode escolher como contribuir.')}}</p>
           </div>
         </div>
         <div class="slide__default" id="next-button" @click="nextPage()">{{$t('Avançar')}}</div>
@@ -33,6 +33,7 @@ export default {
 <style lang="scss">
 .message {
   width: 100%;
+  height: 100%;
 }
 .message h1 {
   font-weight: bold;
@@ -48,10 +49,23 @@ export default {
 }
 .message p {
   font-family: $regular;
-  @include font-scale(8, 24);
+  @include font-scale(12, 24);
   color: $white;
   white-space: pre-wrap;
   font-weight: 100;
+}
+@media screen and (max-width: 800px) {
+  .message p {
+    @include font-scale(12, 18);
+  }
+}
+@media screen and (max-height: 800px) {
+  .message p {
+    @include font-scale(12, 18);
+  }
+  .message h1 {
+  @include font-scale(12, 26);
+}
 }
 .button__right__bottom {
   display: flex;
@@ -73,11 +87,12 @@ export default {
   bottom: 20%;
 }
 .manifest__panel {
-  width: 60%;
+  width: 60vw;
+  height: 80vh;
 }
 @media screen and (max-width: 800px) {
   .manifest__panel {
-    width: 80%;
+    width: 80vw;
   }
 }
 #next-button {
@@ -96,8 +111,8 @@ export default {
 @media screen and (max-width: 800px) {
   #next-button {
     position: static;
-     bottom: 5%;
-      max-width: 100vw;
+    bottom: 5%;
+    max-width: 100vw;
   }
 }
 </style>

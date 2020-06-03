@@ -16,6 +16,7 @@
  *
  * @param {Story} story
  */
+ 
 export async function addStory(story) {
   const user = firebase.auth()?.currentUser;
   if (!user) throw "Usuário não logado.";
@@ -81,7 +82,8 @@ export async function getCountByCountry() {
  * Recupera a porcentagem de resultados por final.
  */
 export async function getRatioByEnding() {
-  const db = firebase.firestore();
+  
+   const db = firebase.firestore();
 
   const doc = await db
     .collection("stats")

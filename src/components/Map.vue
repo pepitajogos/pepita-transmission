@@ -2,7 +2,7 @@
   <article class="map">
     <div class="map__bg">
       <div class="map__content" @click="next()">
-        <p>{{$t('Até o momento, XX pessoas jogaram Transmissions em XX países.')}}</p>
+        <p>{{$t('Até o momento, {0} pessoas jogaram Transmission em {1} países.',{0:players,1:countryTotal})}}</p>
         <MapChart
           class="map__chart"
           :countryData="countryMap"
@@ -11,7 +11,7 @@
           countryStrokeColor="#909090"
           defaultCountryFillColor="#dadada"
         />
-        <p>{{$t('Boa Sorte')}}</p>
+        <p>{{$t('Boa sorte!')}}</p>
       </div>
     </div>
   </article>
@@ -28,13 +28,17 @@ export default {
     MapChart
   },
   data: () => ({
+    loadedCountries:false,
     countryTotal: 0,
     players: 0,
     countryMap: {},
     orderCountries: []
   }),
-  mounted() {
-    this.getResults();
+  updated() {
+    if(!this.loadedCountries){
+      this.getResults();
+      this.loadedCountries=true;
+    }
   },
   methods: {
     next() {
@@ -71,6 +75,7 @@ export default {
           }
         }
       }
+
     }
   }
 };

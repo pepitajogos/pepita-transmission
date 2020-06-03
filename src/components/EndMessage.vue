@@ -3,27 +3,41 @@
     <div class="background__image" :style="backgroundStyle">
       <div @click="goToEnding2()" v-show="ending1">
         <div class="ending__center">
-          <div class="ending__full">
-          </div>
-          <div class="slide__default" id="next-button">{{$t("Avançar")}}</div>
+          <div class="ending__full"></div>
+          <div class="slide__default" id="next-button">{{$t('Avançar')}}</div>
         </div>
       </div>
       <div v-show="ending2">
         <div class="ending__center">
           <div class="message__row">
             <div class="message__column">
-              <div class="share__button" @click="share()">
-                <div class="share_img">
-                  <img src="../../src/assets/share.png" />
-                </div>
-                <div class="ending__message">
-                  <h1>{{$t('Conte para seus amigos quem você é')}}</h1>
-                </div>
+              <div class="share__button">
                 <div class="ending__portrait">
                   <img :src="endingImage" />
                 </div>
                 <div class="ending__message">
                   <h1>{{$t(endingMessage)}}</h1>
+                </div>
+                <div class="ending__message">
+                  <p>{{$t('Conte para seus amigos quem é você!')}}</p>
+                </div>
+                <div class="btn-group">
+                  <ShareNetwork
+                    class="btn"
+                    v-for="network in networks"
+                    :network="network.network"
+                    :key="network.key"
+                    :style="{backgroundColor: network.color}"
+                    :url="sharing.url"
+                    :title="sharing.title"
+                    :description="sharing.description"
+                    :quote="sharing.quote"
+                    :hashtags="sharing.hashtags"
+                    :twitterUser="sharing.twitterUser"
+                  >
+                    <font-awesome-icon :icon="network.icon"></font-awesome-icon>
+                    {{ network.name }}
+                  </ShareNetwork>
                 </div>
               </div>
             </div>
@@ -44,45 +58,12 @@
           </div>
         </div>
       </div>
-      <web-social-share show="false" class="social">
-        <ion-icon
-          name="logo-twitter"
-          slot="twitter"
-          style="color: #00aced; width: 1.4rem; display: block;"
-        ></ion-icon>
-        <ion-icon
-          name="logo-facebook"
-          slot="facebook"
-          style="color: #3b5998; width: 1.4rem; display: block;"
-        ></ion-icon>
-        <ion-icon name="copy" slot="copy" style="color: #000000; width: 1.4rem; display: block;"></ion-icon>
-        <ion-icon name="mail" slot="email" style="color: #00aced; width: 1.4rem; display: block;"></ion-icon>
-        <ion-icon
-          name="logo-linkedin"
-          slot="linkedin"
-          style="color: #0e76a8; width: 1.4rem; display: block;"
-        ></ion-icon>
-        <ion-icon
-          name="logo-pinterest"
-          slot="pinterest"
-          style="color: #c8232c; width: 1.4rem; display: block;"
-        ></ion-icon>
-        <ion-icon
-          name="logo-whatsapp"
-          slot="whatsapp"
-          style="color: #075e54; width: 1.4rem; display: block;"
-        ></ion-icon>
-      </web-social-share>
     </div>
   </article>
 </template>
 
 <script>
 import * as data from "@/data";
-import {
-  applyPolyfills,
-  defineCustomElements
-} from "web-social-share/dist/loader";
 
 export default {
   data: () => ({
@@ -90,16 +71,53 @@ export default {
     ending2: false,
     countryTotal: 0,
     players: 0,
-    countryMap: {},
-    orderCountries: [],
-    orderEndings: []
+    orderEndings: [],
+    sharing: {
+      url: "https://transmission.earth",
+      title: "Eu sou XX! E você?",
+      description: "Eu sou XX! E você?",
+      quote: "Eu sou XX! E você?",
+      hashtags: "transmission"
+    },
+    networks: [
+      {
+        network: "facebook",
+        name: "Facebook",
+        icon: ["fab", "facebook-square"],
+        color: "#1877f2"
+      },
+      {
+        network: "twitter",
+        name: "Twitter",
+        icon: ["fab", "twitter"],
+        color: "#1da1f2"
+      },
+      {
+        network: "linkedin",
+        name: "LinkedIn",
+        icon: ["fab", "linkedin"],
+        color: "#007bb5"
+      },
+      {
+        network: "whatsapp",
+        name: "Whatsapp",
+        icon: ["fab", "whatsapp"],
+        color: "#25d366"
+      },
+      {
+        network: "pinterest",
+        name: "Pinterest",
+        icon: ["fab", "pinterest"],
+        color: "#bd081c"
+      },
+      {
+        network: "email",
+        name: "Email",
+        icon: ["fas", "envelope"],
+        color: "#333333"
+      }
+    ]
   }),
-  mounted() {
-    this.getResults();
-    applyPolyfills().then(() => {
-      defineCustomElements();
-    });
-  },
   computed: {
     backgroundStyle: function() {
       if (localStorage.result == "ENDING_BORBOLETA") {
@@ -165,6 +183,9 @@ export default {
       }
     }
   },
+  mounted(){
+    this.getResults();
+  },
   methods: {
     goToEnding2() {
       this.ending1 = false;
@@ -175,65 +196,6 @@ export default {
         src: "assets/slides/audios/Transmission_Click1.mp3"
       });
       mouse.play();
-    },
-    share() {
-      return new Promise(async resolve => {
-        const webSocialShare = document.querySelector(".social");
-
-        if (!webSocialShare || !window) {
-          return;
-        }
-
-        const shareUrl = `${window.location.protocol}//${window.location.host}`;
-
-        const share = {
-          displayNames: true,
-          config: [
-            {
-              facebook: {
-                socialShareUrl: shareUrl,
-                socialSharePopupWidth: 300,
-                socialSharePopupHeight: 400
-              }
-            },
-            {
-              twitter: {
-                socialShareUrl: shareUrl,
-                socialSharePopupWidth: 300,
-                socialSharePopupHeight: 400
-              }
-            },
-            {
-              copy: {
-                socialShareUrl: shareUrl
-              }
-            },
-            {
-              email: {
-                socialShareUrl: shareUrl
-              }
-            },
-            {
-              linkedin: {
-                socialShareBody: shareUrl,
-                socialSharePopupWidth: 300,
-                socialSharePopupHeight: 400
-              }
-            },
-            {
-              whatsapp: {
-                socialShareUrl: shareUrl
-              }
-            }
-          ]
-        };
-        // The configuration, set the share options
-        webSocialShare.share = share;
-        // Show/open the share actions
-        webSocialShare.show = true;
-
-        resolve();
-      });
     },
     async getResults() {
       const endingList = await data.getRatioByEnding();
@@ -372,22 +334,10 @@ export default {
   height: auto;
   border: 1px solid $border-link;
   background-color: rgba(0, 0, 0, 0.6);
-  cursor: pointer;
+  padding: 1em;
 }
 .share__button div {
-  padding: 1em;
   height: 100%;
-}
-.share_img {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  float: right;
-  width: 20%;
-}
-.share_img img {
-  width: 100%;
-  height: auto;
 }
 .ending__message {
   height: 100%;
@@ -395,23 +345,67 @@ export default {
 .ending__message h1 {
   @include font-scale(10, 30);
   color: $white;
+    text-align: center;
   font-family: $regular;
   white-space: pre-wrap;
+}
+.ending__message p {
+  text-align: center;
+  font-family: $regular;
+  @include font-scale(10, 30);
+  font-weight: 100;
 }
 .ending__full {
   width: 100vw;
   cursor: pointer;
 }
 .ending__full h1 {
-  width: 100%;
+    font-family: $regular;
   text-align: center;
   @include font-scale(20, 40);
   white-space: pre-wrap;
 }
-
+.ending__full p{  
+  text-align: center;
+  font-family: $regular;
+  @include font-scale(10, 30);
+  font-weight: 100;
+}
+.btn {
+  width: 33%;
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 0.8em 0.5em; /* Some padding */
+  margin: 0 auto;
+  cursor: pointer; /* Mouse pointer on hover */
+  float: left; /* Float the buttons side by side */
+  font-family: $regular;
+  @include font-scale(10, 20);
+  font-weight: bold;
+    text-align: center;
+}
 @media screen and (max-width: 800px) {
   .message__column {
     width: 100%;
   }
+  .btn {
+    width: 50%;
+  }
+}
+.btn-group {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
 }
 </style>
