@@ -156,7 +156,7 @@ export default {
   mounted() {
     const script = document.createElement("script");
     script.src =
-      "https://www.paypal.com/sdk/js?client-id=ASCNE_yzVshXYeTw5rQqdlRwq9EQrhT12Dc5LbJPGcR2hH2O2xI_cyamdSdlDGqUXY9_VDKkO2ZS3jDq&currency=USD&locale=en_US&commit=true";
+      "https://www.paypal.com/sdk/js?client-id=ASCNE_yzVshXYeTw5rQqdlRwq9EQrhT12Dc5LbJPGcR2hH2O2xI_cyamdSdlDGqUXY9_VDKkO2ZS3jDq";
     script.addEventListener("load", this.setLoaded);
     document.body.appendChild(script);
   }

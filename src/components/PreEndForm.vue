@@ -130,7 +130,7 @@ export default {
   justify-content: center;
 }
 .form__content {
-  background: url("../../src/assets/equipe.png") bottom no-repeat;
+  //background: url("../../src/assets/equipe.png") bottom no-repeat;
   width: 100vw;
   height: 100%;
   max-height: 100vh;

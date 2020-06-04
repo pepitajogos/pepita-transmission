@@ -18,7 +18,7 @@
                   <img :src="lightEndingImage" />
                 </div>
                 <div class="ending__message">
-                  <h1>{{$t(endingMessage)}}</h1>
+                  <h1>{{endingMessage}}</h1>
                 </div>
                 <div class="ending__message">
                   <p>{{$t('Conte para seus amigos quem é você!')}}</p>
@@ -166,25 +166,37 @@ export default {
       }
     },
     endingMessage: function() {
+      let message = "";
       if (localStorage.result == "ENDING_BORBOLETA") {
-        return "VOCÊ É UMA BORBOLETA SAINDO DO CASULO\nSe você enfrentar seus medos, vai se transformar.";
+        message =
+          "VOCÊ É UMA BORBOLETA SAINDO DO CASULO\nSe você enfrentar seus medos, vai se transformar.";
       } else if (localStorage.result == "ENDING_CASA") {
-        return "VOCÊ É UMA MULHER SAINDO DE CASA\nÉ hora de, com muita coragem, abrir-se para o desconhecido.";
+        message =
+          "VOCÊ ESTÁ PRONTO PARA SAIR DE CASA. \nÉ hora de, com muita coragem, abrir-se para o desconhecido.";
       } else if (localStorage.result == "ENDING_ENFERMEIRA") {
-        return "VOCÊ É UMA ENFERMEIRA DA CRUZ VERMELHA\nVocê sabe ajudar o outro. E isso te leva pra frente.";
+        message =
+          "VOCÊ CUIDA DO PRÓXIMO, COMO UMA ENFERMEIRA DA CRUZ VERMELHA.\nVocê sabe ajudar o outro. E isso te leva pra frente.";
       } else if (localStorage.result == "ENDING_HOMEM") {
-        return "VOCÊ É UM HOMEM NUMA LAGOA\nO equilíbrio durante a pandemia te renovou.\n Você está pronto para seguir em frente.";
+        message =
+          "VOCÊ ESTÁ  NUMA CANOA, NO MEIO DE UM LAGO.\nO equilíbrio durante a pandemia te renovou.\nVocê está pronto para seguir em frente.";
       } else if (localStorage.result == "ENDING_LAGO") {
-        return "VOCÊ É UM LAGO BANHADO PELO LUAR\nVocê está em equilíbrio. Use esse momento para reinventar metas, ritmos e sonhos.";
+        message =
+          "VOCÊ É UM LAGO BANHADO PELO LUAR\nVocê está em equilíbrio. Use esse momento para reinventar metas, ritmos e sonhos.";
       } else if (localStorage.result == "ENDING_LENDO") {
-        return "VOCÊ É UM HOMEM LENDO DEZENAS DE LIVROS\nPara realmente mudar, você precisa deixar o passado para trás.";
+        message =
+          "VOCÊ É COMO UM GRANDE LEITOR DE LIVROS.\nPara realmente mudar, você precisa deixar o passado para trás.";
       } else if (localStorage.result == "ENDING_MEDITANDO") {
-        return "VOCÊ É UMA MULHER MEDITANDO\nVocê encontra paz interior e aprende a escutar o tempo.";
+        message =
+          "VOCÊ ESTÁ EM ESTADO DE MEDITAÇÃO.\nVocê encontra paz interior e aprende a escutar o tempo.";
       } else if (localStorage.result == "ENDING_OCIDENTAL") {
-        return "VOCÊ É UM OCIDENTAL NUMA LAVANDERIA ORIENTAL\nSomos todos iguais, não importa a diferença.";
+        message =
+          "VOCÊ É UM OCIDENTAL NUMA LAVANDERIA ORIENTAL\nSomos todos iguais, não importa a diferença.";
       } else if (localStorage.result == "ENDING_TURISTA") {
-        return "VOCÊ É UM TURISTA NO AEROPORTO\nVocê pode se abrir para novas oportunidades.";
+        message =
+          "VOCÊ É UM TURISTA NO AEROPORTO\nVocê pode se abrir para novas oportunidades.";
       }
+      message = this.$i18n.t(message);
+      return message;
     },
     lightEndingImage: function() {
       if (localStorage.result == "ENDING_BORBOLETA") {
@@ -435,7 +447,7 @@ export default {
   cursor: pointer; /* Mouse pointer on hover */
   float: left; /* Float the buttons side by side */
   font-family: $regular;
-  @include font-scale(10, 20);
+  @include font-scale(10, 18);
   font-weight: bold;
   text-align: center;
 }
@@ -443,6 +455,8 @@ export default {
   .message__column {
     width: 100%;
   }
+}
+@media screen and (max-width: 1020px) {
   .btn {
     width: 50%;
   }
