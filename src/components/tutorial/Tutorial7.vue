@@ -30,9 +30,9 @@ export default {
 .tutorial7__content {
   background: url('../../../src/assets/tutorial/tutorial-1-2.jpg');
   width: 100vw;
-  height: 57vw;
+  height: 100vw;
   max-height: 100vh;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   @include center(relative);

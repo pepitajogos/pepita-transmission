@@ -134,7 +134,7 @@ export default {
   width: 100vw;
   height: 100%;
   max-height: 100vh;
-  background-size: contain;
+  background-size: cover;
   @include center(relative);
 }
 
@@ -214,7 +214,7 @@ export default {
 //   width: auto;
 //   height: auto;
 //   display: block;
-//   background-size: contain;
+//   background-size: cover;
 //   margin: 40px;
 // }
 
