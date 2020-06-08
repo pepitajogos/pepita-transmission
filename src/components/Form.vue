@@ -285,7 +285,7 @@ export default {
 // .form__share {
 //   cursor:pointer;
 //   background: url('../../src/assets/share.png') center no-repeat;
-//   background-size: contain;
+//   background-size: cover;
 //   width: 150px;
 //   background-size: 100%;
 //   margin-left: 20px;
@@ -299,7 +299,7 @@ export default {
   width: 100vw;
   height: 100%;
   max-height: 100vh;
-  background-size: contain;
+  background-size: cover;
   @include center(relative);
 }
 
@@ -389,7 +389,7 @@ export default {
   width: 194px;
   height: 62px;
   display: block;
-  background-size: contain;
+  background-size: cover;
   margin: 40px;
 }
 

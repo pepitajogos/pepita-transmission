@@ -90,7 +90,7 @@ export default {
 }
 .map__bg {
   background: url("../../src/assets/tutorial/tutorial-1.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   width: 100vw;
