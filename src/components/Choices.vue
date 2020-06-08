@@ -31,9 +31,9 @@ export default {
 
 .choices__content {
   width: 100vw;
-  height: 57vw;
+  height: 100vw;
   max-height: 100vh;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   @include center(relative);
