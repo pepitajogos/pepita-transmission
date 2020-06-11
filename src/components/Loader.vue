@@ -266,7 +266,7 @@ export default {
   text-transform: uppercase;
   margin: 0;
   font-family: $regular;
-  font-weight: 100;
+  font-weight: 400;
   color: rgba(250, 250, 250, 0.5);
   text-align: center;
   @include center(absolute);

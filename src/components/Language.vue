@@ -71,7 +71,7 @@ export default {
   @include font-scale(20, 40);
   text-decoration: none;
   color: $white;
-  font-weight: 100;
+  font-weight: 400;
   
   @media (orientation: landscape) and (max-width: 1024px) {
     font-size: 19px;

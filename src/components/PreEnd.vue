@@ -52,7 +52,7 @@ export default {
   @include font-scale(12, 24);
   color: $white;
   white-space: pre-wrap;
-  font-weight: 100;
+  font-weight: 400;
 }
 @media screen and (max-width: 800px) {
   .message p {
@@ -79,7 +79,7 @@ export default {
   padding: 0.5em 1em;
   max-width: 29vw;
   @include font-scale(10, 30);
-  font-weight: 100;
+  font-weight: 400;
   white-space: pre-wrap;
 
   position: absolute;

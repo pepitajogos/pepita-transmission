@@ -14,7 +14,7 @@
         return {
           background: `url(${this.image})`,
           width: '100vw',
-          height: '100vw',
+          height: '100vh',
           'max-height': '100vh',
           'background-size': 'cover',
           'background-repeat': 'no-repeat',

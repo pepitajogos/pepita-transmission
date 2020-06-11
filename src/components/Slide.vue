@@ -174,13 +174,13 @@ export default {
     padding: 0.5em 1em;
     max-width: 29vw;
     @include font-scale(10, 30);
-    font-weight: 100;
+    font-weight: 400;
      white-space: pre-wrap;
 }
 
 .slide__content {
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
     max-height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -272,7 +272,7 @@ export default {
   a:hover,
   a:active {
     font-family: $regular;
-    font-weight: 100;
+    font-weight: 400;
     color: $black;
   }
 }
@@ -299,7 +299,7 @@ export default {
   a:hover,
   a:active {
     font-family: $regular;
-    font-weight: 100;
+    font-weight: 400;
     color: $black;
   }
 }
@@ -338,7 +338,7 @@ export default {
   a:hover,
   a:active {
     font-family: $regular;
-    font-weight: 100;
+    font-weight: 400;
     color: $black;
   }
 }

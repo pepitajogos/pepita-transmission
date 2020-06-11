@@ -112,7 +112,7 @@ export default {
   text-align: center;
   color: $white;
   @include font-scale(10, 30);
-  font-weight: 100;
+  font-weight: 400;
 }
 .map__chart {
   width: 40vw;

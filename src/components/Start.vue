@@ -73,7 +73,7 @@ export default {
 .start__text {
   @include font-scale(20, 30);
    color: $white;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .start__new {

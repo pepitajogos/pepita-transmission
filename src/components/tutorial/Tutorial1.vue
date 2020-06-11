@@ -30,7 +30,7 @@
     color: $white;
     width: 100vw;
     height: 100vh;
-  }]
+  }
 
   .tutorial1__default {
     display: flex;
@@ -45,7 +45,7 @@
     padding: 0.5em 1em;
     max-width: 29vw;
     @include font-scale(10, 30);
-    font-weight: 100;
+    font-weight: 400;
   }
 
   .tutorial1 .full-screen {

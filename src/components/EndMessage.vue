@@ -330,7 +330,7 @@ export default {
 }
 
 .table__text {
-  font-weight: 100;
+  font-weight: 400;
   @include font-scale(12, 20);
   padding: 5px 0;
 }
@@ -420,7 +420,7 @@ export default {
   text-align: center;
   font-family: $regular;
   @include font-scale(10, 30);
-  font-weight: 100;
+  font-weight: 400;
 }
 .ending__full {
   width: 100vw;
@@ -436,7 +436,7 @@ export default {
   text-align: center;
   font-family: $regular;
   @include font-scale(10, 30);
-  font-weight: 100;
+  font-weight: 400;
 }
 .btn {
   width: 33%;

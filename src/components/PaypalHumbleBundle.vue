@@ -174,13 +174,13 @@ export default {
   text-align: center;
 }
 .humble__bundle__panel p {
-  font-weight: 100;
+  font-weight: 400;
   @include font-scale(10, 18);
   color: $white;
   text-align: center;
 }
 .humble__bundle__panel span {
-  font-weight: 100;
+  font-weight: 400;
   @include font-scale(10, 18);
   color: $white;
 }

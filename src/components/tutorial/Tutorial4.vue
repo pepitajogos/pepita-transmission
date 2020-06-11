@@ -30,7 +30,7 @@ export default {
 .tutorial4__content {
   background: url('../../../src/assets/tutorial/tutorial-1-2.jpg');
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   max-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -51,7 +51,7 @@ export default {
   padding: 0.5em 1em;
   max-width: 29vw;
   @include font-scale(10, 30);
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .tutorial4 .full-screen {
