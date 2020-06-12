@@ -166,7 +166,7 @@ export default {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: $white;
+    color: rgba($white, 0.8);
     position: absolute;
     cursor: pointer;
     border: 1px solid $border-link;
@@ -182,7 +182,7 @@ export default {
     width: 100vw;
     height: 100vh;
     max-height: 100vh;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     @include center(relative);
@@ -284,7 +284,7 @@ export default {
     @include font-scale(10, 35);
     position: relative;
     left: 35%;
-    padding-top: 23%;
+    padding-top: 40vh;
     width: 28vw;
 
     @media (max-width: 1202px) {
