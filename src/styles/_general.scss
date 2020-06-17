@@ -1,44 +1,48 @@
-body, html {
-	width: 100%;
-	height: 100%;
-	@include font-size(18);
-	-webkit-font-smoothing: initial;
-	-moz-osx-font-smoothing: grayscale;
-	text-rendering: optimizeLegibility;
-	-webkit-tap-highlight-color: transparent;
-	font-family: $regular;
-	color: $darker;
-	background-color: #fff;
-	margin: 0;
-	overflow: hidden;
-	user-select: none;
-	
-	@include maxWidth(1023) {
-		min-width: 100%;
-	}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  @include font-size(18);
+  -webkit-font-smoothing: initial;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  font-family: $regular;
+  color: $darker;
+  background-color: #fff;
+  margin: 0;
+  overflow: hidden;
+  user-select: none;
+
+  @include maxWidth(1023) {
+    min-width: 100%;
+  }
 }
 
-*, *:before, *:after {
-	box-sizing: border-box;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
 
-.box-justify{
-	display: flex;
-  	justify-content: space-between;
+.box-justify {
+  display: flex;
+  justify-content: space-between;
 }
 
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
-.text-warning{
+.text-warning {
   color: #ff123e;
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }

@@ -1,19 +1,14 @@
 <template>
   <div id="app">
     <router-view />
-    <transition v-on:enter="enter">
-      <Language
-        v-show="!langSelected"
-        @clicked="selectedLanguage"
-        ref="Language"
-      />
+    <transition>
+      <LandingPage v-show="showLanding" @clicked="hideLandingPage" ref="LandingPage" />
     </transition>
     <transition v-on:enter="enter">
-      <Start
-        v-show="!start && langSelected"
-        @clicked="startedGame"
-        ref="Start"
-      />
+      <Language v-show="!showLanding && !langSelected" @clicked="selectedLanguage" ref="Language" />
+    </transition>
+    <transition v-on:enter="enter">
+      <Start v-show="!start && !showLanding && langSelected" @clicked="startedGame" ref="Start" />
     </transition>
     <transition v-on:enter="enter">
       <Game v-show="start" ref="Game" />
@@ -29,6 +24,7 @@ import Start from "@/components/Start";
 import Game from "@/components/Game";
 import Slide from "@/components/Slide";
 import RotationLock from "@/components/RotationLock";
+import LandingPage from "@/components/LandingPage";
 import { TweenMax } from "gsap";
 
 export default {
@@ -38,31 +34,36 @@ export default {
     Start,
     Game,
     Slide,
-    RotationLock
+    RotationLock,
+    LandingPage
   },
   data: () => ({
+    showLanding: true,
     loaded: false,
     lang: null,
     langSelected: false,
-    start: false,
+    start: false
   }),
   methods: {
     enter(el, done) {
       const tl = new TimelineMax({
-        onComplete: done,
+        onComplete: done
       });
 
       tl.set(el, {
         autoAlpha: 0,
         scale: 2,
-        transformOrigin: "50% 50%",
+        transformOrigin: "50% 50%"
       });
 
       tl.to(el, 1, {
         autoAlpha: 1,
         scale: 1,
-        ease: Power4.easeOut,
+        ease: Power4.easeOut
       });
+    },
+    hideLandingPage() {
+      this.showLanding = false;
     },
     selectedLanguage(lang) {
       document.querySelector("body").setAttribute("data-lang", lang);
@@ -86,8 +87,8 @@ export default {
           this.$refs.Language.show();
         });
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
