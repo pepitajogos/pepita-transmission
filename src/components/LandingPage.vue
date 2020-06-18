@@ -24,6 +24,7 @@
         You are in state of meditation!
       </div>
     </section>
+
     <section>
       <div class="world-map-section">
         <app-map></app-map>
@@ -64,15 +65,21 @@
         </div>
       </div>
     </section>
+
+    <section class="form-section">
+      <app-form />
+    </section>
   </div>
 </template>
 
 <script>
   // import components
   import Map from '@/components/Map'
+  import Form from '@/components/Form'
   export default {
     components: {
-      appMap: Map
+      appMap: Map,
+      appForm: Form
     },
     methods: {
       show() {
