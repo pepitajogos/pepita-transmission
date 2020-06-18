@@ -1,20 +1,20 @@
 <template>
   <div class="landing-page">
     <section class="hero-section">
-      <div class="header">
+      <header class="header">
         <div class="logo-container">
           <img src="../../src/assets/landing/TTTT.png" alt="" class="logo" /> transmission
         </div>
         <div class="link-container">
           <a href="#" class="link">Sponsor</a>
           <a href="#" class="link outlined">Share</a>
-          <a href="#" class="link" @click.prevent="hideLandingPage">EN</a>
+          <a href="#" class="link" @click.prevent="selectLanguage">EN</a>
         </div>
-      </div>
+      </header>
       <div class="content">
         <h2>Discover who you are in the pandemic</h2>
         <p>A two minute experience designed to spread positive messages</p>
-        <a href="#" @click.prevent="hideLandingPage">Play it now</a>
+        <a href="#" @click.prevent="startGame">Play it now</a>
       </div>
       <img src="../../src/assets/landing/landing-phone.png" alt="" class="landing-phone" />
       <div class="chat-bubble chat-bubble-1">
@@ -34,6 +34,34 @@
       <div class="about-section">
         <h2>About us</h2>
         <p>We want to spread positive messages and create a global conversation</p>
+
+        <div class="cards">
+          <div class="card">
+            <img src="../../src/assets/landing/icons/icon1.png" alt="" class="icon" />
+            <p>
+              "Transmission" shows how our choices define our reality. And we choose what is best for us when we are in
+              balance.
+            </p>
+          </div>
+          <div class="card">
+            <img src="../../src/assets/landing/icons/icon2.png" alt="" class="icon" />
+            <p>
+              After the experience, you receive a tailored message that shows your emotional state after the pandemic..
+            </p>
+          </div>
+          <div class="card">
+            <img src="../../src/assets/landing/icons/icon3.png" alt="" class="icon" />
+            <p>
+              You can share your story in the Pandemic with us. And we will share it with the world
+            </p>
+          </div>
+          <div class="card">
+            <img src="../../src/assets/landing/icons/icon4.png" alt="" class="icon" />
+            <p>
+              By sharing positive messages, we can change the way we see world. .
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -47,8 +75,18 @@
       appMap: Map
     },
     methods: {
-      hideLandingPage() {
-        this.$emit('clicked')
+      show() {
+        // console.log('Show Landing page');
+      },
+      hide() {
+        // console.log('Hide Landing page');
+      },
+      selectLanguage() {
+        this.$emit('chooseLanguage')
+      },
+
+      startGame() {
+        this.$emit('startGame')
       }
     }
   }
@@ -60,6 +98,34 @@
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto !important;
+  }
+  .header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #ffffff;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    .logo-container {
+      display: flex;
+      font-size: 20px;
+      img {
+        margin-right: 5px;
+      }
+    }
+
+    .link-container {
+      .link {
+        color: #ffffff;
+        padding: 5px 12px;
+        &.outlined {
+          border: 1px solid #ffffff;
+          border-radius: 50px;
+        }
+      }
+    }
   }
   .hero-section {
     background: url('../../src/assets/landing/hero-bg.png') no-repeat $black center;
@@ -124,34 +190,7 @@
       }
     }
   }
-  .header {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    color: #ffffff;
-    padding: 20px 15px;
-    display: flex;
-    justify-content: space-between;
-    .logo-container {
-      display: flex;
-      font-size: 20px;
-      img {
-        margin-right: 5px;
-      }
-    }
 
-    .link-container {
-      .link {
-        color: #ffffff;
-        padding: 5px 12px;
-        &.outlined {
-          border: 1px solid #ffffff;
-          border-radius: 50px;
-        }
-      }
-    }
-  }
   .about-section {
     background: url('../../src/assets/landing/about-bg.png') no-repeat $black center;
     background-size: cover;
@@ -163,11 +202,31 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-top: 100px;
     h2,
-    p {
+    > p {
       background: rgba(0, 0, 0, 0.5);
       padding: 5px 15px;
       color: #ffffff;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 100px;
+      .card {
+        width: 250px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid #707070;
+        color: #ffffff;
+        padding: 10px 15px;
+        font-size: 10px;
+        margin: 10px;
+      }
     }
   }
 </style>
