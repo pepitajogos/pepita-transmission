@@ -69,6 +69,25 @@
     <section class="form-section">
       <app-form />
     </section>
+
+    <section class="heal-stories">
+      <h2>Heal Stories</h2>
+      <p>Leave your contribution to a cause that helps change the world.</p>
+
+      <div class="content">
+        <p>
+          We believe that a good story can shape the world. If you resonate with our cause, help us gather stories from
+          all over the globe and tell them. Transmission 2.0 will tell real stories from the Pandemic.
+        </p>
+        <p>
+          Besides from telling stories, we can also heal stories from all over the world. Choose here which story you
+          want to embrace and regenerate!
+        </p>
+        <div class="paypal">
+          <app-paypal />
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -76,10 +95,12 @@
   // import components
   import Map from '@/components/Map'
   import Form from '@/components/Form'
+  import PaypalBundle from '@/components/PaypalHumbleBundle'
   export default {
     components: {
       appMap: Map,
-      appForm: Form
+      appForm: Form,
+      appPaypal: PaypalBundle
     },
     methods: {
       show() {
@@ -234,6 +255,33 @@
         font-size: 10px;
         margin: 10px;
       }
+    }
+  }
+  .heal-stories {
+    background: url('../../src/assets/landing/heal-bg.png') no-repeat $black center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+    h2,
+    > p {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 5px 15px;
+      color: #ffffff;
+    }
+
+    .content {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 5px 15px;
+      color: #ffffff;
     }
   }
 </style>
