@@ -7,13 +7,14 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'home'
   },
   {
     path: '/end',
-    name: 'end',
-    component: End,
-  },
+    // name: 'end',
+    // component: End,
+    redirect: '/'
+  }
 ]
 
 const router = new VueRouter({

@@ -16,7 +16,7 @@
       <Start v-show="!start && !showLanding && langSelected" @clicked="startedGame" ref="Start" />
     </transition>
     <transition v-on:enter="enter">
-      <Game v-show="start" ref="Game" />
+      <Game v-show="start" ref="Game" @ended="backToStart" />
     </transition>
 
     <RotationLock />
@@ -106,6 +106,11 @@
         //     this.$refs.Language.show()
         //   })
         // }
+      },
+      backToStart: function() {
+        this.showLanding = false
+        this.loaded = false
+        this.start = false
       }
     }
   }

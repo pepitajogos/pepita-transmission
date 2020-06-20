@@ -88,6 +88,37 @@
         </div>
       </div>
     </section>
+
+    <section class="sharer-section">
+      <div class="content">
+        <h2>Share</h2>
+
+        <div class="cards">
+          <div class="card">
+            <font-awesome-icon :icon="['fab', 'twitter']" />
+          </div>
+          <div class="card">
+            <font-awesome-icon :icon="['fab', 'facebook']" />
+          </div>
+          <div class="card">
+            <font-awesome-icon :icon="['fab', 'whatsapp']" />
+          </div>
+          <div class="card">
+            <font-awesome-icon :icon="['fab', 'linkedin']" />
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="logo-container">
+          <img src="../../src/assets/landing/TTTT.png" alt="transmission" class="logo" />
+          <div class="text-container">
+            ©2020.Transmission. All rights reserved. <br />
+            Have Questions? Send and <a href="mailto:contant@transmission.earth">email</a>
+          </div>
+        </div>
+      </footer>
+    </section>
   </div>
 </template>
 
@@ -96,11 +127,19 @@
   import Map from '@/components/Map'
   import Form from '@/components/Form'
   import PaypalBundle from '@/components/PaypalHumbleBundle'
+
+  // import libraries
+  // import { library } from '@fortawesome/fontawesome-svg-core'
+  // import { faTwitter, faLinkedin, faWhatsapp, faFacebookF } from '@fortawesome/free-brands-svg-icons'
+  // library.add(faTwitter, faLinkedin, faWhatsapp, faFacebookF)
   export default {
     components: {
       appMap: Map,
       appForm: Form,
       appPaypal: PaypalBundle
+    },
+    mounted: function() {
+      console.log('mounted')
     },
     methods: {
       show() {
@@ -112,6 +151,8 @@
       selectLanguage() {
         this.$emit('chooseLanguage')
       },
+
+      onShareClicked(method) {},
 
       startGame() {
         this.$emit('startGame')
@@ -282,6 +323,84 @@
       background: rgba(0, 0, 0, 0.5);
       padding: 5px 15px;
       color: #ffffff;
+    }
+  }
+
+  .sharer-section {
+    background: url('../../src/assets/landing/hero-bg.png') no-repeat $black center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      display: block;
+      content: '';
+    }
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      padding: 50px 0;
+      flex-direction: column;
+      align-items: center;
+    }
+    h2,
+    > p {
+      color: #ffffff;
+    }
+
+    .cards {
+      width: 80%;
+      max-width: 800px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 10%;
+      .card {
+        border: 1px solid #707070;
+        color: #ffffff;
+        padding: 30px;
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 30px 20px;
+      color: #fff;
+      font-size: 14px;
+
+      a {
+        color: #fff;
+        text-decoration: underline;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        .logo {
+          width: 50px;
+          margin-right: 15px;
+        }
+      }
     }
   }
 </style>
