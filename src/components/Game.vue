@@ -2,12 +2,14 @@
   <article class="game">
     <Tutorial v-show="!tutorialFinished" ref="Tutorial" @finished="finishedTutorial" />
     <SlidePlayer v-show="tutorialFinished && !gameFinished" @finished="finishedGame" />
+    <RotationLock />
   </article>
 </template>
 
 <script>
   import Tutorial from './Tutorial'
   import SlidePlayer from './SlidePlayer'
+  import RotationLock from './RotationLock'
 
   export default {
     name: 'Game',
@@ -17,7 +19,8 @@
     }),
     components: {
       Tutorial,
-      SlidePlayer
+      SlidePlayer,
+      RotationLock
     },
     methods: {
       show() {

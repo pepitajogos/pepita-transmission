@@ -12,14 +12,14 @@
         ref="LandingPage"
       />
     </transition>
-    <transition v-on:enter="enter">
+    <!-- <transition v-on:enter="enter">
       <Start v-show="!start && !showLanding && langSelected" @clicked="startedGame" ref="Start" />
-    </transition>
+    </transition> -->
     <transition v-on:enter="enter">
       <Game v-show="start" ref="Game" @ended="backToStart" />
     </transition>
 
-    <RotationLock />
+    <!-- <RotationLock /> -->
   </div>
 </template>
 
@@ -70,7 +70,7 @@
       // show start page of the game
       onStartGameClicked() {
         this.showLanding = false
-        // this.start = true
+        this.start = true
         console.log(this.langSelected)
         // this.$refs.Start.show()
       },
