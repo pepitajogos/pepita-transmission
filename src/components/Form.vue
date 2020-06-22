@@ -12,7 +12,8 @@
             Share your best or worst choices in the Pandemic. <br />
             We will publish them in our social media!
           </p>
-          <form action id="form">
+
+          <form action id="form" v-if="showStoryForm">
             <div class="form__group">
               <input
                 type="text"
@@ -51,6 +52,9 @@
               <p>World Stats</p>
             </div> -->
       </div>
+    </div>
+    <div class="btn-container" v-if="!showStoryForm">
+      <a href="#" @click.prevent="showStoryForm = true" class="btn">Share your story</a>
     </div>
     <!--
     <div class="form__content">
@@ -118,8 +122,16 @@
 
   export default {
     name: 'Form',
-    data: () => ({}),
-    components: {},
+    data: () => ({
+      showStoryForm: window.innerWidth > 769 ? true : false
+    }),
+    mounted: function() {
+      let windowWidth = console.log('mounted')
+      if (windowWidth > 768) {
+        this.showStoryForm = true
+        console.log(this.showStoryForm)
+      }
+    },
     methods: {
       submit() {
         this.validation()
@@ -225,6 +237,23 @@
 </script>
 
 <style lang="scss" scoped>
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    a.btn {
+      @include font-scale(16, 16);
+      margin-bottom: 50px;
+      text-decoration: none;
+      color: #000000;
+      padding: 15px 30px;
+      border-radius: 50px;
+      margin-top: 20px;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.8);
+      text-transform: uppercase;
+      clear: both;
+    }
+  }
   .share_stats_panel {
     display: flex;
   }

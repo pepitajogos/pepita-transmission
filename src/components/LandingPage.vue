@@ -16,52 +16,50 @@
         <p>A two minute experience designed to spread positive messages</p>
         <a href="#" @click.prevent="startGame">Play it now</a>
       </div>
-      <img src="../../src/assets/landing/landing-phone.png" alt="" class="landing-phone" />
-      <div class="chat-bubble chat-bubble-1">
-        You need to open up to new opportunities
-      </div>
-      <div class="chat-bubble chat-bubble-2">
-        You are in state of meditation!
-      </div>
-    </section>
-
-    <section>
-      <div class="world-map-section">
-        <app-map></app-map>
+      <div class="content-mobile">
+        <img src="../../src/assets/landing/landing-phone.png" alt="" class="landing-phone" />
+        <div class="chat-bubble chat-bubble-1">
+          You need to open up to new opportunities
+        </div>
+        <div class="chat-bubble chat-bubble-2">
+          You are in state of meditation!
+        </div>
       </div>
     </section>
 
-    <section>
-      <div class="about-section">
-        <h2>About us</h2>
-        <p>We want to spread positive messages and create a global conversation</p>
+    <section class="world-map-section">
+      <app-map></app-map>
+    </section>
 
-        <div class="cards">
-          <div class="card">
-            <img src="../../src/assets/landing/icons/icon1.png" alt="" class="icon" />
-            <p>
-              "Transmission" shows how our choices define our reality. And we choose what is best for us when we are in
-              balance.
-            </p>
-          </div>
-          <div class="card">
-            <img src="../../src/assets/landing/icons/icon2.png" alt="" class="icon" />
-            <p>
-              After the experience, you receive a tailored message that shows your emotional state after the pandemic..
-            </p>
-          </div>
-          <div class="card">
-            <img src="../../src/assets/landing/icons/icon3.png" alt="" class="icon" />
-            <p>
-              You can share your story in the Pandemic with us. And we will share it with the world
-            </p>
-          </div>
-          <div class="card">
-            <img src="../../src/assets/landing/icons/icon4.png" alt="" class="icon" />
-            <p>
-              By sharing positive messages, we can change the way we see world. .
-            </p>
-          </div>
+    <section class="about-section">
+      <h2>About us</h2>
+      <p>We want to spread positive messages and create a global conversation</p>
+
+      <div class="cards">
+        <div class="card">
+          <img src="../../src/assets/landing/icons/icon1.png" alt="" class="icon" />
+          <p>
+            "Transmission" shows how our choices define our reality. And we choose what is best for us when we are in
+            balance.
+          </p>
+        </div>
+        <div class="card">
+          <img src="../../src/assets/landing/icons/icon2.png" alt="" class="icon" />
+          <p>
+            After the experience, you receive a tailored message that shows your emotional state after the pandemic..
+          </p>
+        </div>
+        <div class="card">
+          <img src="../../src/assets/landing/icons/icon3.png" alt="" class="icon" />
+          <p>
+            You can share your story in the Pandemic with us. And we will share it with the world
+          </p>
+        </div>
+        <div class="card">
+          <img src="../../src/assets/landing/icons/icon4.png" alt="" class="icon" />
+          <p>
+            By sharing positive messages, we can change the way we see world. .
+          </p>
         </div>
       </div>
     </section>
@@ -83,10 +81,13 @@
           Besides from telling stories, we can also heal stories from all over the world. Choose here which story you
           want to embrace and regenerate!
         </p>
-        <div class="paypal">
+        <div class="paypal" v-if="showPaymentForm">
           <app-paypal />
         </div>
       </div>
+      <a href="#" @click.prevent="showPaymentForm = true" class="btn show-mobile" v-if="!showPaymentForm"
+        >Heal stories</a
+      >
     </section>
 
     <section class="sharer-section">
@@ -118,18 +119,23 @@
   import Form from '@/components/Form'
   import PaypalBundle from '@/components/PaypalHumbleBundle'
 
-  // import libraries
-  // import { library } from '@fortawesome/fontawesome-svg-core'
-  // import { faTwitter, faLinkedin, faWhatsapp, faFacebookF } from '@fortawesome/free-brands-svg-icons'
-  // library.add(faTwitter, faLinkedin, faWhatsapp, faFacebookF)
   export default {
+    data: function() {
+      return {
+        showPaymentForm: false
+      }
+    },
     components: {
       appMap: Map,
       appForm: Form,
       appPaypal: PaypalBundle
     },
     mounted: function() {
-      console.log('mounted')
+      let windowWidth = window.innerWidth
+
+      if (windowWidth > 768) {
+        this.showPaymentForm = true
+      }
     },
     methods: {
       show() {
@@ -152,6 +158,18 @@
 </script>
 
 <style lang="scss" scoped>
+  a.btn {
+    @include font-scale(16, 16);
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: #000000;
+    padding: 15px 30px;
+    border-radius: 50px;
+    margin-top: 20px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+  }
   .landing-page {
     height: 100vh;
     width: 100%;
@@ -195,28 +213,32 @@
     z-index: 3;
     overflow: hidden;
 
-    .landing-phone {
-      position: absolute;
-      bottom: -50px;
-      right: 10%;
-    }
-
-    .chat-bubble {
-      background: rgba(255, 255, 255, 0.9);
-      padding: 20px;
-      border-radius: 30px;
-      border: 1px solid #3a3a3a;
-      &.chat-bubble-1 {
+    .content-mobile {
+      position: relative;
+      height: 100%;
+      .landing-phone {
         position: absolute;
-        bottom: 200px;
-        right: 6%;
-        max-width: 200px;
+        bottom: -50px;
+        right: 10%;
       }
-      &.chat-bubble-2 {
-        position: absolute;
-        bottom: 50px;
-        right: 20%;
-        max-width: 200px;
+
+      .chat-bubble {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 30px;
+        border: 1px solid #3a3a3a;
+        &.chat-bubble-1 {
+          position: absolute;
+          bottom: 200px;
+          right: 6%;
+          max-width: 200px;
+        }
+        &.chat-bubble-2 {
+          position: absolute;
+          bottom: 50px;
+          right: 20%;
+          max-width: 200px;
+        }
       }
     }
 
@@ -226,6 +248,7 @@
       top: 50%;
       transform: translateY(-50%);
       left: 5%;
+      z-index: 1;
       h2 {
         margin-bottom: 10px;
         font-size: 40px;
@@ -351,18 +374,6 @@
         color: #ffffff;
       }
     }
-    a.btn {
-      @include font-scale(16, 16);
-      margin-bottom: 50px;
-      text-decoration: none;
-      color: #000000;
-      padding: 15px 30px;
-      border-radius: 50px;
-      margin-top: 20px;
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.9);
-      text-transform: uppercase;
-    }
 
     .cards {
       width: 80%;
@@ -402,6 +413,63 @@
           margin-right: 15px;
         }
       }
+    }
+  }
+  // responsive
+  @media screen and (max-width: 768px) {
+    .hero-section {
+      height: 700px;
+      .content {
+        position: relative;
+        top: 0;
+        margin-top: 100px;
+        transform: translateY(0);
+        text-align: center;
+        left: 0;
+      }
+
+      .content-mobile {
+        .landing-phone {
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .chat-bubble {
+          &.chat-bubble-1 {
+            top: 100px;
+            bottom: auto;
+            right: 15%;
+          }
+          &.chat-bubble-2 {
+            top: 300px;
+            bottom: auto;
+            left: 15%;
+          }
+        }
+      }
+    }
+    .form-section {
+      .form {
+        height: auto;
+      }
+    }
+    .about-section {
+      height: auto;
+      padding-bottom: 50px;
+
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    .heal-stories {
+      height: auto;
+      padding-bottom: 50px;
+    }
+  }
+  @media screen and (min-width: 769px) {
+    .show-mobile {
+      display: none;
     }
   }
 </style>
