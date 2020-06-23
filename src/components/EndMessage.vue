@@ -1,71 +1,77 @@
 <template>
   <article class="slide">
-    <div @click="goToEnding2()" v-show="!ending1">
-      <div class="background__image" :style="backgroundStyle('light')">
-        <div class="ending__center">
-          <div class="ending__full"></div>
-          <div class="slide__default" id="next-button">{{$t('Avançar')}}</div>
+    <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
+      <div @click="goToEnding2()" v-show="!ending1">
+        <div class="background__image" :style="backgroundStyle('light')">
+          <div class="ending__center">
+            <div class="ending__full"></div>
+            <div class="slide__default right">{{$t('Avançar')}}</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div v-show="!ending2&&ending1">
-      <div class="background__image" :style="backgroundStyle('dark')">
-        <div class="ending__center">
-          <div class="message__row">
-            <div class="message__column">
-              <div class="share__button">
-                <div class="ending__portrait">
-                  <img :src="lightEndingImage" />
-                </div>
-                <div class="ending__message">
-                  <h1>{{endingMessage}}</h1>
-                </div>
-                <div class="ending__message">
-                  <p>{{$t('Conte para seus amigos quem é você!')}}</p>
-                </div>
-                <div class="btn-group">
-                  <ShareNetwork
-                    class="btn"
-                    v-for="network in networks"
-                    :network="network.network"
-                    :key="network.key"
-                    :style="{backgroundColor: network.color}"
-                    :url="sharing.url"
-                    :title="network.title"
-                    :description="network.description"
-                    :quote="network.quote"
-                    :hashtags="sharing.hashtags"
-                  >
-                    <font-awesome-icon :icon="network.icon"></font-awesome-icon>
-                    {{ network.name }}
-                  </ShareNetwork>
+    </transition>
+    <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
+      <div v-show="!ending2&&ending1">
+        <div class="background__image" :style="backgroundStyle('dark')">
+          <div class="ending__center">
+            <div class="message__row">
+              <div class="message__column">
+                <div class="share__button">
+                  <div class="ending__portrait">
+                    <img
+                      :src="require(`../assets/slides/images/${this.lightEndingImage[this.userEnding]}`)"
+                    />
+                  </div>
+                  <div class="ending__message">
+                    <h1>{{userEndingMessage}}</h1>
+                  </div>
+                  <div class="ending__message">
+                    <p>{{$t('Conte para seus amigos quem é você!')}}</p>
+                  </div>
+                  <div class="btn-group">
+                    <ShareNetwork
+                      class="btn"
+                      v-for="network in networks"
+                      :network="network.network"
+                      :key="network.key"
+                      :style="{backgroundColor: network.color}"
+                      :url="sharing.url"
+                      :title="network.title"
+                      :description="network.description"
+                      :quote="network.quote"
+                      :hashtags="sharing.hashtags"
+                    >
+                      <font-awesome-icon :icon="network.icon"></font-awesome-icon>
+                      {{ network.name }}
+                    </ShareNetwork>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="message__column">
-              <div class="map__info">
-                <ul class="table">
-                  <li
-                    class="table__text"
-                    v-for="(ending) in orderEndings.slice(0, 9)"
-                    :key="ending.id"
-                  >
-                    <span class="table__numbers">{{ ending[1] }}%</span>
-                    {{ ending[0] }}
-                  </li>
-                </ul>
+              <div class="message__column">
+                <div class="map__info">
+                  <ul class="table">
+                    <li
+                      class="table__text"
+                      v-for="(ending) in orderEndings.slice(0, 9)"
+                      :key="ending.id"
+                    >
+                      <span class="table__numbers">{{ ending[1] }}%</span>
+                      {{ ending[0] }}
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </transition>
   </article>
 </template>
 
 <script>
 import * as data from "@/data";
-
+const anim = require("@/anim.js");
 export default {
   data: () => ({
     loaded: false,
@@ -74,11 +80,51 @@ export default {
     countryTotal: 0,
     players: 0,
     orderEndings: [],
+    lightEndingImage: {
+      ENDING_BORBOLETA: "06_02_05.jpg",
+      ENDING_CASA: "06_018_04.jpg",
+      ENDING_ENFERMEIRA: "06_10_04.jpg",
+      ENDING_HOMEM: "06_022_04.jpg",
+      ENDING_LAGO: "06_021_04.jpg",
+      ENDING_LENDO: "06_09_04.jpg",
+      ENDING_MEDITANDO: "06_08_04.jpg",
+      ENDING_OCIDENTAL: "06_06_04.jpg",
+      ENDING_TURISTA: "06_01_04.jpg"
+    },
+    darkEndingImage: {
+      ENDING_BORBOLETA: "06_02_06.jpg",
+      ENDING_CASA: "06_018_05.jpg",
+      ENDING_ENFERMEIRA: "06_10_05.jpg",
+      ENDING_HOMEM: "06_022_05.jpg",
+      ENDING_LAGO: "06_021_05.jpg",
+      ENDING_LENDO: "06_09_05.jpg",
+      ENDING_MEDITANDO: "06_08_05.jpg",
+      ENDING_OCIDENTAL: "06_06_05.jpg",
+      ENDING_TURISTA: "06_01_05.jpg"
+    },
+    shareMessage: {
+      ENDING_BORBOLETA:
+        "Na pandemia, sou uma borboleta saindo do casulo. E você?",
+      ENDING_CASA:
+        "Estou pronto para descobrir um mundo novo após a pandemia. E você?",
+      ENDING_ENFERMEIRA: "Na pandemia, eu sou altruísta. E você?",
+      ENDING_HOMEM: "Na pandemia, eu estou em equilíbrio. E você?",
+      ENDING_LAGO: "Na pandemia, eu sou um lago banhado pelo luar. E você?",
+      ENDING_LENDO:
+        "Na pandemia, eu sou como um grande leitor de livros. E você?",
+      ENDING_MEDITANDO: "Na pandemia, eu sou um meditador. E você?",
+      ENDING_OCIDENTAL:
+        "Na pandemia, eu sou um ocidental numa lavanderia. E você?",
+      ENDING_TURISTA: "Na pandemia, eu sou um turista no aeroporto. E você?"
+    },
     sharing: {
       url: "https://transmission.earth",
       hashtags: "transmission"
     }
   }),
+  props: {
+    userEnding: String
+  },
   computed: {
     networks: function() {
       return [
@@ -90,7 +136,7 @@ export default {
 
           title: "",
           description: "",
-          quote: this.$i18n.t(this.shareMessage)
+          quote: this.$i18n.t(this.shareMessage[this.userEnding])
         },
         {
           network: "twitter",
@@ -98,147 +144,75 @@ export default {
           icon: ["fab", "twitter"],
           color: "#1da1f2",
 
-          title: this.$i18n.t(this.shareMessage),
+          title: this.$i18n.t(this.shareMessage[this.userEnding]),
           description: "",
           quote: ""
         },
-        {
-          network: "linkedin",
-          name: "LinkedIn",
-          icon: ["fab", "linkedin"],
-          color: "#007bb5",
+        // {
+        //   network: "linkedin",
+        //   name: "LinkedIn",
+        //   icon: ["fab", "linkedin"],
+        //   color: "#007bb5",
 
-          title: this.$i18n.t(this.shareMessage),
-          description: "",
-          quote: ""
-        },
+        //   title: this.$i18n.t(this.shareMessage[this.userEnding]),
+        //   description: "",
+        //   quote: ""
+        // },
         {
           network: "whatsapp",
           name: "Whatsapp",
           icon: ["fab", "whatsapp"],
           color: "#25d366",
 
-          title: this.$i18n.t(this.shareMessage),
+          title: this.$i18n.t(this.shareMessage[this.userEnding]),
           description: "",
           quote: ""
         },
-        {
-          network: "pinterest",
-          name: "Pinterest",
-          icon: ["fab", "pinterest"],
-          color: "#bd081c",
+        // {
+        //   network: "pinterest",
+        //   name: "Pinterest",
+        //   icon: ["fab", "pinterest"],
+        //   color: "#bd081c",
 
-          title: this.$i18n.t(this.shareMessage),
-          description: "",
-          quote: ""
-        },
-        {
-          network: "email",
-          name: "Email",
-          icon: ["fas", "envelope"],
-          color: "#333333",
+        //   title: this.$i18n.t(this.shareMessage[this.userEnding]),
+        //   description: "",
+        //   quote: ""
+        // },
+        // {
+        //   network: "email",
+        //   name: "Email",
+        //   icon: ["fas", "envelope"],
+        //   color: "#333333",
 
-          title: this.$i18n.t(this.shareMessage),
-          description: "",
-          quote: ""
-        }
+        //   title: this.$i18n.t(this.shareMessage[this.userEnding]),
+        //   description: "",
+        //   quote: ""
+        // }
       ];
     },
-    shareMessage: function() {
-      if (localStorage.result == "ENDING_BORBOLETA") {
-        return "Na pandemia, sou uma borboleta saindo do casulo. E você?";
-      } else if (localStorage.result == "ENDING_CASA") {
-        return "Estou pronto para descobrir um mundo novo após a pandemia. E você?";
-      } else if (localStorage.result == "ENDING_ENFERMEIRA") {
-        return "Na pandemia, eu sou altruísta. E você?";
-      } else if (localStorage.result == "ENDING_HOMEM") {
-        return "Na pandemia, eu estou em equilíbrio. E você?";
-      } else if (localStorage.result == "ENDING_LAGO") {
-        return "Na pandemia, eu sou um lago banhado pelo luar. E você?";
-      } else if (localStorage.result == "ENDING_LENDO") {
-        return "Na pandemia, eu sou como um grande leitor de livros. E você?";
-      } else if (localStorage.result == "ENDING_MEDITANDO") {
-        return "Na pandemia, eu sou um meditador. E você?";
-      } else if (localStorage.result == "ENDING_OCIDENTAL") {
-        return "Na pandemia, eu sou um ocidental numa lavanderia. E você?";
-      } else if (localStorage.result == "ENDING_TURISTA") {
-        return "Na pandemia, eu sou um turista no aeroporto. E você?";
-      }
-    },
-    endingMessage: function() {
-      let message = "";
-      if (localStorage.result == "ENDING_BORBOLETA") {
-        message =
-          "VOCÊ É UMA BORBOLETA SAINDO DO CASULO\nSe você enfrentar seus medos, vai se transformar.";
-      } else if (localStorage.result == "ENDING_CASA") {
-        message =
-          "VOCÊ ESTÁ PRONTO PARA SAIR DE CASA. \nÉ hora de, com muita coragem, abrir-se para o desconhecido.";
-      } else if (localStorage.result == "ENDING_ENFERMEIRA") {
-        message =
-          "VOCÊ CUIDA DO PRÓXIMO, COMO UMA ENFERMEIRA DA CRUZ VERMELHA.\nVocê sabe ajudar o outro. E isso te leva pra frente.";
-      } else if (localStorage.result == "ENDING_HOMEM") {
-        message =
-          "VOCÊ ESTÁ  NUMA CANOA, NO MEIO DE UM LAGO.\nO equilíbrio durante a pandemia te renovou.\nVocê está pronto para seguir em frente.";
-      } else if (localStorage.result == "ENDING_LAGO") {
-        message =
-          "VOCÊ É UM LAGO BANHADO PELO LUAR\nVocê está em equilíbrio. Use esse momento para reinventar metas, ritmos e sonhos.";
-      } else if (localStorage.result == "ENDING_LENDO") {
-        message =
-          "VOCÊ É COMO UM GRANDE LEITOR DE LIVROS.\nPara realmente mudar, você precisa deixar o passado para trás.";
-      } else if (localStorage.result == "ENDING_MEDITANDO") {
-        message =
-          "VOCÊ ESTÁ EM ESTADO DE MEDITAÇÃO.\nVocê encontra paz interior e aprende a escutar o tempo.";
-      } else if (localStorage.result == "ENDING_OCIDENTAL") {
-        message =
-          "VOCÊ É UM OCIDENTAL NUMA LAVANDERIA ORIENTAL\nSomos todos iguais, não importa a diferença.";
-      } else if (localStorage.result == "ENDING_TURISTA") {
-        message =
-          "VOCÊ É UM TURISTA NO AEROPORTO\nVocê pode se abrir para novas oportunidades.";
-      }
+    userEndingMessage: function() {
+      let message = {
+        ENDING_BORBOLETA:
+          "VOCÊ É UMA BORBOLETA SAINDO DO CASULO\nSe você enfrentar seus medos, vai se transformar.",
+        ENDING_CASA:
+          "VOCÊ ESTÁ PRONTO PARA SAIR DE CASA. \nÉ hora de, com muita coragem, abrir-se para o desconhecido.",
+        ENDING_ENFERMEIRA:
+          "VOCÊ CUIDA DO PRÓXIMO, COMO UMA ENFERMEIRA DA CRUZ VERMELHA.\nVocê sabe ajudar o outro. E isso te leva pra frente.",
+        ENDING_HOMEM:
+          "VOCÊ ESTÁ  NUMA CANOA, NO MEIO DE UM LAGO.\nO equilíbrio durante a pandemia te renovou.\nVocê está pronto para seguir em frente.",
+        ENDING_LAGO:
+          "VOCÊ É UM LAGO BANHADO PELO LUAR\nVocê está em equilíbrio. Use esse momento para reinventar metas, ritmos e sonhos.",
+        ENDING_LENDO:
+          "VOCÊ É COMO UM GRANDE LEITOR DE LIVROS.\nPara realmente mudar, você precisa deixar o passado para trás.",
+        ENDING_MEDITANDO:
+          "VOCÊ ESTÁ EM ESTADO DE MEDITAÇÃO.\nVocê encontra paz interior e aprende a escutar o tempo.",
+        ENDING_OCIDENTAL:
+          "VOCÊ É UM OCIDENTAL NUMA LAVANDERIA ORIENTAL\nSomos todos iguais, não importa a diferença.",
+        ENDING_TURISTA:
+          "VOCÊ É UM TURISTA NO AEROPORTO\nVocê pode se abrir para novas oportunidades."
+      }[this.userEnding];
       message = this.$i18n.t(message);
       return message;
-    },
-    lightEndingImage: function() {
-      if (localStorage.result == "ENDING_BORBOLETA") {
-        return "assets/slides/images/06_02_05.jpg";
-      } else if (localStorage.result == "ENDING_CASA") {
-        return "assets/slides/images/06_018_04.jpg";
-      } else if (localStorage.result == "ENDING_ENFERMEIRA") {
-        return "assets/slides/images/06_10_04.jpg";
-      } else if (localStorage.result == "ENDING_HOMEM") {
-        return "assets/slides/images/06_022_04.jpg";
-      } else if (localStorage.result == "ENDING_LAGO") {
-        return "assets/slides/images/06_021_04.jpg";
-      } else if (localStorage.result == "ENDING_LENDO") {
-        return "assets/slides/images/06_09_04.jpg";
-      } else if (localStorage.result == "ENDING_MEDITANDO") {
-        return "assets/slides/images/06_08_04.jpg";
-      } else if (localStorage.result == "ENDING_OCIDENTAL") {
-        return "assets/slides/images/06_06_04.jpg";
-      } else if (localStorage.result == "ENDING_TURISTA") {
-        return "assets/slides/images/06_01_04.jpg";
-      }
-    },
-    darkEndingImage: function() {
-      if (localStorage.result == "ENDING_BORBOLETA") {
-        return "assets/slides/images/06_02_06.jpg";
-      } else if (localStorage.result == "ENDING_CASA") {
-        return "assets/slides/images/06_018_05.jpg";
-      } else if (localStorage.result == "ENDING_ENFERMEIRA") {
-        return "assets/slides/images/06_10_05.jpg";
-      } else if (localStorage.result == "ENDING_HOMEM") {
-        return "assets/slides/images/06_022_05.jpg";
-      } else if (localStorage.result == "ENDING_LAGO") {
-        return "assets/slides/images/06_021_05.jpg";
-      } else if (localStorage.result == "ENDING_LENDO") {
-        return "assets/slides/images/06_09_05.jpg";
-      } else if (localStorage.result == "ENDING_MEDITANDO") {
-        return "assets/slides/images/06_08_05.jpg";
-      } else if (localStorage.result == "ENDING_OCIDENTAL") {
-        return "assets/slides/images/06_06_05.jpg";
-      } else if (localStorage.result == "ENDING_TURISTA") {
-        return "assets/slides/images/06_01_05.jpg";
-      }
     }
   },
   updated() {
@@ -250,9 +224,23 @@ export default {
   methods: {
     backgroundStyle(type) {
       if (type == "light") {
-        return "background-image: url(" + this.lightEndingImage + ")";
+        return {
+          backgroundImage:
+            "url(" +
+            require(`../assets/slides/images/${
+              this.lightEndingImage[this.userEnding]
+            }`) +
+            ")"
+        };
       } else if (type == "dark") {
-        return "background-image: url(" + this.darkEndingImage + ")";
+        return {
+          backgroundImage:
+            "url(" +
+            require(`../assets/slides/images/${
+              this.darkEndingImage[this.userEnding]
+            }`) +
+            ")"
+        };
       }
     },
     goToEnding2() {
@@ -312,6 +300,12 @@ export default {
           }
         }
       }
+    },
+    enter(el, done) {
+      anim.enterAnim(el, done);
+    },
+    leave(el, done) {
+      anim.exitAnim(el, done);
     }
   }
 };

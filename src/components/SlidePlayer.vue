@@ -13,42 +13,53 @@
 </template>
 
 <script>
-  import Slide from './Slide'
-  import slideData from '@/assets/slides.json'
-  const audio = require('@/audio.js')
+import * as data from "@/data";
+import Slide from "./Slide";
+import slideData from "@/assets/slides.json";
+const audio = require("@/audio.js");
 
-  export default {
-    name: 'SlidePlayer',
-    data: () => ({
-      isLoaded: false,
-      slides: [],
-      entryPoint: null,
-      currentSlide: null
-    }),
-    components: {
-      Slide
+export default {
+  name: "SlidePlayer",
+  data: () => ({
+    isLoaded: false,
+    slides: [],
+    entryPoint: null,
+    currentSlide: null
+  }),
+  components: {
+    Slide
+  },
+  mounted() {
+    this.fetchSlides();
+  },
+  methods: {
+    fetchSlides() {
+      this.slides = slideData.slides;
+      this.entryPoint = slideData.entry_point;
+      this.currentSlide = this.slides[this.entryPoint];
+      this.isLoaded = true;
     },
-    mounted() {
-      this.fetchSlides()
+    finish(result) {
+      this.$emit("finished");
+      this.addResultToBase(result);
+      this.$router.push("/end");
     },
-    methods: {
-      fetchSlides() {
-        this.slides = slideData.slides
-        this.entryPoint = slideData.entry_point
-        this.currentSlide = this.slides[this.entryPoint]
-        this.isLoaded = true
-      },
-      finish() {
-        this.$emit('finished')
-        this.$router.push('/end')
-      },
-      goToSlide(slideId) {
-        audio.playOnce('click')
-        if (this.slides[slideId]) {
-          this.currentSlide = this.slides[slideId]
-          if (this.slides[slideId].sound_effect) audio.playOnce(this.slides[slideId].sound_effect)
-        } else throw `O slide ${slideId} não existe.`
-      }
+    async addResultToBase(final) {
+      const result = {
+        ending: final,
+        country: await data.getCountry()
+      };
+
+      await data.addResult(result);
+    },
+    goToSlide(slideId) {
+      audio.playOnce("click");
+      if (this.slides[slideId]) {
+        this.currentSlide = this.slides[slideId];
+        if (this.slides[slideId].sound_effect)
+          audio.playOnce(this.slides[slideId].sound_effect);
+      } else throw `O slide ${slideId} não existe.`;
     }
   }
+};
 </script>

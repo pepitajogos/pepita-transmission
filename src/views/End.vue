@@ -1,72 +1,52 @@
 <template>
   <article id="end">
     <transition v-on:enter="enter">
-      <PreEnd v-show="preEnd" @clicked="showPreEndForm" />
-    </transition>
-    <transition v-on:enter="enter">
-      <PreEndForm v-show="preEndForm" @clicked="showEndMessage" />
-    </transition>
-    <transition v-on:enter="enter">
-      <EndMessage v-show="endMessage" />
+      <EndMessage v-if="ending" :userEnding="ending" />
     </transition>
   </article>
 </template>
 
 <script>
-  import PreEnd from '@/components/PreEnd'
-  import PreEndForm from '@/components/PreEndForm'
-  import EndMessage from '@/components/EndMessage'
+import EndMessage from "@/components/EndMessage";
 
-  export default {
-    name: 'End',
-    data: () => ({
-      preEnd: false,
-      preEndForm: false,
-      endMessage: true
-    }),
-    components: {
-      PreEnd,
-      PreEndForm,
-      EndMessage
-    },
-    methods: {
-      enter(el, done) {
-        const tl = new TimelineMax({
-          onComplete: done
-        })
+export default {
+  name: "End",
+  data: () => ({}),
+  components: {
+    EndMessage
+  },
+  computed: {
+    ending: function() {
+      return localStorage.result;
+    }
+  },
+  methods: {
+    enter(el, done) {
+      const tl = new TimelineMax({
+        onComplete: done
+      });
 
-        tl.set(el, {
-          autoAlpha: 0,
-          scale: 2,
-          transformOrigin: '50% 50%'
-        })
+      tl.set(el, {
+        autoAlpha: 0,
+        scale: 2,
+        transformOrigin: "50% 50%"
+      });
 
-        tl.to(el, 1, {
-          autoAlpha: 1,
-          scale: 1,
-          ease: Power4.easeOut
-        })
-      },
-      showPreEndForm() {
-        this.preEndForm = true
-        this.preEnd = false
-        this.endMessage = false
-      },
-      showEndMessage() {
-        this.preEndForm = false
-        this.preEnd = false
-        this.endMessage = true
-      }
+      tl.to(el, 1, {
+        autoAlpha: 1,
+        scale: 1,
+        ease: Power4.easeOut
+      });
     }
   }
+};
 </script>
 
-<style>
-  #end {
-    background: #050607;
-    width: 100%;
-    height: 100vh;
-    z-index: 3;
-    position: absolute;
-  }
+<style lang="scss">
+#end {
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  position: absolute;
+}
 </style>

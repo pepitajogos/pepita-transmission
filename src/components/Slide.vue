@@ -34,9 +34,6 @@
 </template>
 
 <script>
-import axios from "axios";
-import { Howl, Howler } from "howler";
-import * as data from "@/data";
 import RatioByEnding from "./RatioByEnding";
 const anim = require("@/anim.js");
 
@@ -56,7 +53,6 @@ export default {
     finalGame: function() {
       this.result = this.slide.ending;
       localStorage.result = this.result;
-      this.addResultToBase(this.result);
       return this.result;
     },
     linkBoxClass: function() {
@@ -73,7 +69,7 @@ export default {
       if (step.link_to) {
         this.$emit("goToSlide", step.link_to);
       } else if (step.finish) {
-        this.$emit("finish");
+        this.$emit("finish", this.result);
       }
     },
     stepStyle: function(step) {
@@ -85,14 +81,6 @@ export default {
           laptop: "laptop__link"
         }[this.slide.state] || "slide__default " + step.style
       );
-    },
-    async addResultToBase(final) {
-      const result = {
-        ending: final,
-        country: await data.getCountry()
-      };
-
-      await data.addResult(result);
     },
     enter(el, done) {
       anim.enterAnim(el, done);
