@@ -10,6 +10,7 @@
   import Tutorial from './Tutorial'
   import SlidePlayer from './SlidePlayer'
   import RotationLock from './RotationLock'
+  const audio = require('@/audio.js')
 
   export default {
     name: 'Game',
@@ -38,18 +39,10 @@
       },
       finishedGame() {
         this.gameFinished = !this.gameFinished
-        // this.$emit('ended') // reset the home page
+        // this.$emit("ended"); // reset the home page
       },
       musicPlay() {
-        const sound = new Howl({
-          src: ['assets/slides/audios/Transmission_Trilha_1.mp3', 'assets/slides/audios/Transmission_Trilha_2.mp3'],
-          autoplay: true,
-          loop: true,
-          volume: 0.5
-        })
-
-        const sound1 = sound.play(1, 0, 1000, sound1)
-        const sound2 = sound.play(1.0, 1000, sound2)
+        audio.playMusic('trilha1')
       }
     }
   }

@@ -1,34 +1,44 @@
 <template>
-  <article class="slide">
-    <div class="slide__content" :style="backgroundStyle">
-      <div id="slide__linkbox" :class="linkBoxClass">
-        <a
-          href
-          v-for="stepLink in steps"
-          :key="stepLink.id"
-          :class="stepLink.class"
-          @click.prevent="changeSlide(stepLink.step)"
-        >
-          <p v-if="slide.state === 'world-stats'" class="world-stats__text">
-            <span class="bigger">
-              <RatioByEnding :ending="finalGame" />%
-            </span>
-            {{ $t(stepLink.step.content) }}
-          </p>
-
-          <span v-if="slide.state !== 'world-stats'">{{ $t(stepLink.step.content) }}</span>
-        </a>
+  <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
+    <article class="slide">
+      <div v-if="this.slide.image">
+        <img
+          v-if="this.slide.language_image"
+          class="bg-image"
+          :src="require(`../assets/slides/images/${this.language()}/${this.slide.image}`)"
+        />
+        <img v-else class="bg-image" :src="require(`../assets/slides/images/${this.slide.image}`)" />
       </div>
-    </div>
-  </article>
+      <div class="slide__content">
+        <div id="slide__linkbox" :class="linkBoxClass">
+          <a
+            href
+            v-for="step in slide.steps"
+            :key="step.id"
+            :class="stepStyle(step)"
+            @click.prevent="changeSlide(step)"
+          >
+            <p v-if="slide.state&&slide.state == 'world-stats'" class="world-stats__text">
+              <span class="bigger">
+                <RatioByEnding :ending="finalGame" />%
+              </span>
+              {{ $t(step.content) }}
+            </p>
+
+            <span v-else>{{ $t(step.content) }}</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </transition>
 </template>
 
 <script>
 import axios from "axios";
 import { Howl, Howler } from "howler";
-import { TweenMax } from "gsap";
 import * as data from "@/data";
 import RatioByEnding from "./RatioByEnding";
+const anim = require("@/anim.js");
 
 export default {
   name: "Slide",
@@ -49,15 +59,6 @@ export default {
       this.addResultToBase(this.result);
       return this.result;
     },
-    backgroundStyle: function() {
-      if (this.slide) {
-        return this.slide.language_image
-          ? `background-image: url('assets/slides/images/${this.language()}/${
-              this.slide.image
-            }')`
-          : `background-image: url('assets/slides/images/${this.slide.image}')`;
-      }
-    },
     linkBoxClass: function() {
       return {
         smartphone: "smartphone",
@@ -65,86 +66,25 @@ export default {
         "world-stats": "world-stats",
         laptop: "laptop"
       }[this.slide.state];
-    },
-    steps: function() {
-      const stepLinks = [];
-      let count = 0;
-
-      if (this.slide.sound_effect != undefined) {
-        this.newsPlay(this.slide.sound_effect);
-      }
-
-      for (const step of this.slide.steps) {
-        const link = {
-          id: count++,
-          class: "",
-          step,
-          percents: 0.8
-          // await data.getRatioByEnding(final)
-          //     .then(results => Math.round(parseFloat(results[final]) * 100) || 0)
-          //     .catch(err => 0),
-        };
-
-        link.class =
-          {
-            smartphone: "smartphone__link",
-            smartphone2: "smartphone2__link",
-            "world-stats": "slide__default " + step.style,
-            laptop: "laptop__link"
-          }[this.slide.state] || "slide__default " + step.style;
-
-        stepLinks.push(link);
-      }
-
-      return stepLinks;
     }
   },
   methods: {
-    /**
-     * @param {string} slideId
-     */
     changeSlide(step) {
-      this.playMouseClickSoundEffect();
       if (step.link_to) {
         this.$emit("goToSlide", step.link_to);
       } else if (step.finish) {
         this.$emit("finish");
       }
     },
-
-    playMouseClickSoundEffect() {
-      const mouse = new Howl({
-        src: "assets/slides/audios/Transmission_Click1.mp3"
-      });
-      mouse.play();
-    },
-    async linkToContent(content) {
-      const slotClear = document.querySelector(".slide");
-      const slotContent = document.querySelector(".slide__content");
-
-      const tl = new TimelineMax({
-        delay: 0.5
-      });
-      console.log({ result });
-
-      //animation
-      tl.fromTo(
-        slotContent,
-        0.5,
-        { opacity: 1 },
-        { delay: 1, opacity: 0, onComplete: (slotClear.innerHTML = "") }
+    stepStyle: function(step) {
+      return (
+        {
+          smartphone: "smartphone__link",
+          smartphone2: "smartphone2__link",
+          "world-stats": "slide__default " + step.style,
+          laptop: "laptop__link"
+        }[this.slide.state] || "slide__default " + step.style
       );
-
-      if (this.slides[content] == undefined) {
-        alert(content);
-      }
-
-      await data.addResult(result);
-    },
-    show() {
-      this.lang = document.querySelector("body").getAttribute("data-lang");
-
-      this.musicPlay();
     },
     async addResultToBase(final) {
       const result = {
@@ -154,13 +94,11 @@ export default {
 
       await data.addResult(result);
     },
-    newsPlay(fileName) {
-      const news = new Howl({
-        src: `assets/slides/audios/${fileName}`,
-        autoplay: true
-      });
-
-      news.play();
+    enter(el, done) {
+      anim.enterAnim(el, done);
+    },
+    leave(el, done) {
+      anim.exitAnim(el, done);
     }
   }
 };
@@ -168,12 +106,20 @@ export default {
 
 <style lang="scss">
 .slide {
-  background: $darker;
+  background: $black;
   color: $white;
   width: 100vw;
   height: 100vh;
+  position: absolute;
 }
-
+.bg-image {
+  width: 100vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
 .slide__default {
   display: flex;
   align-items: center;
@@ -195,9 +141,6 @@ export default {
   width: 100vw;
   height: 100vh;
   max-height: 100vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   @include center(relative);
 }
 

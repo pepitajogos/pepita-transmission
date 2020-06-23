@@ -2,28 +2,22 @@
   <div class="landing-page">
     <section class="hero-section">
       <header class="header">
-        <div class="logo-container">
-          <img src="../../src/assets/landing/TTTT.png" alt="" class="logo" /> transmission
-        </div>
+        <div class="logo-container"><img src="../../src/assets/landing/TTTT.png" alt class="logo" /> transmission</div>
         <div class="link-container">
-          <a href="#" class="link" @click.prevent="scrollToView('#sponsor')">Sponsor</a>
-          <a href="#" class="link outlined" @click.prevent="scrollToView('#share-story')">Share</a>
+          <a href="#" class="link" @click.prevent="scrollToView('#sponsor')">{{ $t('Sponsor') }}</a>
+          <a href="#" class="link outlined" @click.prevent="scrollToView('#share-story')">{{ $t('Share') }}</a>
           <a href="#" class="link" @click.prevent="selectLanguage">EN</a>
         </div>
       </header>
       <div class="content">
-        <h2>Discover who you are in the pandemic</h2>
-        <p>A two minute experience designed to spread positive messages</p>
-        <a href="#" @click.prevent="startGame">Play it now</a>
+        <h2>{{ $t('Discover who you are in the pandemic') }}</h2>
+        <p>{{ $t('A two minute experience designed to spread positive messages') }}</p>
+        <a href="#" @click.prevent="startGame">{{ $t('Play it now') }}</a>
       </div>
       <div class="content-mobile">
-        <img src="../../src/assets/landing/landing-phone.png" alt="" class="landing-phone" />
-        <div class="chat-bubble chat-bubble-1">
-          You need to open up to new opportunities
-        </div>
-        <div class="chat-bubble chat-bubble-2">
-          You are in state of meditation!
-        </div>
+        <img src="../../src/assets/landing/landing-phone.png" alt class="landing-phone" />
+        <div class="chat-bubble chat-bubble-1">{{ $t('You need to open up to new opportunities') }}</div>
+        <div class="chat-bubble chat-bubble-2">{{ $t('You are in state of meditation!') }}</div>
       </div>
     </section>
 
@@ -32,34 +26,37 @@
     </section>
 
     <section class="about-section">
-      <h2>About us</h2>
-      <p>We want to spread positive messages and create a global conversation</p>
+      <h2>{{ $t('About us') }}</h2>
+      <p>{{ $t('We want to spread positive messages and create a global conversation') }}</p>
 
       <div class="cards">
         <div class="card">
-          <img src="../../src/assets/landing/icons/icon1.png" alt="" class="icon" />
+          <img src="../../src/assets/landing/icons/icon1.png" alt class="icon" />
           <p>
-            "Transmission" shows how our choices define our reality. And we choose what is best for us when we are in
-            balance.
+            {{
+              $t(
+                '"Transmission" shows how our choices define our reality. And we choose what is best for us when we are in balance.'
+              )
+            }}
           </p>
         </div>
         <div class="card">
-          <img src="../../src/assets/landing/icons/icon2.png" alt="" class="icon" />
+          <img src="../../src/assets/landing/icons/icon2.png" alt class="icon" />
           <p>
-            After the experience, you receive a tailored message that shows your emotional state after the pandemic..
+            {{
+              $t(
+                'After the experience, you receive a tailored message that shows your emotional state after the pandemic..'
+              )
+            }}
           </p>
         </div>
         <div class="card">
-          <img src="../../src/assets/landing/icons/icon3.png" alt="" class="icon" />
-          <p>
-            You can share your story in the Pandemic with us. And we will share it with the world
-          </p>
+          <img src="../../src/assets/landing/icons/icon3.png" alt class="icon" />
+          <p>{{ $t('You can share your story in the Pandemic with us. And we will share it with the world') }}</p>
         </div>
         <div class="card">
-          <img src="../../src/assets/landing/icons/icon4.png" alt="" class="icon" />
-          <p>
-            By sharing positive messages, we can change the way we see world. .
-          </p>
+          <img src="../../src/assets/landing/icons/icon4.png" alt class="icon" />
+          <p>{{ $t('By sharing positive messages, we can change the way we see world.') }}</p>
         </div>
       </div>
     </section>
@@ -68,44 +65,59 @@
       <app-form />
     </section>
 
-    <section class="heal-stories" id="sponsor">
-      <h2>Heal Stories</h2>
-      <p>Leave your contribution to a cause that helps change the world.</p>
+    <section class="heal-stories">
+      <h2>{{ $t('Heal Stories') }}</h2>
+      <p>{{ $t('Leave your contribution to a cause that helps change the world.') }}</p>
 
       <div class="content">
         <p>
-          We believe that a good story can shape the world. If you resonate with our cause, help us gather stories from
-          all over the globe and tell them. Transmission 2.0 will tell real stories from the Pandemic.
+          {{
+            $t(
+              'We believe that a good story can shape the world. If you resonate with our cause, help us gather stories from all over the globe and tell them. Transmission 2.0 will tell real stories from the Pandemic.'
+            )
+          }}'
         </p>
         <p>
-          Besides from telling stories, we can also heal stories from all over the world. Choose here which story you
-          want to embrace and regenerate!
+          {{
+            $t(
+              'Besides from telling stories, we can also heal stories from all over the world. Choose here which story you want to embrace and regenerate!'
+            )
+          }}
         </p>
         <div class="paypal" v-if="showPaymentForm">
           <app-paypal />
         </div>
       </div>
-      <a href="#" @click.prevent="showPaymentForm = true" class="btn show-mobile" v-if="!showPaymentForm"
-        >Heal stories</a
-      >
+      <a href="#" @click.prevent="showPaymentForm = true" class="btn show-mobile" v-if="!showPaymentForm">{{
+        $t('Heal stories')
+      }}</a>
     </section>
 
     <section class="sharer-section">
       <div class="content">
-        <h2>Discover who you are</h2>
-        <p>Tell your story, share to your friends</p>
+        <h2>{{ $t('Discover who you are') }}</h2>
+        <p>{{ $t('Tell your story, share to your friends') }}</p>
       </div>
 
-      <a href="#" class="btn" @click.prevent="startGame">Play it now</a>
+      <a href="#" class="btn" @click.prevent="startGame">{{ $t('Play it now') }}</a>
 
       <footer class="footer">
         <div class="logo-container">
           <img src="../../src/assets/landing/TTTT.png" alt="transmission" class="logo" />
           <div class="text-container">
-            ©2020.Transmission. All rights reserved. <br />
-            Have Questions? Send and <a href="mailto:contact@transmission.earth">email</a> <br />
-            <a href="#"><font-awesome-icon :icon="['fab', 'twitter']"/></a>
-            <a href="#"><font-awesome-icon :icon="['fab', 'instagram']"/></a>
+            <div>©2020.Transmission.{{ $t('All rights reserved.') }}</div>
+            <div>
+              {{ $t(' Have Questions? Send an') }}
+              <a href="mailto:contact@transmission.earth">email</a>
+            </div>
+            <div>
+              <a href="#">
+                <font-awesome-icon :icon="['fab', 'twitter']" />
+              </a>
+              <a href="#">
+                <font-awesome-icon :icon="['fab', 'instagram']" />
+              </a>
+            </div>
           </div>
         </div>
       </footer>
@@ -143,10 +155,6 @@
       },
       hide() {
         // console.log('Hide Landing page');
-      },
-      scrollToView(id) {
-        let element = this.$el.querySelector(id)
-        element.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' })
       },
       selectLanguage() {
         this.$emit('chooseLanguage')
@@ -189,7 +197,6 @@
     padding: 20px 15px;
     display: flex;
     justify-content: space-between;
-    z-index: 2;
     .logo-container {
       display: flex;
       font-size: 20px;

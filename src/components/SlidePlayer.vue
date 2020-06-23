@@ -1,9 +1,21 @@
 <template>
-  <Slide @finish="finish" ref="Slide" :slide="currentSlide" v-if="isLoaded" @goToSlide="goToSlide" />
+  <div>
+    <Slide
+      v-for="slide in slides"
+      v-bind:key="slide.title"
+      v-show="currentSlide == slide"
+      ref="Slide"
+      :slide="slide"
+      @goToSlide="goToSlide"
+      @finish="finish"
+    />
+  </div>
 </template>
 
 <script>
   import Slide from './Slide'
+  import slideData from '@/assets/slides.json'
+  const audio = require('@/audio.js')
 
   export default {
     name: 'SlidePlayer',
@@ -13,30 +25,28 @@
       entryPoint: null,
       currentSlide: null
     }),
-    mounted() {
-      this.fetchSlides()
-    },
     components: {
       Slide
     },
+    mounted() {
+      this.fetchSlides()
+    },
     methods: {
-      async fetchSlides() {
-        const slidesData = await fetch('assets/slides/slides.json').then((res) => res.json())
-
-        this.slides = slidesData.slides
-        this.entryPoint = slidesData.entry_point
-        this.isLoaded = true
+      fetchSlides() {
+        this.slides = slideData.slides
+        this.entryPoint = slideData.entry_point
         this.currentSlide = this.slides[this.entryPoint]
+        this.isLoaded = true
       },
-
       finish() {
         this.$emit('finished')
         this.$router.push('/end')
       },
-
       goToSlide(slideId) {
+        audio.playOnce('click')
         if (this.slides[slideId]) {
           this.currentSlide = this.slides[slideId]
+          if (this.slides[slideId].sound_effect) audio.playOnce(this.slides[slideId].sound_effect)
         } else throw `O slide ${slideId} não existe.`
       }
     }
