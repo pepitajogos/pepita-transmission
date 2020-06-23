@@ -12,8 +12,7 @@ const routes = [
   {
     path: '/end',
     // name: 'end',
-    // component: End,
-    redirect: '/'
+    component: End
   }
 ]
 

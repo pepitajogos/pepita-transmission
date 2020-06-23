@@ -31,7 +31,7 @@
 
       finish() {
         this.$emit('finished')
-        this.$router.push('/')
+        this.$router.push('/end')
       },
 
       goToSlide(slideId) {

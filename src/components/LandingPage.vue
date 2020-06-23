@@ -6,8 +6,8 @@
           <img src="../../src/assets/landing/TTTT.png" alt="" class="logo" /> transmission
         </div>
         <div class="link-container">
-          <a href="#" class="link">Sponsor</a>
-          <a href="#" class="link outlined">Share</a>
+          <a href="#" class="link" @click.prevent="scrollToView('#sponsor')">Sponsor</a>
+          <a href="#" class="link outlined" @click.prevent="scrollToView('#share-story')">Share</a>
           <a href="#" class="link" @click.prevent="selectLanguage">EN</a>
         </div>
       </header>
@@ -64,11 +64,11 @@
       </div>
     </section>
 
-    <section class="form-section">
+    <section class="form-section" id="share-story">
       <app-form />
     </section>
 
-    <section class="heal-stories">
+    <section class="heal-stories" id="sponsor">
       <h2>Heal Stories</h2>
       <p>Leave your contribution to a cause that helps change the world.</p>
 
@@ -144,6 +144,10 @@
       hide() {
         // console.log('Hide Landing page');
       },
+      scrollToView(id) {
+        let element = this.$el.querySelector(id)
+        element.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' })
+      },
       selectLanguage() {
         this.$emit('chooseLanguage')
       },
@@ -185,6 +189,7 @@
     padding: 20px 15px;
     display: flex;
     justify-content: space-between;
+    z-index: 2;
     .logo-container {
       display: flex;
       font-size: 20px;

@@ -38,7 +38,7 @@
       },
       finishedGame() {
         this.gameFinished = !this.gameFinished
-        this.$emit('ended') // reset the home page
+        // this.$emit('ended') // reset the home page
       },
       musicPlay() {
         const sound = new Howl({
