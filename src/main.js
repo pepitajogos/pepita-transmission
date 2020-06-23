@@ -11,6 +11,9 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+const audio = require("@/audio.js");
+audio.loadAudio();
+
 library.add(fab)
 library.add(faEnvelope)
 Vue.component('font-awesome-icon', FontAwesomeIcon)

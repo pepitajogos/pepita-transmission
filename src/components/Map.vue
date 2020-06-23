@@ -2,7 +2,7 @@
   <article class="map">
     <div class="map__bg">
       <div class="map__content" @click="next()">
-        <h2>The World is playing Transmission</h2>
+        <h2>{{ $t('The World is playing Transmission')}}</h2>
         <p>
           {{ $t('Até o momento, {0} pessoas jogaram Transmission em {1} países.', { 0: players, 1: countryTotal }) }}
         </p>
