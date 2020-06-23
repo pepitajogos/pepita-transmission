@@ -9,12 +9,14 @@ const musicAssets = {
 };
 
 var music = null;
-var musicVolume = 0.8;
+var musicVolume = 0.6;
+var sfxVolume = 0.8;
 var fadeDuration = 500;
 
 export function playOnce(id) {
   const once = new Howl({
-    src: [sfxAssets[id]]
+    src: [sfxAssets[id]],
+    volume: sfxVolume
   });
   once.play();
 }

@@ -16,7 +16,7 @@
       <Start v-show="!start && !showLanding && langSelected" @clicked="startedGame" ref="Start" />
     </transition>-->
     <transition v-on:enter="enter">
-      <Game v-if="start" ref="Game" @ended="backToStart" />
+      <Game v-if="start" v-cloak ref="Game" @ended="backToStart" />
     </transition>
 
     <!-- <RotationLock /> -->
@@ -50,8 +50,10 @@ export default {
     langSelected: false,
     start: false
   }),
-  mounted() {
-    audio.playMusic("trilha2");
+  watch: {
+    showLanding: function(newValue, oldValue) {
+      if (newValue && !oldValue) audio.playMusic("trilha2");
+    }
   },
   methods: {
     enter(el, done) {

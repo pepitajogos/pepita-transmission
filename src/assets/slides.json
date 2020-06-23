@@ -4,7 +4,7 @@
       "0_0_01": {
         "title": "0_0_01",
         "alternative_text": "",
-        "sound_effect": "ambiencia",
+        "music": "trilha1",
         "image": "0_0_01.jpg",
         "steps": [
         {
@@ -23,7 +23,6 @@
       "title": "0_0_02",
       "alternative_text": "",
       "image": "0_0_02.jpg",
-
       "steps": [
         {
           "style": "full-screen",
