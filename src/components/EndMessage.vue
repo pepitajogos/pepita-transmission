@@ -49,6 +49,7 @@
               </div>
               <div class="message__column">
                 <div class="map__info">
+                  <h1>{{$t('Como o mundo escolheu')}}</h1>
                   <ul class="table">
                     <li
                       class="table__text"
@@ -72,6 +73,7 @@
 <script>
 import * as data from "@/data";
 const anim = require("@/anim.js");
+
 export default {
   data: () => ({
     loaded: false,
@@ -167,7 +169,7 @@ export default {
           title: this.$i18n.t(this.shareMessage[this.userEnding]),
           description: "",
           quote: ""
-        },
+        }
         // {
         //   network: "pinterest",
         //   name: "Pinterest",
@@ -193,23 +195,23 @@ export default {
     userEndingMessage: function() {
       let message = {
         ENDING_BORBOLETA:
-          'VOCÊ É UMA BORBOLETA SAINDO DO CASULO\nSe você enfrentar seus medos, vai se transformar.',
+          "VOCÊ É UMA BORBOLETA SAINDO DO CASULO\nSe você enfrentar seus medos, vai se transformar.",
         ENDING_CASA:
-          'VOCÊ ESTÁ PRONTO PARA SAIR DE CASA. \nÉ hora de, com muita coragem, abrir-se para o desconhecido.',
+          "VOCÊ ESTÁ PRONTO PARA SAIR DE CASA. \nÉ hora de, com muita coragem, abrir-se para o desconhecido.",
         ENDING_ENFERMEIRA:
-          'VOCÊ CUIDA DO PRÓXIMO, COMO UMA ENFERMEIRA DA CRUZ VERMELHA.\nVocê sabe ajudar o outro. E isso te leva pra frente.',
+          "VOCÊ CUIDA DO PRÓXIMO, COMO UMA ENFERMEIRA DA CRUZ VERMELHA.\nVocê sabe ajudar o outro. E isso te leva pra frente.",
         ENDING_HOMEM:
-          'VOCÊ ESTÁ  NUMA CANOA, NO MEIO DE UM LAGO.\nO equilíbrio durante a pandemia te renovou.\nVocê está pronto para seguir em frente.',
+          "VOCÊ ESTÁ  NUMA CANOA, NO MEIO DE UM LAGO.\nO equilíbrio durante a pandemia te renovou.\nVocê está pronto para seguir em frente.",
         ENDING_LAGO:
-          'VOCÊ É UM LAGO BANHADO PELO LUAR\nVocê está em equilíbrio. Use esse momento para reinventar metas, ritmos e sonhos.',
+          "VOCÊ É UM LAGO BANHADO PELO LUAR\nVocê está em equilíbrio. Use esse momento para reinventar metas, ritmos e sonhos.",
         ENDING_LENDO:
-          'VOCÊ É COMO UM GRANDE LEITOR DE LIVROS.\nPara realmente mudar, você precisa deixar o passado para trás.',
+          "VOCÊ É COMO UM GRANDE LEITOR DE LIVROS.\nPara realmente mudar, você precisa deixar o passado para trás.",
         ENDING_MEDITANDO:
-          'VOCÊ ESTÁ EM ESTADO DE MEDITAÇÃO.\nVocê encontra paz interior e aprende a escutar o tempo.',
+          "VOCÊ ESTÁ EM ESTADO DE MEDITAÇÃO.\nVocê encontra paz interior e aprende a escutar o tempo.",
         ENDING_OCIDENTAL:
-          'VOCÊ É UM OCIDENTAL NUMA LAVANDERIA ORIENTAL\nSomos todos iguais, não importa a diferença.',
+          "VOCÊ É UM OCIDENTAL NUMA LAVANDERIA ORIENTAL\nSomos todos iguais, não importa a diferença.",
         ENDING_TURISTA:
-          'VOCÊ É UM TURISTA NO AEROPORTO\nVocê pode se abrir para novas oportunidades.'
+          "VOCÊ É UM TURISTA NO AEROPORTO\nVocê pode se abrir para novas oportunidades."
       }[this.userEnding];
       message = this.$i18n.t(message);
       return message;
@@ -302,10 +304,10 @@ export default {
       }
     },
     enter(el, done) {
-      anim.enterAnim(el, done);
+      anim.enterTransition(el, done);
     },
     leave(el, done) {
-      anim.exitAnim(el, done);
+      anim.exitTransition(el, done);
     }
   }
 };
@@ -316,13 +318,15 @@ export default {
   width: 100%;
   height: 100%;
 }
+.map__info h1 {
+  @include font-scale(10, 24);
+}
 .table {
   @include font-scale(10, 16);
   width: 100%;
   margin: 0 auto;
   padding: 0;
 }
-
 .table__text {
   font-weight: 400;
   @include font-scale(12, 20);

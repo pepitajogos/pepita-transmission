@@ -52,7 +52,6 @@ export default {
   computed: {
     finalGame: function() {
       this.result = this.slide.ending;
-      localStorage.result = this.result;
       return this.result;
     },
     linkBoxClass: function() {
@@ -69,6 +68,7 @@ export default {
       if (step.link_to) {
         this.$emit("goToSlide", step.link_to);
       } else if (step.finish) {
+        localStorage.result = this.result;
         this.$emit("finish", this.result);
       }
     },
@@ -83,10 +83,10 @@ export default {
       );
     },
     enter(el, done) {
-      anim.enterAnim(el, done);
+      anim.enterTransition(el, done);
     },
     leave(el, done) {
-      anim.exitAnim(el, done);
+      anim.exitTransition(el, done);
     }
   }
 };

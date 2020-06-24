@@ -194,6 +194,8 @@
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto !important;
+    //anim purpose
+    position: absolute;
   }
   .header {
     position: absolute;
