@@ -19,9 +19,10 @@
         <div class="chat-bubble chat-bubble-1">{{ $t('You need to open up to new opportunities') }}</div>
         <div class="chat-bubble chat-bubble-2">{{ $t('You are in state of meditation!') }}</div>
       </div>
+      <a href="#" class="scroll-btn" @click.prevent="scrollToView('#world-map')"><span></span>Scroll</a>
     </section>
 
-    <section class="world-map-section">
+    <section class="world-map-section" id="world-map">
       <app-map></app-map>
     </section>
 
@@ -111,10 +112,10 @@
               <a href="mailto:contact@transmission.earth">email</a>
             </div>
             <div>
-              <a href="#">
+              <a href="https://twitter.com/TransmissionNow" target="_blank" rel="noopener noreferrer">
                 <font-awesome-icon :icon="['fab', 'twitter']" />
               </a>
-              <a href="#">
+              <a href="https://www.instagram.com/transmission_now/" target="_blank" rel="noopener noreferrer">
                 <font-awesome-icon :icon="['fab', 'instagram']" />
               </a>
             </div>
@@ -232,6 +233,35 @@
     position: relative;
     z-index: 3;
     overflow: hidden;
+
+    .scroll-btn {
+      padding-top: 60px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      z-index: 2;
+      display: inline-block;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      color: #fff;
+      font: normal 400 20px/1 $regular;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: opacity 0.3s;
+      span {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        box-sizing: border-box;
+      }
+    }
 
     .content-mobile {
       position: relative;
@@ -440,6 +470,9 @@
   @media screen and (max-width: 768px) {
     .hero-section {
       height: 700px;
+      .scroll-btn {
+        display: none;
+      }
       .content {
         position: relative;
         top: 0;
