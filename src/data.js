@@ -16,20 +16,22 @@
  *
  * @param {Story} story
  */
- 
+
 export async function addStory(story) {
-  const user = firebase.auth()?.currentUser;
-  if (!user) throw "Usuário não logado.";
+    const auth = firebase.auth();
+    if (!auth) throw "Usuário não logado.";
+    const user = auth.currentUser;
+    if (!user) throw "Usuário não logado.";
 
-  const db = firebase.firestore();
+    const db = firebase.firestore();
 
-  return db
-    .collection("stories")
-    .doc(user.uid)
-    .set({
-      ...story,
-      created_at: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    return db
+        .collection("stories")
+        .doc(user.uid)
+        .set({
+            ...story,
+            created_at: firebase.firestore.FieldValue.serverTimestamp(),
+        });
 }
 
 /**
@@ -38,63 +40,77 @@ export async function addStory(story) {
  * @param {Result} result
  */
 export async function addResult(result) {
-  const user = firebase.auth()?.currentUser;
-  if (!user) throw "Usuário não logado.";
+    const auth = firebase.auth();
+    if (!auth) throw "Usuário não logado.";
+    const user = auth.currentUser;
+    if (!user) throw "Usuário não logado.";
 
-  const db = firebase.firestore();
+    const db = firebase.firestore();
 
-  return db
-    .collection("results")
-    .doc(user.uid)
-    .set({
-      ...result,
-      created_at: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    return db
+        .collection("results")
+        .doc(user.uid)
+        .set({
+            ...result,
+            created_at: firebase.firestore.FieldValue.serverTimestamp(),
+        });
 }
 
 /**
  * Desloga o usuário e loga de novo para renovar o token.
  */
 export async function signIn() {
-  await firebase.auth().signOut();
-  await firebase
-    .auth()
-    .signInAnonymously()
-    .then((auth) => auth.user);
+    await firebase.auth().signOut();
+    await firebase
+        .auth()
+        .signInAnonymously()
+        .then((auth) => { auth.user; });
+    addCountByCountry();
+}
+
+async function addCountByCountry() {
+    var key = await getCountry();;
+    var data = {};
+    data[key] = firebase.firestore.FieldValue.increment(1);
+
+    const db = firebase.firestore();
+
+    var countryRef = db.collection('stats').doc('count_by_country');
+    countryRef.update(data);
 }
 
 /**
  * Recupera a contagem de resultados por país.
  */
 export async function getCountByCountry() {
-  
-  const db = firebase.firestore();
 
-  const doc = await db
-    .collection("stats")
-    .doc("count_by_country")
-    .get();
+    const db = firebase.firestore();
 
-  return doc.data();
+    const doc = await db
+        .collection("stats")
+        .doc("count_by_country")
+        .get();
+
+    return doc.data();
 }
 
 /**
  * Recupera a porcentagem de resultados por final.
  */
 export async function getRatioByEnding() {
-  
-   const db = firebase.firestore();
 
-  const doc = await db
-    .collection("stats")
-    .doc("avg_by_ending")
-    .get();
+    const db = firebase.firestore();
 
-  return doc.data();
+    const doc = await db
+        .collection("stats")
+        .doc("avg_by_ending")
+        .get();
+
+    return doc.data();
 }
 
 export async function getCountry() {
-  const doc = await fetch('https://pro.ip-api.com/json/?key=4XU9wivJgRoNMv2').then(r => r.json());
-  
-  return doc.countryCode;
+    const doc = await fetch('https://pro.ip-api.com/json/?key=4XU9wivJgRoNMv2').then(r => r.json());
+
+    return doc.countryCode;
 }
