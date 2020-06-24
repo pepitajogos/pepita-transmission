@@ -289,7 +289,7 @@
     background: url('../../src/assets/landing/about-bg.png') no-repeat $black center;
     background-size: cover;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     z-index: 3;
     overflow: hidden;
@@ -327,7 +327,7 @@
     background: url('../../src/assets/landing/heal-bg.png') no-repeat $black center;
     background-size: cover;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     z-index: 3;
     overflow: hidden;
@@ -335,6 +335,7 @@
     align-items: center;
     flex-direction: column;
     padding-top: 100px;
+    padding-bottom: 50px;
     h2,
     > p {
       background: rgba(0, 0, 0, 0.5);
