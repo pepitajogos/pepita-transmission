@@ -159,6 +159,13 @@
       selectLanguage() {
         this.$emit('chooseLanguage')
       },
+      scrollToView(id) {
+        let element = this.$el.querySelector(id)
+        element.scrollIntoView({
+          behaviour: 'smooth',
+          block: 'nearest'
+        })
+      },
 
       onShareClicked(method) {},
 
@@ -197,6 +204,7 @@
     padding: 20px 15px;
     display: flex;
     justify-content: space-between;
+    z-index: 2;
     .logo-container {
       display: flex;
       font-size: 20px;
