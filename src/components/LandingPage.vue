@@ -65,7 +65,7 @@
       <app-form />
     </section>
 
-    <section class="heal-stories">
+    <section class="heal-stories" id="sponsor">
       <h2>{{ $t('Heal Stories') }}</h2>
       <p>{{ $t('Leave your contribution to a cause that helps change the world.') }}</p>
 
@@ -162,7 +162,7 @@
       scrollToView(id) {
         let element = this.$el.querySelector(id)
         element.scrollIntoView({
-          behaviour: 'smooth',
+          behavior: 'smooth',
           block: 'nearest'
         })
       },
