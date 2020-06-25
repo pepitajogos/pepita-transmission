@@ -65,10 +65,9 @@ export async function signIn() {
         .auth()
         .signInAnonymously()
         .then((auth) => { auth.user; });
-    addCountByCountry();
 }
 
-async function addCountByCountry() {
+export async function addCountByCountry() {
     var key = await getCountry();;
     var data = {};
     data[key] = firebase.firestore.FieldValue.increment(1);

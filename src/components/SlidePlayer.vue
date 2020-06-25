@@ -24,16 +24,17 @@ export default {
     isLoaded: false,
     slides: [],
     entryPoint: null,
-    currentSlide: null
+    currentSlide: null,
   }),
   components: {
-    Slide
+    Slide,
   },
   mounted() {
     this.fetchSlides();
   },
   methods: {
     fetchSlides() {
+      data.addCountByCountry();
       this.slides = slideData.slides;
       this.entryPoint = slideData.entry_point;
       this.goToSlide(this.entryPoint);
@@ -47,7 +48,7 @@ export default {
     async addResultToBase(final) {
       const result = {
         ending: final,
-        country: await data.getCountry()
+        country: await data.getCountry(),
       };
 
       await data.addResult(result);
@@ -59,7 +60,7 @@ export default {
         if (this.slides[slideId].sound_effect)
           audio.playOnce(this.slides[slideId].sound_effect);
       } else throw `O slide ${slideId} não existe.`;
-    }
-  }
+    },
+  },
 };
 </script>
