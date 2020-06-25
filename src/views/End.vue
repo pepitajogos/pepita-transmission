@@ -8,6 +8,7 @@
 
 <script>
 import EndMessage from "@/components/EndMessage";
+const anim = require("@/anim.js");
 
 export default {
   name: "End",
@@ -17,26 +18,13 @@ export default {
   },
   computed: {
     ending: function() {
-      return localStorage.result;
+      //console.log(localStorage["result"]);
+      return localStorage["result"];
     }
   },
   methods: {
     enter(el, done) {
-      const tl = new TimelineMax({
-        onComplete: done
-      });
-
-      tl.set(el, {
-        autoAlpha: 0,
-        scale: 2,
-        transformOrigin: "50% 50%"
-      });
-
-      tl.to(el, 1, {
-        autoAlpha: 1,
-        scale: 1,
-        ease: Power4.easeOut
-      });
+      anim.enter(el, done);
     }
   }
 };

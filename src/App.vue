@@ -1,46 +1,36 @@
 <template>
   <div id="app">
     <router-view />
-    <transition v-on:enter="enter">
-      <Language v-show="!langSelected" @clicked="selectedLanguage" ref="Language" />
+    <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
+      <Language v-cloak v-show="!langSelected" @clicked="selectedLanguage" ref="Language" />
     </transition>
-    <transition v-on:enter="enter">
+    <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
       <LandingPage
+        v-cloak
         v-show="showLanding"
         @chooseLanguage="onLanguageOptionClick"
         @startGame="onStartGameClicked"
         ref="LandingPage"
       />
     </transition>
-    <!-- <transition v-on:enter="enter">
-      <Start v-show="!start && !showLanding && langSelected" @clicked="startedGame" ref="Start" />
-    </transition>-->
-    <transition v-on:enter="enter">
+    <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
       <Game v-if="start" v-cloak ref="Game" @ended="backToStart" />
     </transition>
-
-    <!-- <RotationLock /> -->
   </div>
 </template>
 
 <script>
 import Language from "@/components/Language";
-import Start from "@/components/Start";
 import Game from "@/components/Game";
-import Slide from "@/components/Slide";
-import RotationLock from "@/components/RotationLock";
 import LandingPage from "@/components/LandingPage";
-import { TweenMax } from "gsap";
 const audio = require("@/audio.js");
+const anim = require("@/anim.js");
 
 export default {
   name: "App",
   components: {
     Language,
-    Start,
     Game,
-    Slide,
-    RotationLock,
     LandingPage
   },
   data: () => ({
@@ -52,26 +42,16 @@ export default {
   }),
   watch: {
     showLanding: function(newValue, oldValue) {
+      //check if returned to the landing page and switching to the landing page audio track
       if (newValue && !oldValue) audio.playMusic("trilha2");
     }
   },
   methods: {
     enter(el, done) {
-      const tl = new TimelineMax({
-        onComplete: done
-      });
-
-      tl.set(el, {
-        autoAlpha: 0,
-        scale: 2,
-        transformOrigin: "50% 50%"
-      });
-
-      tl.to(el, 1, {
-        autoAlpha: 1,
-        scale: 1,
-        ease: Power4.easeOut
-      });
+      anim.enter(el, done);
+    },
+    leave(el, done) {
+      anim.exitTransition(el, done);
     },
     // show start page of the game
     onStartGameClicked() {
@@ -102,7 +82,6 @@ export default {
       if (value) {
         this.start = !this.start;
         this.$nextTick(() => {
-          this.$refs.Start.hide();
           this.$refs.Game.show();
         });
       }

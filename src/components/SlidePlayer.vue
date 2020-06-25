@@ -58,8 +58,6 @@ export default {
         this.currentSlide = this.slides[slideId];
         if (this.slides[slideId].sound_effect)
           audio.playOnce(this.slides[slideId].sound_effect);
-        if (this.slides[slideId].music)
-          audio.playMusic(this.slides[slideId].music);
       } else throw `O slide ${slideId} não existe.`;
     }
   }
