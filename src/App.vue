@@ -2,7 +2,12 @@
   <div id="app">
     <router-view />
     <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
-      <Language v-cloak v-show="!langSelected" @clicked="selectedLanguage" ref="Language" />
+      <Language
+        v-cloak
+        v-show="!langSelected"
+        @clicked="selectedLanguage"
+        ref="Language"
+      />
     </transition>
     <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
       <LandingPage
@@ -31,20 +36,25 @@ export default {
   components: {
     Language,
     Game,
-    LandingPage
+    LandingPage,
   },
   data: () => ({
     showLanding: false,
     loaded: false,
     lang: null,
     langSelected: false,
-    start: false
+    start: false,
   }),
   watch: {
     showLanding: function(newValue, oldValue) {
       //check if returned to the landing page and switching to the landing page audio track
       if (newValue && !oldValue) audio.playMusic("trilha2");
-    }
+    },
+    $route(to, from) {
+      if (to.name == "home" && from.name == "end") {
+        this.showLanding = true;
+      }
+    },
   },
   methods: {
     enter(el, done) {
@@ -57,7 +67,7 @@ export default {
     onStartGameClicked() {
       this.showLanding = false;
       this.start = true;
-      console.log(this.langSelected);
+      //console.log(this.langSelected);
       // this.$refs.Start.show()
     },
     onLanguageOptionClick() {
@@ -90,8 +100,8 @@ export default {
       this.showLanding = false;
       this.loaded = false;
       this.start = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

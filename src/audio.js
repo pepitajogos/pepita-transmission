@@ -46,6 +46,7 @@ export function playMusic(id) {
         music.fade(musicVolume, 0, fadeOutDuration);
     }
     music = sounds[id];
+    music.stop();
     music.play();
     music.fade(0, musicVolume, fadeInDuration);
 }

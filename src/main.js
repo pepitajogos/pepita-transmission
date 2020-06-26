@@ -9,6 +9,7 @@ import VueSocialSharing from 'vue-social-sharing'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 const audio = require("@/audio.js");
@@ -16,6 +17,7 @@ audio.loadAudio();
 
 library.add(fab)
 library.add(faEnvelope)
+library.add(faHome)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false;

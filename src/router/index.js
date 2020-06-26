@@ -11,7 +11,7 @@ const routes = [
   },
   {
     path: '/end',
-    // name: 'end',
+    name: 'end',
     component: End
   }
 ]

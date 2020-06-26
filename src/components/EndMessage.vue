@@ -2,31 +2,38 @@
   <article class="slide">
     <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
       <div @click="goToEnding2()" v-show="!ending1">
-        <div class="background__image" :style="backgroundStyle('light')">
+        <div class="ending__image" :style="backgroundStyle('light')">
           <div class="ending__center">
             <div class="ending__full"></div>
-            <div class="slide__default right">{{$t('Avançar')}}</div>
+            <div class="slide__default right">{{ $t("Avançar") }}</div>
           </div>
         </div>
       </div>
     </transition>
     <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
-      <div v-show="!ending2&&ending1">
+      <div v-show="!ending2 && ending1">
         <div class="background__image" :style="backgroundStyle('dark')">
+          <div class="slide__default home-btn" @click="returnToHome">
+            <font-awesome-icon :icon="['fa', 'home']"></font-awesome-icon>
+          </div>
           <div class="ending__center">
             <div class="message__row">
               <div class="message__column">
                 <div class="share__button">
                   <div class="ending__portrait">
                     <img
-                      :src="require(`../assets/slides/images/${this.lightEndingImage[this.userEnding]}`)"
+                      :src="
+                        require(`../assets/slides/images/${
+                          this.lightEndingImage[this.userEnding]
+                        }`)
+                      "
                     />
                   </div>
                   <div class="ending__message">
-                    <h1>{{userEndingMessage}}</h1>
+                    <h1>{{ userEndingMessage }}</h1>
                   </div>
                   <div class="ending__message">
-                    <p>{{$t('Conte para seus amigos quem é você!')}}</p>
+                    <p>{{ $t("Conte para seus amigos quem é você!") }}</p>
                   </div>
                   <div class="btn-group">
                     <ShareNetwork
@@ -34,14 +41,16 @@
                       v-for="network in networks"
                       :network="network.network"
                       :key="network.key"
-                      :style="{backgroundColor: network.color}"
+                      :style="{ backgroundColor: network.color }"
                       :url="sharing.url"
                       :title="network.title"
                       :description="network.description"
                       :quote="network.quote"
                       :hashtags="sharing.hashtags"
                     >
-                      <font-awesome-icon :icon="network.icon"></font-awesome-icon>
+                      <font-awesome-icon
+                        :icon="network.icon"
+                      ></font-awesome-icon>
                       {{ network.name }}
                     </ShareNetwork>
                   </div>
@@ -49,11 +58,11 @@
               </div>
               <div class="message__column">
                 <div class="map__info">
-                  <h1>{{$t('Como o mundo escolheu')}}</h1>
+                  <h1>{{ $t("Como o mundo escolheu") }}</h1>
                   <ul class="table">
                     <li
                       class="table__text"
-                      v-for="(ending) in orderEndings.slice(0, 9)"
+                      v-for="ending in orderEndings.slice(0, 9)"
                       :key="ending.id"
                     >
                       <span class="table__numbers">{{ ending[1] }}%</span>
@@ -91,7 +100,7 @@ export default {
       ENDING_LENDO: "06_09_04.jpg",
       ENDING_MEDITANDO: "06_08_04.jpg",
       ENDING_OCIDENTAL: "06_06_04.jpg",
-      ENDING_TURISTA: "06_01_04.jpg"
+      ENDING_TURISTA: "06_01_04.jpg",
     },
     darkEndingImage: {
       ENDING_BORBOLETA: "06_02_06.jpg",
@@ -102,7 +111,7 @@ export default {
       ENDING_LENDO: "06_09_05.jpg",
       ENDING_MEDITANDO: "06_08_05.jpg",
       ENDING_OCIDENTAL: "06_06_05.jpg",
-      ENDING_TURISTA: "06_01_05.jpg"
+      ENDING_TURISTA: "06_01_05.jpg",
     },
     shareMessage: {
       ENDING_BORBOLETA:
@@ -117,15 +126,15 @@ export default {
       ENDING_MEDITANDO: "Na pandemia, eu sou um meditador. E você?",
       ENDING_OCIDENTAL:
         "Na pandemia, eu sou um ocidental numa lavanderia. E você?",
-      ENDING_TURISTA: "Na pandemia, eu sou um turista no aeroporto. E você?"
+      ENDING_TURISTA: "Na pandemia, eu sou um turista no aeroporto. E você?",
     },
     sharing: {
       url: "https://transmission.earth",
-      hashtags: "transmission"
-    }
+      hashtags: "transmission",
+    },
   }),
   props: {
-    userEnding: String
+    userEnding: String,
   },
   computed: {
     networks: function() {
@@ -138,7 +147,7 @@ export default {
 
           title: "",
           description: "",
-          quote: this.$i18n.t(this.shareMessage[this.userEnding])
+          quote: this.$i18n.t(this.shareMessage[this.userEnding]),
         },
         {
           network: "twitter",
@@ -148,7 +157,7 @@ export default {
 
           title: this.$i18n.t(this.shareMessage[this.userEnding]),
           description: "",
-          quote: ""
+          quote: "",
         },
         // {
         //   network: "linkedin",
@@ -168,8 +177,8 @@ export default {
 
           title: this.$i18n.t(this.shareMessage[this.userEnding]),
           description: "",
-          quote: ""
-        }
+          quote: "",
+        },
         // {
         //   network: "pinterest",
         //   name: "Pinterest",
@@ -211,11 +220,11 @@ export default {
         ENDING_OCIDENTAL:
           "VOCÊ É UM OCIDENTAL NUMA LAVANDERIA ORIENTAL\nSomos todos iguais, não importa a diferença.",
         ENDING_TURISTA:
-          "VOCÊ É UM TURISTA NO AEROPORTO\nVocê pode se abrir para novas oportunidades."
+          "VOCÊ É UM TURISTA NO AEROPORTO\nVocê pode se abrir para novas oportunidades.",
       }[this.userEnding];
       message = this.$i18n.t(message);
       return message;
-    }
+    },
   },
   updated() {
     if (!this.loaded) {
@@ -232,7 +241,7 @@ export default {
             require(`../assets/slides/images/${
               this.lightEndingImage[this.userEnding]
             }`) +
-            ")"
+            ")",
         };
       } else if (type == "dark") {
         return {
@@ -241,7 +250,7 @@ export default {
             require(`../assets/slides/images/${
               this.darkEndingImage[this.userEnding]
             }`) +
-            ")"
+            ")",
         };
       }
     },
@@ -250,7 +259,7 @@ export default {
     },
     playMouseClickSoundEffect() {
       const mouse = new Howl({
-        src: "assets/slides/audios/Transmission_Click1.mp3"
+        src: "assets/slides/audios/Transmission_Click1.mp3",
       });
       mouse.play();
     },
@@ -308,8 +317,11 @@ export default {
     },
     leave(el, done) {
       anim.exitTransition(el, done);
-    }
-  }
+    },
+    returnToHome() {
+      this.$emit("return");
+    },
+  },
 };
 </script>
 
@@ -342,10 +354,6 @@ export default {
   td {
     width: 1vw;
   }
-
-  // @media (max-width: 1024px) {
-  //   width: 100%;
-  // }
 }
 
 .ending__portrait {
@@ -368,11 +376,18 @@ export default {
   align-items: center;
   justify-content: center;
 }
+.ending__image {
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 .background__image {
   width: 100vw;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
 .message__column {
   float: left;
@@ -444,7 +459,7 @@ export default {
   cursor: pointer; /* Mouse pointer on hover */
   float: left; /* Float the buttons side by side */
   font-family: $regular;
-  @include font-scale(10, 18);
+  @include font-scale(8, 18);
   font-weight: bold;
   text-align: center;
 }
@@ -453,11 +468,11 @@ export default {
     width: 100%;
   }
 }
-@media screen and (max-width: 1020px) {
-  .btn {
-    width: 50%;
-  }
-}
+// @media screen and (max-width: 1020px) {
+//   .btn {
+//     width: 50%;
+//   }
+// }
 .btn-group {
   width: 100%;
   flex-direction: column;
@@ -473,5 +488,10 @@ export default {
   content: "";
   clear: both;
   display: table;
+}
+
+.home-btn {
+  top: 4%;
+  left: 2%;
 }
 </style>
