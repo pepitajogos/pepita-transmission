@@ -2,10 +2,19 @@
   <div class="landing-page">
     <section class="hero-section">
       <header class="header">
-        <div class="logo-container"><img src="../../src/assets/landing/TTTT.png" alt class="logo" /> transmission</div>
+        <div class="logo-container">
+          <img src="../../src/assets/landing/TTTT.png" alt class="logo" /> transmission
+        </div>
         <div class="link-container">
-          <a href="#" class="link" @click.prevent="scrollToView('#sponsor')">{{ $t('Sponsor') }}</a>
-          <a href="#" class="link outlined" @click.prevent="scrollToView('#share-story')">{{ $t('Share') }}</a>
+          <a href="#" class="link" @click.prevent="scrollToView('#sponsor')">{{
+            $t('Sponsor')
+          }}</a>
+          <a
+            href="#"
+            class="link outlined"
+            @click.prevent="scrollToView('#share-story')"
+            >{{ $t('Share') }}</a
+          >
           <a href="#" class="link" @click.prevent="selectLanguage">EN</a>
         </div>
       </header>
@@ -16,19 +25,31 @@
       </div>
       <div class="content-mobile">
         <img src="../../src/assets/landing/landing-phone.png" alt class="landing-phone" />
-        <div class="chat-bubble chat-bubble-1">{{ $t('You need to open up to new opportunities') }}</div>
-        <div class="chat-bubble chat-bubble-2">{{ $t('You are in state of meditation!') }}</div>
+        <div class="chat-bubble chat-bubble-1">
+          {{ $t('You need to open up to new opportunities') }}
+        </div>
+        <div class="chat-bubble chat-bubble-2">
+          {{ $t('You are in state of meditation!') }}
+        </div>
       </div>
-      <a href="#" class="scroll-btn" @click.prevent="scrollToView('#world-map')"><span></span>Scroll</a>
+      <a href="#" class="scroll-btn" @click.prevent="scrollToView('#world-map')"
+        ><span></span>Scroll</a
+      >
     </section>
 
     <section class="world-map-section" id="world-map">
       <app-map></app-map>
+
+      <a href="#" class="scroll-btn" @click.prevent="scrollToView('#about-section')">
+        <span></span>Scroll</a
+      >
     </section>
 
-    <section class="about-section">
+    <section class="about-section" id="about-section">
       <h2>{{ $t('About us') }}</h2>
-      <p>{{ $t('We want to spread positive messages and create a global conversation') }}</p>
+      <p>
+        {{ $t('We want to spread positive messages and create a global conversation') }}
+      </p>
 
       <div class="cards">
         <div class="card">
@@ -53,17 +74,32 @@
         </div>
         <div class="card">
           <img src="../../src/assets/landing/icons/icon3.png" alt class="icon" />
-          <p>{{ $t('You can share your story in the Pandemic with us. And we will share it with the world') }}</p>
+          <p>
+            {{
+              $t(
+                'You can share your story in the Pandemic with us. And we will share it with the world'
+              )
+            }}
+          </p>
         </div>
         <div class="card">
           <img src="../../src/assets/landing/icons/icon4.png" alt class="icon" />
-          <p>{{ $t('By sharing positive messages, we can change the way we see world.') }}</p>
+          <p>
+            {{ $t('By sharing positive messages, we can change the way we see world.') }}
+          </p>
         </div>
       </div>
+
+      <a href="#" class="scroll-btn" @click.prevent="scrollToView('#share-story')">
+        <span></span>Scroll</a
+      >
     </section>
 
     <section class="form-section" id="share-story">
       <app-form />
+      <a href="#" class="scroll-btn" @click.prevent="scrollToView('#sponsor')">
+        <span></span>Scroll</a
+      >
     </section>
 
     <section class="heal-stories" id="sponsor">
@@ -89,9 +125,13 @@
           <app-paypal />
         </div>
       </div>
-      <a href="#" @click.prevent="showPaymentForm = true" class="btn show-mobile" v-if="!showPaymentForm">{{
-        $t('Heal stories')
-      }}</a>
+      <a
+        href="#"
+        @click.prevent="showPaymentForm = true"
+        class="btn show-mobile"
+        v-if="!showPaymentForm"
+        >{{ $t('Heal stories') }}</a
+      >
     </section>
 
     <section class="sharer-section">
@@ -112,10 +152,18 @@
               <a href="mailto:contact@transmission.earth">email</a>
             </div>
             <div>
-              <a href="https://twitter.com/TransmissionNow" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://twitter.com/TransmissionNow"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <font-awesome-icon :icon="['fab', 'twitter']" />
               </a>
-              <a href="https://www.instagram.com/transmission_now/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.instagram.com/transmission_now/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <font-awesome-icon :icon="['fab', 'instagram']" />
               </a>
             </div>
@@ -325,6 +373,38 @@
     }
   }
 
+  #world-map {
+    position: relative;
+    .scroll-btn {
+      padding-top: 60px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      z-index: 2;
+      display: inline-block;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      color: #fff;
+      font: normal 400 20px/1 $regular;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: opacity 0.3s;
+      span {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        box-sizing: border-box;
+      }
+    }
+  }
+
   .about-section {
     background: url('../../src/assets/landing/about-bg.png') no-repeat $black center;
     background-size: cover;
@@ -337,6 +417,34 @@
     align-items: center;
     flex-direction: column;
     padding-top: 100px;
+    .scroll-btn {
+      padding-top: 60px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      z-index: 2;
+      display: inline-block;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      color: #fff;
+      font: normal 400 20px/1 $regular;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: opacity 0.3s;
+      span {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        box-sizing: border-box;
+      }
+    }
     h2,
     > p {
       background: rgba(0, 0, 0, 0.5);
@@ -376,6 +484,36 @@
     flex-direction: column;
     padding-top: 100px;
     padding-bottom: 50px;
+
+    .scroll-btn {
+      padding-top: 60px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      z-index: 2;
+      display: inline-block;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      color: #fff;
+      font: normal 400 20px/1 $regular;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: opacity 0.3s;
+      span {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        box-sizing: border-box;
+      }
+    }
+
     h2,
     > p {
       background: rgba(0, 0, 0, 0.5);
@@ -389,6 +527,38 @@
       background: rgba(0, 0, 0, 0.5);
       padding: 5px 15px;
       color: #ffffff;
+    }
+  }
+
+  #share-story {
+    position: relative;
+    .scroll-btn {
+      padding-top: 60px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      z-index: 2;
+      display: inline-block;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      color: #fff;
+      font: normal 400 20px/1 $regular;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: opacity 0.3s;
+      span {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        box-sizing: border-box;
+      }
     }
   }
 
@@ -413,6 +583,35 @@
     //   display: block;
     //   content: '';
     // }
+
+    .scroll-btn {
+      padding-top: 60px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      z-index: 2;
+      display: inline-block;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      color: #fff;
+      font: normal 400 20px/1 $regular;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: opacity 0.3s;
+      span {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        box-sizing: border-box;
+      }
+    }
     .content {
       width: 80%;
       max-width: 800px;
@@ -470,11 +669,11 @@
   }
   // responsive
   @media screen and (max-width: 768px) {
+    .scroll-btn {
+      display: none;
+    }
     .hero-section {
       height: 700px;
-      .scroll-btn {
-        display: none;
-      }
       .content {
         position: relative;
         top: 0;
