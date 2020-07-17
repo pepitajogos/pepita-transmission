@@ -673,7 +673,7 @@
   // responsive
   @media screen and (max-width: 900px) {
     .scroll-btn {
-      display: none;
+      display: none !important;
     }
     .hero-section {
       height: 700px;
