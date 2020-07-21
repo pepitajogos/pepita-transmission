@@ -2,6 +2,7 @@
  * @typedef {Object} Story  Objeto representando um envio de história.
  * @property {string} Story.name  O nome do usuário
  * @property {string} Story.email  O email do usuário
+ * @property {string} Story.country  O email do usuário
  * @property {string} Story.story  A história que o usuário quer contar
  */
 
@@ -22,6 +23,8 @@ export async function addStory(story) {
     if (!auth) throw "Usuário não logado.";
     const user = auth.currentUser;
     if (!user) throw "Usuário não logado.";
+
+    story["country"] = await getCountry();
 
     const db = firebase.firestore();
 

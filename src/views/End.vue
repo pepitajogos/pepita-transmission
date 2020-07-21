@@ -41,5 +41,8 @@ export default {
   height: 100vh;
   z-index: 3;
   position: absolute;
+     overflow-x: hidden;
+    overflow-y: auto !important;
+    font-family: $regular;
 }
 </style>

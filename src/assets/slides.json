@@ -5,7 +5,8 @@
             "title": "0_0_01",
             "alternative_text": "",
             "image": "0_0_01.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "style": "full-screen",
                     "link_to": "0_0_02"
                 },
@@ -20,7 +21,8 @@
             "title": "0_0_02",
             "alternative_text": "",
             "image": "0_0_02.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "style": "full-screen",
                     "link_to": "0_0_03"
                 },
@@ -35,7 +37,8 @@
             "title": "0_0_03",
             "alternative_text": "",
             "image": "0_0_03.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "style": "full-screen",
                     "link_to": "0_0_04"
                 },
@@ -50,7 +53,8 @@
             "title": "0_0_04",
             "alternative_text": "",
             "image": "0_0_04.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "style": "full-screen",
                     "link_to": "1_1_01"
                 },
@@ -66,36 +70,43 @@
             "alternative_text": "",
             "image": "01_01_001.jpg",
             "sound_effect": "ambiencia",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "1_1_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "1_1_02"
+                }
+            ]
         },
         "1_1_02": {
             "title": "1_1_02",
             "alternative_text": "",
             "image": "01_01_002.jpg",
-            "steps": [{
-                "content": "Seu país declara quarentena depois da pandemia",
-                "style": "full-screen",
-                "link_to": "1_1_03"
-            }]
+            "steps": [
+                {
+                    "content": "Seu país declara quarentena depois da pandemia",
+                    "style": "full-screen",
+                    "link_to": "1_1_03"
+                }
+            ]
         },
         "1_1_03": {
             "title": "1_1_03",
             "alternative_text": "",
             "image": "01_01_002.jpg",
-            "steps": [{
-                "content": "Qual o seu primeiro impulso?",
-                "style": "full-screen",
-                "link_to": "1_1_04"
-            }]
+            "steps": [
+                {
+                    "content": "Qual o seu primeiro impulso?",
+                    "style": "full-screen",
+                    "link_to": "1_1_04"
+                }
+            ]
         },
         "1_1_04": {
             "title": "1_1_04",
             "alternative_text": "",
             "image": "01_01_004.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Assistir ao noticiário",
                     "style": "left bottom",
                     "link_to": "1_1_05a"
@@ -110,7 +121,8 @@
         "1_1_05a": {
             "title": "1_1_05a",
             "image": "01_01_005_A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "- Melhor ficar informado e assistir ao noticiário.",
                     "style": "right center",
                     "link_to": "2_1_01"
@@ -125,7 +137,8 @@
         "1_1_05b": {
             "title": "1_1_05b",
             "image": "01_01_005_A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "- Hum. Melhor eu checar como estão meus amigos e família.",
                     "style": "right center",
                     "link_to": "2_2_01"
@@ -141,26 +154,31 @@
             "title": "2_1_01",
             "alternative_text": "",
             "image": "02_01_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "2_1_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "2_1_02"
+                }
+            ]
         },
         "2_1_02": {
             "title": "2_1_02",
             "alternative_text": "",
             "image": "02_01_02.jpg",
-            "steps": [{
-                "content": "O noticiário ressalta a crise econômica e o número de mortes.",
-                "style": "full-screen",
-                "link_to": "2_1_03"
-            }]
+            "steps": [
+                {
+                    "content": "O noticiário ressalta a crise econômica e o número de mortes.",
+                    "style": "full-screen",
+                    "link_to": "2_1_03"
+                }
+            ]
         },
         "2_1_03": {
             "title": "2_1_03",
             "alternative_text": "",
             "image": "02_01_01.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Estocar comida.",
                     "style": "left bottom",
                     "link_to": "2_1_04a"
@@ -181,7 +199,8 @@
             "title": "2_1_04a",
             "alternative_text": "",
             "image": "02_01_04_A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "- Melhor estocar o máximo de comida que eu posso.",
                     "style": "right center",
                     "link_to": "3_1_01"
@@ -197,7 +216,8 @@
             "title": "2_1_04b",
             "alternative_text": "",
             "image": "02_01_04_B.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "- Hum, é hora de focar em ações e investimentos!",
                     "style": "right center",
                     "link_to": "3_2_01"
@@ -213,7 +233,8 @@
             "title": "2_1_04c",
             "alternative_text": "",
             "image": "02_01_04_C.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Melhor fazer compras na venda aqui do lado.",
                     "style": "right center",
                     "link_to": "3_3_01"
@@ -229,28 +250,33 @@
             "title": "2_2_01",
             "image": "02_02_06.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "2_2_07"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "2_2_07"
+                }
+            ]
         },
         "2_2_07": {
             "title": "2_2_07",
             "alternative_text": "",
             "image": "02_02_07.jpg",
             "language_image": true,
-            "steps": [{
-                "content": "Como reagir aos seus vizinhos?",
-                "style": "full-screen",
-                "link_to": "2_2_08"
-            }]
+            "steps": [
+                {
+                    "content": "Como reagir aos seus vizinhos?",
+                    "style": "full-screen",
+                    "link_to": "2_2_08"
+                }
+            ]
         },
         "2_2_08": {
             "title": "2_2_08",
             "alternative_text": "",
             "image": "02_02_08.jpg",
             "state": "smartphone2",
-            "steps": [{
+            "steps": [
+                {
                     "content": "1. Pensamento Positivo.",
                     "style": "left bottom",
                     "link_to": "2_2_09b"
@@ -272,7 +298,8 @@
             "alternative_text": "",
             "image": "02_02_09A.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "2_2_08"
@@ -289,7 +316,8 @@
             "alternative_text": "",
             "image": "02_02_09B.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "2_2_08"
@@ -306,7 +334,8 @@
             "alternative_text": "",
             "image": "02_02_09C.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "2_2_08"
@@ -322,35 +351,42 @@
             "title": "3_1_01",
             "alternative_text": "",
             "image": "03_01_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "3_1_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "3_1_02"
+                }
+            ]
         },
         "3_1_02": {
             "title": "3_1_02",
             "alternative_text": "",
             "image": "03_01_02.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "3_1_03"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "3_1_03"
+                }
+            ]
         },
         "3_1_03": {
             "title": "3_1_03",
             "alternative_text": "",
             "image": "03_01_03.jpg",
-            "steps": [{
-                "content": "Sua vizinha está doente e pede comida.",
-                "style": "full-screen",
-                "link_to": "3_1_04"
-            }]
+            "steps": [
+                {
+                    "content": "Sua vizinha está doente e pede comida.",
+                    "style": "full-screen",
+                    "link_to": "3_1_04"
+                }
+            ]
         },
         "3_1_04": {
             "title": "3_1_04",
             "alternative_text": "",
             "image": "03_01_02.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Vender.",
                     "style": "left bottom",
                     "link_to": "3_1_05a"
@@ -371,15 +407,26 @@
             "title": "3_1_05a",
             "alternative_text": "",
             "image": "03_01_05A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Posso fazer uma reserva financeira se eu vender para ela com lucro.",
                     "style": "right center",
-                    "link_to": "4_1_01"
+                    "link_to": "4_1_01form"
                 },
                 {
                     "content": "Voltar",
                     "style": "full-left",
                     "link_to": "3_1_04"
+                }
+            ]
+        },
+        "4_1_01form": {
+            "title": "4_1_01form",
+            "image": "form.jpg",
+            "form": true,
+            "steps": [
+                {
+                    "link_to": "4_1_01"
                 }
             ]
         },
@@ -387,15 +434,26 @@
             "title": "3_1_05b",
             "alternative_text": "",
             "image": "03_01_05B.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Quero ajudar, mas não posso. Tenho medo de me contaminar.",
                     "style": "right center",
-                    "link_to": "4_2_01"
+                    "link_to": "4_2_01form"
                 },
                 {
                     "content": "Voltar",
                     "style": "full-left",
                     "link_to": "3_1_04"
+                }
+            ]
+        },
+        "4_2_01form": {
+            "title": "4_2_01form",
+            "image": "form.jpg",
+            "form": true,
+            "steps": [
+                {
+                    "link_to": "4_2_01"
                 }
             ]
         },
@@ -403,10 +461,11 @@
             "title": "3_1_05c",
             "alternative_text": "",
             "image": "03_01_05C.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Vou doar. Acho difícil me contaminar",
                     "style": "right center",
-                    "link_to": "4_6_01"
+                    "link_to": "4_6_01form"
                 },
                 {
                     "content": "Voltar",
@@ -415,49 +474,68 @@
                 }
             ]
         },
+        "4_6_01form": {
+            "title": "4_6_01form",
+            "image": "form.jpg",
+            "form": true,
+            "steps": [
+                {
+                    "link_to": "4_6_01"
+                }
+            ]
+        },
         "3_2_01": {
             "title": "3_2_01",
             "alternative_text": "",
             "image": "03_02_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "3_2_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "3_2_02"
+                }
+            ]
         },
         "3_2_02": {
             "title": "3_2_02",
             "alternative_text": "",
             "image": "03_02_02.jpg",
-            "steps": [{
-                "content": "Você perdeu boa parte das suas economias, mas o estrago poderia ter sido pior.",
-                "style": "full-screen",
-                "link_to": "3_2_08"
-            }]
+            "steps": [
+                {
+                    "content": "Você perdeu boa parte das suas economias, mas o estrago poderia ter sido pior.",
+                    "style": "full-screen",
+                    "link_to": "3_2_08"
+                }
+            ]
         },
         "3_2_08": {
             "title": "3_2_08",
             "image": "03_02_08.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "3_2_09"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "3_2_09"
+                }
+            ]
         },
         "3_2_09": {
             "title": "3_2_09",
             "alternative_text": "",
             "image": "03_02_09.jpg",
-            "steps": [{
-                "content": "Ambos os lados têm um ponto e a comunidade está dividida.",
-                "style": "full-screen",
-                "link_to": "3_2_10"
-            }]
+            "steps": [
+                {
+                    "content": "Ambos os lados têm um ponto e a comunidade está dividida.",
+                    "style": "full-screen",
+                    "link_to": "3_2_10"
+                }
+            ]
         },
         "3_2_10": {
             "title": "3_2_10",
             "image": "03_02_10.jpg",
             "state": "smartphone",
-            "steps": [{
+            "steps": [
+                {
                     "content": "1. Pensar nos funcionários...",
                     "link_to": "3_2_11a"
                 },
@@ -472,7 +550,8 @@
             "alternative_text": "",
             "image": "03_02_11A.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "3_2_10"
@@ -480,7 +559,7 @@
                 {
                     "content": "",
                     "style": "full-right",
-                    "link_to": "4_6_01"
+                    "link_to": "4_6_01form"
                 }
             ]
         },
@@ -489,7 +568,8 @@
             "alternative_text": "",
             "image": "03_02_11B.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "3_2_10"
@@ -497,6 +577,16 @@
                 {
                     "content": "",
                     "style": "full-right",
+                    "link_to": "4_5_01form"
+                }
+            ]
+        },
+        "4_5_01form": {
+            "title": "4_5_01form",
+            "image": "form.jpg",
+            "form": true,
+            "steps": [
+                {
                     "link_to": "4_5_01"
                 }
             ]
@@ -505,55 +595,66 @@
             "title": "3_3_01",
             "alternative_text": "",
             "image": "03_03_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "3_3_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "3_3_02"
+                }
+            ]
         },
         "3_3_02": {
             "title": "3_3_02",
             "alternative_text": "",
             "image": "03_03_02.jpg",
-            "steps": [{
-                "content": "No caminho de volta, seu chefe suspende seu contrato de trabalho",
-                "style": "full-screen",
-                "link_to": "3_3_03"
-            }]
+            "steps": [
+                {
+                    "content": "No caminho de volta, seu chefe suspende seu contrato de trabalho",
+                    "style": "full-screen",
+                    "link_to": "3_3_03"
+                }
+            ]
         },
         "3_3_03": {
             "title": "3_3_03",
             "alternative_text": "",
             "image": "03_03_03.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "3_3_04"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "3_3_04"
+                }
+            ]
         },
         "3_3_04": {
             "title": "3_3_04",
             "alternative_text": "",
             "image": "03_03_04.jpg",
-            "steps": [{
-                "content": "O estoque de leite da cidade está comprometido.",
-                "style": "full-screen",
-                "link_to": "3_3_05"
-            }]
+            "steps": [
+                {
+                    "content": "O estoque de leite da cidade está comprometido.",
+                    "style": "full-screen",
+                    "link_to": "3_3_05"
+                }
+            ]
         },
         "3_3_05": {
             "title": "3_3_05",
             "alternative_text": "",
             "image": "03_03_04.jpg",
-            "steps": [{
-                "content": "Mas você se preveniu e fez um estoque bom e tem uma pequena reserva financeira para os próximos meses.",
-                "style": "full-screen",
-                "link_to": "3_3_06"
-            }]
+            "steps": [
+                {
+                    "content": "Mas você se preveniu e fez um estoque bom e tem uma pequena reserva financeira para os próximos meses.",
+                    "style": "full-screen",
+                    "link_to": "3_3_06"
+                }
+            ]
         },
         "3_3_06": {
             "title": "3_3_06",
             "alternative_text": "",
             "image": "03_03_06.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Revender o leite.",
                     "style": "left bottom",
                     "link_to": "3_3_07a"
@@ -569,10 +670,11 @@
             "title": "3_3_07a",
             "alternative_text": "",
             "image": "03_03_07A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Vou revender e recuperar parte do que perdi.",
                     "style": "right center",
-                    "link_to": "4_4_1"
+                    "link_to": "4_4_1form"
                 },
                 {
                     "content": "Voltar",
@@ -581,14 +683,25 @@
                 }
             ]
         },
+        "4_4_1form": {
+            "title": "4_4_1form",
+            "image": "form.jpg",
+            "form": true,
+            "steps": [
+                {
+                    "link_to": "4_4_1"
+                }
+            ]
+        },
         "3_3_07b": {
             "title": "3_3_07b",
             "alternative_text": "",
             "image": "03_03_07A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Vou ver quem está precisando e doar o leite.",
                     "style": "right center",
-                    "link_to": "4_6_01"
+                    "link_to": "4_6_01form"
                 },
                 {
                     "content": "Voltar",
@@ -601,27 +714,32 @@
             "title": "3_4_07",
             "image": "03_04_07.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "3_4_08"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "3_4_08"
+                }
+            ]
         },
         "3_4_08": {
             "title": "3_4_08",
             "alternative_text": "",
             "image": "03_04_08.jpg",
             "language_image": true,
-            "steps": [{
-                "content": "O grupo está apavorado com o cenário atual.",
-                "style": "full-screen",
-                "link_to": "3_4_09"
-            }]
+            "steps": [
+                {
+                    "content": "O grupo está apavorado com o cenário atual.",
+                    "style": "full-screen",
+                    "link_to": "3_4_09"
+                }
+            ]
         },
         "3_4_09": {
             "title": "3_4_09",
             "image": "02_02_08.jpg",
             "state": "smartphone2",
-            "steps": [{
+            "steps": [
+                {
                     "content": "1. Não vou conviver com um grupo tóxico.",
                     "link_to": "3_4_10a"
                 },
@@ -636,7 +754,8 @@
             "alternative_text": "",
             "image": "03_04_10A.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "3_4_09"
@@ -644,6 +763,16 @@
                 {
                     "content": "",
                     "style": "full-right",
+                    "link_to": "4_3_01form"
+                }
+            ]
+        },
+        "4_3_01form": {
+            "title": "4_3_01form",
+            "image": "form.jpg",
+            "form": true,
+            "steps": [
+                {
                     "link_to": "4_3_01"
                 }
             ]
@@ -653,7 +782,8 @@
             "alternative_text": "",
             "image": "03_04_10B.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "3_4_09"
@@ -661,7 +791,7 @@
                 {
                     "content": "",
                     "style": "full-right",
-                    "link_to": "4_6_01"
+                    "link_to": "4_6_01form"
                 }
             ]
         },
@@ -669,45 +799,54 @@
             "title": "3_5_01",
             "alternative_text": "",
             "image": "03_05_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "3_5_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "3_5_02"
+                }
+            ]
         },
         "3_5_02": {
             "title": "3_5_02",
             "alternative_text": "",
             "image": "03_05_02.jpg",
-            "steps": [{
-                "content": "Você ajuda seus vizinhos com as compras.",
-                "style": "full-screen",
-                "link_to": "3_5_03"
-            }]
+            "steps": [
+                {
+                    "content": "Você ajuda seus vizinhos com as compras.",
+                    "style": "full-screen",
+                    "link_to": "3_5_03"
+                }
+            ]
         },
         "3_5_03": {
             "title": "3_5_03",
             "alternative_text": "",
             "image": "03_05_03.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "3_5_04"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "3_5_04"
+                }
+            ]
         },
         "3_5_04": {
             "title": "3_5_04",
             "alternative_text": "",
             "image": "03_05_04.jpg",
-            "steps": [{
-                "content": "O síndico do seu prédio pergunta se você consegue fazer compras para todos do prédio.",
-                "style": "full-screen",
-                "link_to": "3_5_05"
-            }]
+            "steps": [
+                {
+                    "content": "O síndico do seu prédio pergunta se você consegue fazer compras para todos do prédio.",
+                    "style": "full-screen",
+                    "link_to": "3_5_05"
+                }
+            ]
         },
         "3_5_05": {
             "title": "3_5_05",
             "alternative_text": "",
             "image": "03_05_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "É uma boa ideia.",
                     "style": "left bottom",
                     "link_to": "3_5_06a"
@@ -723,10 +862,11 @@
             "title": "3_5_06a",
             "alternative_text": "",
             "image": "03_05_06.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Como eu já estou saindo para os idosos,  faz sentido. Menos gente pode se contaminar.",
                     "style": "right center",
-                    "link_to": "4_7_01"
+                    "link_to": "4_7_01form"
                 },
                 {
                     "content": "Voltar",
@@ -735,14 +875,25 @@
                 }
             ]
         },
+        "4_7_01form": {
+            "title": "4_7_01form",
+            "image": "form.jpg",
+            "form": true,
+            "steps": [
+                {
+                    "link_to": "4_7_01"
+                }
+            ]
+        },
         "3_5_06b": {
             "title": "3_5_06b",
             "alternative_text": "",
             "image": "03_05_06.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Talvez o cenário seja mais perigoso do que imaginei. Melhor eu parar de sair tanto.",
                     "style": "right center",
-                    "link_to": "4_6_01"
+                    "link_to": "4_6_01form"
                 },
                 {
                     "content": "Voltar",
@@ -755,45 +906,54 @@
             "title": "4_1_01",
             "alternative_text": "",
             "image": "04_01_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_1_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_1_02"
+                }
+            ]
         },
         "4_1_02": {
             "title": "4_1_02",
             "alternative_text": "",
             "image": "04_01_02.jpg",
-            "steps": [{
-                "content": "Você compra máscaras para revender e fazer um caixa para os próximos meses.",
-                "style": "full-screen",
-                "link_to": "4_1_03"
-            }]
+            "steps": [
+                {
+                    "content": "Você compra máscaras para revender e fazer um caixa para os próximos meses.",
+                    "style": "full-screen",
+                    "link_to": "4_1_03"
+                }
+            ]
         },
         "4_1_03": {
             "title": "4_1_03",
             "alternative_text": "",
             "image": "04_01_03.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_1_04"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_1_04"
+                }
+            ]
         },
         "4_1_04": {
             "title": "4_1_04",
             "alternative_text": "",
             "image": "04_01_02.jpg",
-            "steps": [{
-                "content": "E o uso obrigatório delas vira uma grande oportunidade.",
-                "style": "full-screen",
-                "link_to": "4_1_05"
-            }]
+            "steps": [
+                {
+                    "content": "E o uso obrigatório delas vira uma grande oportunidade.",
+                    "style": "full-screen",
+                    "link_to": "4_1_05"
+                }
+            ]
         },
         "4_1_05": {
             "title": "4_1_05",
             "alternative_text": "",
             "image": "04_01_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Vender.",
                     "style": "left bottom",
                     "link_to": "4_1_06a"
@@ -809,7 +969,8 @@
             "title": "4_1_06a",
             "alternative_text": "",
             "image": "04_01_06A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Ótimo! Vai me ajudar a fazer caixa para a crise!",
                     "style": "right center",
                     "link_to": "5_01_01"
@@ -825,7 +986,8 @@
             "title": "4_1_06b",
             "alternative_text": "",
             "image": "04_01_06A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Melhor repassar para meus vizinhos! Talvez eles precisem.",
                     "style": "right center",
                     "link_to": "5_04_01"
@@ -841,46 +1003,55 @@
             "title": "4_2_01",
             "image": "04_02_01.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_2_06"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_2_06"
+                }
+            ]
         },
         "4_2_06": {
             "title": "4_2_06",
             "alternative_text": "",
             "image": "04_02_06.jpg",
             "language_image": true,
-            "steps": [{
-                "content": "Seus vizinhos estão com raiva.",
-                "style": "full-screen",
-                "link_to": "4_2_07"
-            }]
+            "steps": [
+                {
+                    "content": "Seus vizinhos estão com raiva.",
+                    "style": "full-screen",
+                    "link_to": "4_2_07"
+                }
+            ]
         },
         "4_2_07": {
             "title": "4_2_07",
             "alternative_text": "",
             "image": "04_02_07.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_2_08"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_2_08"
+                }
+            ]
         },
         "4_2_08": {
             "title": "4_2_08",
             "alternative_text": "",
             "image": "04_02_08.jpg",
-            "steps": [{
-                "content": "Sua entrega de comida foi roubada da portaria.",
-                "style": "full-screen",
-                "link_to": "4_2_09"
-            }]
+            "steps": [
+                {
+                    "content": "Sua entrega de comida foi roubada da portaria.",
+                    "style": "full-screen",
+                    "link_to": "4_2_09"
+                }
+            ]
         },
         "4_2_09": {
             "title": "4_2_09",
             "alternative_text": "",
             "image": "04_02_07.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Cada um por si.",
                     "style": "left bottom",
                     "link_to": "4_2_10a"
@@ -896,7 +1067,8 @@
             "title": "4_2_10a",
             "alternative_text": "",
             "image": "04_02_010_A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Que absurdo! É cada um por si então? Vou pegar outro pacote aqui para mim.",
                     "style": "right center",
                     "link_to": "5_02_01"
@@ -912,7 +1084,8 @@
             "title": "4_2_10b",
             "alternative_text": "",
             "image": "04_02_010_B.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Vou tirar satisfação com o síndico. Isso não pode ficar assim.",
                     "style": "right center",
                     "link_to": "5_03_01"
@@ -928,63 +1101,76 @@
             "title": "4_3_01",
             "alternative_text": "",
             "image": "04_03_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_3_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_3_02"
+                }
+            ]
         },
         "4_3_02": {
             "title": "4_3_02",
             "alternative_text": "",
             "image": "04_03_02.jpg",
-            "steps": [{
-                "content": "O governo restringe as saídas de casa. E você agora está quase sem comida.",
-                "style": "full-screen",
-                "link_to": "4_3_03"
-            }]
+            "steps": [
+                {
+                    "content": "O governo restringe as saídas de casa. E você agora está quase sem comida.",
+                    "style": "full-screen",
+                    "link_to": "4_3_03"
+                }
+            ]
         },
         "4_3_03": {
             "title": "4_3_03",
             "alternative_text": "",
             "image": "04_03_03.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_3_04"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_3_04"
+                }
+            ]
         },
         "4_3_04": {
             "title": "4_3_04",
             "image": "04_03_04.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_3_08"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_3_08"
+                }
+            ]
         },
         "4_3_08": {
             "title": "4_3_08",
             "image": "04_03_08.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_3_09"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_3_09"
+                }
+            ]
         },
         "4_3_09": {
             "title": "4_3_09",
             "alternative_text": "",
             "image": "04_03_09.jpg",
-            "steps": [{
-                "content": "Seus vizinhos estão ressentidos.",
-                "style": "full-screen",
-                "link_to": "4_3_10"
-            }]
+            "steps": [
+                {
+                    "content": "Seus vizinhos estão ressentidos.",
+                    "style": "full-screen",
+                    "link_to": "4_3_10"
+                }
+            ]
         },
         "4_3_10": {
             "title": "4_3_10",
             "image": "02_02_08.jpg",
             "state": "smartphone",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Se afastar.",
                     "link_to": "4_3_11a"
                 },
@@ -999,7 +1185,8 @@
             "alternative_text": "",
             "image": "04_03_011A.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "4_3_10"
@@ -1016,7 +1203,8 @@
             "alternative_text": "",
             "image": "04_03_011B.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "4_3_10"
@@ -1032,27 +1220,32 @@
             "title": "4_4_1",
             "image": "04_04_05.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_4_6"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_4_6"
+                }
+            ]
         },
         "4_4_6": {
             "title": "4_4_6",
             "alternative_text": "",
             "image": "04_04_06.jpg",
             "language_image": true,
-            "steps": [{
-                "content": "Seus vizinhos acham que você se aproveitou da situação.",
-                "style": "full-screen",
-                "link_to": "4_4_7"
-            }]
+            "steps": [
+                {
+                    "content": "Seus vizinhos acham que você se aproveitou da situação.",
+                    "style": "full-screen",
+                    "link_to": "4_4_7"
+                }
+            ]
         },
         "4_4_7": {
             "title": "4_4_7",
             "image": "04_04_07.jpg",
             "state": "laptop",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Concordar com os vizinhos.",
                     "link_to": "4_4_8b"
                 },
@@ -1067,7 +1260,8 @@
             "alternative_text": "",
             "image": "04_04_08A.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "4_4_7"
@@ -1084,7 +1278,8 @@
             "alternative_text": "",
             "image": "04_04_08B.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "4_4_7"
@@ -1100,47 +1295,56 @@
             "title": "4_5_01",
             "alternative_text": "",
             "image": "04_05_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_5_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_5_02"
+                }
+            ]
         },
         "4_5_02": {
             "title": "4_5_02",
             "alternative_text": "",
             "image": "04_05_002.jpg",
-            "steps": [{
-                "content": "Agora, foi a sua vez de perder o emprego.",
-                "style": "full-screen",
-                "link_to": "4_5_07"
-            }]
+            "steps": [
+                {
+                    "content": "Agora, foi a sua vez de perder o emprego.",
+                    "style": "full-screen",
+                    "link_to": "4_5_07"
+                }
+            ]
         },
         "4_5_07": {
             "title": "4_5_07",
             "image": "04_05_007.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_5_08"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_5_08"
+                }
+            ]
         },
         "4_5_08": {
             "title": "4_5_08",
             "alternative_text": "",
             "image": "04_05_008.jpg",
             "language_image": true,
-            "steps": [{
-                "content": "Você concorda em pagar mais de condomínio?",
-                "style": "full-screen",
-                "link_to": "4_5_09"
-            }]
+            "steps": [
+                {
+                    "content": "Você concorda em pagar mais de condomínio?",
+                    "style": "full-screen",
+                    "link_to": "4_5_09"
+                }
+            ]
         },
         "4_5_09": {
             "title": "4_5_09",
             "image": "04_05_009.jpg",
             "language_image": true,
             "state": "laptop",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Pagar.",
                     "link_to": "4_5_10b"
                 },
@@ -1155,7 +1359,8 @@
             "alternative_text": "",
             "image": "04_05_0010A.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "4_5_09"
@@ -1172,7 +1377,8 @@
             "alternative_text": "",
             "image": "04_05_0010B.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "4_5_09"
@@ -1188,54 +1394,65 @@
             "title": "4_6_01",
             "alternative_text": "",
             "image": "04_06_0001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_6_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_6_02"
+                }
+            ]
         },
         "4_6_02": {
             "title": "4_6_02",
             "alternative_text": "",
             "image": "04_06_0002.jpg",
-            "steps": [{
-                "content": "A ajuda ensinou a comunidade a se proteger.",
-                "style": "full-screen",
-                "link_to": "4_6_03"
-            }]
+            "steps": [
+                {
+                    "content": "A ajuda ensinou a comunidade a se proteger.",
+                    "style": "full-screen",
+                    "link_to": "4_6_03"
+                }
+            ]
         },
         "4_6_03": {
             "title": "4_6_03",
             "alternative_text": "",
             "image": "04_06_0003.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_6_04"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_6_04"
+                }
+            ]
         },
         "4_6_04": {
             "title": "4_6_04",
             "alternative_text": "",
             "image": "04_06_0004.jpg",
-            "steps": [{
-                "content": "Porém, o governo prolonga o decreto de quarentena. O desemprego aumenta e atinge a todos.",
-                "style": "full-screen",
-                "link_to": "4_6_05"
-            }]
+            "steps": [
+                {
+                    "content": "Porém, o governo prolonga o decreto de quarentena. O desemprego aumenta e atinge a todos.",
+                    "style": "full-screen",
+                    "link_to": "4_6_05"
+                }
+            ]
         },
         "4_6_05": {
             "title": "4_6_05",
             "alternative_text": "",
             "image": "04_06_0005.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_6_06"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_6_06"
+                }
+            ]
         },
         "4_6_06": {
             "title": "4_6_06",
             "alternative_text": "",
             "image": "04_06_0006.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Pensar na sua família",
                     "style": "left bottom",
                     "link_to": "4_6_07a"
@@ -1251,7 +1468,8 @@
             "title": "4_6_07a",
             "alternative_text": "",
             "image": "04_07_08.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Melhor eu guardar minha reserva e pensar mais na minha família. Não sei o que o futuro me reserva.",
                     "style": "right center",
                     "link_to": "5_09_01"
@@ -1267,7 +1485,8 @@
             "title": "4_6_07b",
             "alternative_text": "",
             "image": "04_07_08.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Todo mundo está se ajudando. Não tem por que ter medo. Vou propor de dividir o que tenho de comida com todos.",
                     "style": "right center",
                     "link_to": "5_10_01"
@@ -1283,35 +1502,42 @@
             "title": "4_7_01",
             "alternative_text": "",
             "image": "04_07_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_7_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_7_02"
+                }
+            ]
         },
         "4_7_02": {
             "title": "4_7_02",
             "alternative_text": "",
             "image": "04_07_02.jpg",
-            "steps": [{
-                "content": "A quarentena se prolonga.",
-                "style": "full-screen",
-                "link_to": "4_7_07"
-            }]
+            "steps": [
+                {
+                    "content": "A quarentena se prolonga.",
+                    "style": "full-screen",
+                    "link_to": "4_7_07"
+                }
+            ]
         },
         "4_7_07": {
             "title": "4_7_07",
             "image": "04_07_07.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "4_7_08"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "4_7_08"
+                }
+            ]
         },
         "4_7_08": {
             "title": "4_7_08",
             "alternative_text": "",
             "image": "05_07_0004.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Estocar comida.",
                     "style": "left bottom",
                     "link_to": "4_7_09a"
@@ -1332,7 +1558,8 @@
             "title": "4_7_09a",
             "alternative_text": "",
             "image": "04_07_08.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Está cada vez pior. Vou estocar comida por seis meses... melhor me resguardar.",
                     "style": "right center",
                     "link_to": "5_09_01"
@@ -1348,7 +1575,8 @@
             "title": "4_7_09b",
             "alternative_text": "",
             "image": "04_07_08.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Não posso deixar meus vizinhos passarem fome. Vou doar dinheiro.",
                     "style": "right center",
                     "link_to": "5_10_01"
@@ -1364,7 +1592,8 @@
             "title": "4_7_09c",
             "alternative_text": "",
             "image": "04_07_08.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Se todo mundo se ajudar, ninguém vai precisar de ajuda. Vou montar um fundo colaborativo.",
                     "style": "right center",
                     "link_to": "5_11_01"
@@ -1380,26 +1609,31 @@
             "title": "5_01_01",
             "alternative_text": "",
             "image": "05_01_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_01_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_01_02"
+                }
+            ]
         },
         "5_01_02": {
             "title": "5_01_02",
             "alternative_text": "",
             "image": "05_01_02.jpg",
-            "steps": [{
-                "content": "O seu locador descobre suas transações e exige que você devolva o dinheiro para os vizinhos.",
-                "style": "full-screen",
-                "link_to": "5_01_03"
-            }]
+            "steps": [
+                {
+                    "content": "O seu locador descobre suas transações e exige que você devolva o dinheiro para os vizinhos.",
+                    "style": "full-screen",
+                    "link_to": "5_01_03"
+                }
+            ]
         },
         "5_01_03": {
             "title": "5_01_03",
             "alternative_text": "",
             "image": "05_01_03.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Não, preciso do dinheiro.",
                     "style": "left bottom",
                     "link_to": "5_01_04a"
@@ -1415,7 +1649,8 @@
             "title": "5_01_04a",
             "alternative_text": "",
             "image": "05_01_04A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "- Preciso do dinheiro. Só eu posso me ajudar.",
                     "style": "right center",
                     "link_to": "6_01_01"
@@ -1431,7 +1666,8 @@
             "title": "5_01_04b",
             "alternative_text": "",
             "image": "05_01_04A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "É. Acho que passei do limite. Ninguém se ajuda, infelizmente.",
                     "style": "right center",
                     "link_to": "6_02_01"
@@ -1447,45 +1683,54 @@
             "title": "5_02_01",
             "alternative_text": "",
             "image": "05_02_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_02_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_02_02"
+                }
+            ]
         },
         "5_02_02": {
             "title": "5_02_02",
             "alternative_text": "",
             "image": "05_02_002.jpg",
-            "steps": [{
-                "content": "Você foi pego roubando comida.",
-                "style": "full-screen",
-                "link_to": "5_02_03"
-            }]
+            "steps": [
+                {
+                    "content": "Você foi pego roubando comida.",
+                    "style": "full-screen",
+                    "link_to": "5_02_03"
+                }
+            ]
         },
         "5_02_03": {
             "title": "5_02_03",
             "alternative_text": "",
             "image": "05_02_003.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_02_04"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_02_04"
+                }
+            ]
         },
         "5_02_04": {
             "title": "5_02_04",
             "alternative_text": "",
             "image": "05_02_004.jpg",
-            "steps": [{
-                "content": "O síndico diz que se você devolver, tudo está resolvido.",
-                "style": "full-screen",
-                "link_to": "5_02_05"
-            }]
+            "steps": [
+                {
+                    "content": "O síndico diz que se você devolver, tudo está resolvido.",
+                    "style": "full-screen",
+                    "link_to": "5_02_05"
+                }
+            ]
         },
         "5_02_05": {
             "title": "5_02_05",
             "alternative_text": "",
             "image": "05_02_005.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Devolvo, se devolverem antes.",
                     "style": "left bottom",
                     "link_to": "5_02_06a"
@@ -1501,7 +1746,8 @@
             "title": "5_02_06a",
             "alternative_text": "",
             "image": "05_02_006B.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "- Olho por olho, dente por dente. Se devolverem a minha, devolvo a que roubei.",
                     "style": "right center",
                     "link_to": "06_03_01"
@@ -1517,7 +1763,8 @@
             "title": "5_02_06b",
             "alternative_text": "",
             "image": "05_02_006B.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "-É acho que passei do limite. Melhor cortar o problema pela raiz.",
                     "style": "right center",
                     "link_to": "06_04_01"
@@ -1533,35 +1780,42 @@
             "title": "5_03_01",
             "alternative_text": "",
             "image": "05_02_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_03_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_03_02"
+                }
+            ]
         },
         "5_03_02": {
             "title": "5_03_02",
             "alternative_text": "",
             "image": "05_03_02.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_03_03"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_03_03"
+                }
+            ]
         },
         "5_03_03": {
             "title": "5_03_03",
             "alternative_text": "",
             "image": "05_03_03.jpg",
-            "steps": [{
-                "content": "Você consegue as imagens da câmera de segurança.",
-                "style": "full-screen",
-                "link_to": "5_03_04"
-            }]
+            "steps": [
+                {
+                    "content": "Você consegue as imagens da câmera de segurança.",
+                    "style": "full-screen",
+                    "link_to": "5_03_04"
+                }
+            ]
         },
         "5_03_04": {
             "title": "5_03_04",
             "alternative_text": "",
             "image": "05_01_03.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Vou denunciar para a justiça.",
                     "style": "left bottom",
                     "link_to": "5_03_05a"
@@ -1577,7 +1831,8 @@
             "title": "5_03_05a",
             "alternative_text": "",
             "image": "05_03_05A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Melhor deixar a polícia lidar com isso.",
                     "style": "right center",
                     "link_to": "6_05_01"
@@ -1593,7 +1848,8 @@
             "title": "5_03_05b",
             "alternative_text": "",
             "image": "05_03_05A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Se ele me devolver o que é meu. Ninguém precisa ser preso.",
                     "style": "right center",
                     "link_to": "6_06_01"
@@ -1609,25 +1865,30 @@
             "title": "5_04_01",
             "alternative_text": "",
             "image": "04_06_0005.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_04_06"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_04_06"
+                }
+            ]
         },
         "5_04_06": {
             "title": "5_04_06",
             "image": "05_04_06.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_04_07"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_04_07"
+                }
+            ]
         },
         "5_04_07": {
             "title": "5_04_07",
             "image": "02_02_08.jpg",
             "state": "smartphone",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Sim.",
                     "link_to": "5_04_08a"
                 },
@@ -1642,7 +1903,8 @@
             "alternative_text": "",
             "image": "05_04_08A.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "5_04_07"
@@ -1659,7 +1921,8 @@
             "alternative_text": "",
             "image": "05_04_08B.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "5_04_07"
@@ -1675,26 +1938,31 @@
             "title": "5_05_01",
             "alternative_text": "",
             "image": "05_05_0001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_05_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_05_02"
+                }
+            ]
         },
         "5_05_02": {
             "title": "5_05_02",
             "alternative_text": "",
             "image": "05_05_0002.jpg",
-            "steps": [{
-                "content": "Valeu a pena estocar comida pois a cidade está com problemas de abastecimento.",
-                "style": "full-screen",
-                "link_to": "5_05_03"
-            }]
+            "steps": [
+                {
+                    "content": "Valeu a pena estocar comida pois a cidade está com problemas de abastecimento.",
+                    "style": "full-screen",
+                    "link_to": "5_05_03"
+                }
+            ]
         },
         "5_05_03": {
             "title": "5_05_03",
             "alternative_text": "",
             "image": "05_05_0003.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Manter o estoque.",
                     "style": "left bottom",
                     "link_to": "5_05_04a"
@@ -1710,7 +1978,8 @@
             "title": "5_05_04a",
             "alternative_text": "",
             "image": "05_05_004A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Eu fiz a coisa certa... Melhor prevenir do que remediar.",
                     "style": "right center",
                     "link_to": "6_09_01"
@@ -1726,7 +1995,8 @@
             "title": "5_05_04b",
             "alternative_text": "",
             "image": "05_05_004A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Vou dividir o que tenho... Precisam tanto quanto eu.",
                     "style": "right center",
                     "link_to": "6_10_01"
@@ -1742,25 +2012,30 @@
             "title": "5_06_01",
             "alternative_text": "",
             "image": "04_06_0006.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_06_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_06_05"
+                }
+            ]
         },
         "5_06_05": {
             "title": "5_06_05",
             "image": "05_06_05.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_06_06"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_06_06"
+                }
+            ]
         },
         "5_06_06": {
             "title": "5_06_06",
             "image": "03_02_10.jpg",
             "state": "smartphone",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Demitir.",
                     "link_to": "5_06_07a"
                 },
@@ -1775,7 +2050,8 @@
             "alternative_text": "",
             "image": "05_06_07A.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "5_06_06"
@@ -1792,7 +2068,8 @@
             "alternative_text": "",
             "image": "05_06_07B.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "5_06_06"
@@ -1808,35 +2085,42 @@
             "title": "5_7_01",
             "alternative_text": "",
             "image": "05_07_0001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_7_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_7_02"
+                }
+            ]
         },
         "5_7_02": {
             "title": "5_7_02",
             "alternative_text": "",
             "image": "05_07_0002.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_7_03"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_7_03"
+                }
+            ]
         },
         "5_7_03": {
             "title": "5_7_03",
             "alternative_text": "",
             "image": "05_07_0002.jpg",
-            "steps": [{
-                "content": "Um dos seus vizinhos está infectado, em estado grave. E te pede dinheiro para remédios.",
-                "style": "full-screen",
-                "link_to": "5_7_04"
-            }]
+            "steps": [
+                {
+                    "content": "Um dos seus vizinhos está infectado, em estado grave. E te pede dinheiro para remédios.",
+                    "style": "full-screen",
+                    "link_to": "5_7_04"
+                }
+            ]
         },
         "5_7_04": {
             "title": "5_7_04",
             "alternative_text": "",
             "image": "05_07_0004.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Emprestar dinheiro.",
                     "style": "left bottom",
                     "link_to": "5_7_05a"
@@ -1857,7 +2141,8 @@
             "title": "5_7_05a",
             "alternative_text": "",
             "image": "04_07_08.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Claro, faço questão de ajudar.",
                     "style": "right center",
                     "link_to": "6_14_01"
@@ -1873,7 +2158,8 @@
             "title": "5_7_05b",
             "alternative_text": "",
             "image": "04_07_08.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Não posso, estou economizando.",
                     "style": "right center",
                     "link_to": "6_15_01"
@@ -1889,7 +2175,8 @@
             "title": "5_7_05c",
             "alternative_text": "",
             "image": "04_07_08.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Se eu ajudar todo mundo, um dia serei eu que precisarei de ajuda.",
                     "style": "right center",
                     "link_to": "6_13_01"
@@ -1905,26 +2192,31 @@
             "title": "5_08_01",
             "alternative_text": "",
             "image": "05_08_0001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_08_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_08_02"
+                }
+            ]
         },
         "5_08_02": {
             "title": "5_08_02",
             "alternative_text": "",
             "image": "05_08_0002.jpg",
-            "steps": [{
-                "content": "Os vizinhos descobrem suas reservas financeiras. E te pedem empréstimos.",
-                "style": "full-screen",
-                "link_to": "5_08_03"
-            }]
+            "steps": [
+                {
+                    "content": "Os vizinhos descobrem suas reservas financeiras. E te pedem empréstimos.",
+                    "style": "full-screen",
+                    "link_to": "5_08_03"
+                }
+            ]
         },
         "5_08_03": {
             "title": "5_08_03",
             "alternative_text": "",
             "image": "05_08_0003.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Chega.",
                     "style": "left bottom",
                     "link_to": "5_08_04a"
@@ -1940,7 +2232,8 @@
             "title": "5_08_04a",
             "alternative_text": "",
             "image": "05_08_0004_A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Você dá a mão, eles pedem o braço. Chega.",
                     "style": "right center",
                     "link_to": "6_16_01"
@@ -1956,7 +2249,8 @@
             "title": "5_08_04b",
             "alternative_text": "",
             "image": "05_08_0004_A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Não estou em posição de decidir o que é importante.",
                     "style": "right center",
                     "link_to": "6_17_01"
@@ -1972,45 +2266,54 @@
             "title": "5_09_01",
             "alternative_text": "",
             "image": "05_09_0001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_09_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_09_02"
+                }
+            ]
         },
         "5_09_02": {
             "title": "5_09_02",
             "alternative_text": "",
             "image": "05_09_0002.jpg",
-            "steps": [{
-                "content": "Você foi demitido do seu emprego.",
-                "style": "full-screen",
-                "link_to": "5_09_03"
-            }]
+            "steps": [
+                {
+                    "content": "Você foi demitido do seu emprego.",
+                    "style": "full-screen",
+                    "link_to": "5_09_03"
+                }
+            ]
         },
         "5_09_03": {
             "title": "5_09_03",
             "alternative_text": "",
             "image": "05_09_0003.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_09_04"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_09_04"
+                }
+            ]
         },
         "5_09_04": {
             "title": "5_09_04",
             "alternative_text": "",
             "image": "05_08_0002.jpg",
-            "steps": [{
-                "content": "Um dos seus vizinhos te oferece ajuda financeira num modelo de gerenciamento coletivo.",
-                "style": "full-screen",
-                "link_to": "5_09_05"
-            }]
+            "steps": [
+                {
+                    "content": "Um dos seus vizinhos te oferece ajuda financeira num modelo de gerenciamento coletivo.",
+                    "style": "full-screen",
+                    "link_to": "5_09_05"
+                }
+            ]
         },
         "5_09_05": {
             "title": "5_09_05",
             "alternative_text": "",
             "image": "05_09_0005.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Aceitar ajuda.",
                     "style": "left bottom",
                     "link_to": "5_09_06a"
@@ -2026,7 +2329,8 @@
             "title": "5_09_06a",
             "alternative_text": "",
             "image": "05_08_0004_A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Preciso aprender a aceitar a ajuda dos outros.",
                     "style": "right center",
                     "link_to": "6_19_01"
@@ -2042,7 +2346,8 @@
             "title": "5_09_06b",
             "alternative_text": "",
             "image": "05_08_0004_A.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Não. Melhor eu ir para outro lugar e pagar minhas contas.",
                     "style": "right center",
                     "link_to": "6_18_01"
@@ -2058,44 +2363,53 @@
             "title": "5_10_01",
             "alternative_text": "",
             "image": "05_10_0001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_10_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_10_02"
+                }
+            ]
         },
         "5_10_02": {
             "title": "5_10_02",
             "alternative_text": "",
             "image": "05_10_0002.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_10_03"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_10_03"
+                }
+            ]
         },
         "5_10_03": {
             "title": "5_10_03",
             "alternative_text": "",
             "image": "05_10_0003.jpg",
-            "steps": [{
-                "content": "Ratear a comida fomentou a comunidade.",
-                "style": "full-screen",
-                "link_to": "5_10_04"
-            }]
+            "steps": [
+                {
+                    "content": "Ratear a comida fomentou a comunidade.",
+                    "style": "full-screen",
+                    "link_to": "5_10_04"
+                }
+            ]
         },
         "5_10_04": {
             "title": "5_10_04",
             "image": "05_10_0004.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_10_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_10_05"
+                }
+            ]
         },
         "5_10_05": {
             "title": "5_10_05",
             "image": "05_10_0005.jpg",
             "state": "smartphone",
-            "steps": [{
+            "steps": [
+                {
                     "content": "1. Aceitar",
                     "link_to": "5_10_06a"
                 },
@@ -2110,7 +2424,8 @@
             "alternative_text": "",
             "image": "05_10_06A.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "5_10_05"
@@ -2127,7 +2442,8 @@
             "alternative_text": "",
             "image": "05_10_06B.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "5_10_05"
@@ -2143,35 +2459,42 @@
             "title": "5_11_01",
             "alternative_text": "",
             "image": "05_11_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_11_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_11_02"
+                }
+            ]
         },
         "5_11_02": {
             "title": "5_11_02",
             "alternative_text": "",
             "image": "05_11_02.jpg",
-            "steps": [{
-                "content": "Se todo mundo se ajudar, ninguém vai precisar de ajuda.\nA sua ideia viraliza e fomenta diversas pequenas comunidades.",
-                "style": "full-screen",
-                "link_to": "5_11_03"
-            }]
+            "steps": [
+                {
+                    "content": "Se todo mundo se ajudar, ninguém vai precisar de ajuda.\nA sua ideia viraliza e fomenta diversas pequenas comunidades.",
+                    "style": "full-screen",
+                    "link_to": "5_11_03"
+                }
+            ]
         },
         "5_11_03": {
             "title": "5_11_03",
             "image": "05_11_03.jpg",
             "language_image": true,
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "5_11_04"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "5_11_04"
+                }
+            ]
         },
         "5_11_04": {
             "title": "5_11_04",
             "image": "05_10_0005.jpg",
             "state": "smartphone",
-            "steps": [{
+            "steps": [
+                {
                     "content": "Montar um negócio.",
                     "link_to": "5_11_05a"
                 },
@@ -2186,7 +2509,8 @@
             "alternative_text": "",
             "image": "05_11_05A.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "5_11_04"
@@ -2203,7 +2527,8 @@
             "alternative_text": "",
             "image": "05_11_05B.jpg",
             "language_image": true,
-            "steps": [{
+            "steps": [
+                {
                     "content": "",
                     "style": "full-left",
                     "link_to": "5_11_04"
@@ -2219,20 +2544,24 @@
             "title": "6_01_01",
             "alternative_text": "",
             "image": "06_01_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "06_01_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "06_01_02"
+                }
+            ]
         },
         "06_01_02": {
             "title": "06_01_02",
             "alternative_text": "",
             "image": "06_01_002.jpg",
-            "steps": [{
-                "content": "Seu locador acionou um advogado e você é despejado do apartamento.",
-                "style": "full-screen",
-                "link_to": "6_01_03"
-            }]
+            "steps": [
+                {
+                    "content": "Seu locador acionou um advogado e você é despejado do apartamento.",
+                    "style": "full-screen",
+                    "link_to": "6_01_03"
+                }
+            ]
         },
         "6_01_03": {
             "title": "6_01_03",
@@ -2240,7 +2569,8 @@
             "image": "06_01_03.jpg",
             "ending": "ENDING_TURISTA",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -2256,16 +2586,19 @@
             "title": "6_01_04",
             "alternative_text": "",
             "image": "06_01_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_01_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_01_05"
+                }
+            ]
         },
         "6_01_05": {
             "title": "6_01_05",
             "alternative_text": "",
             "image": "06_01_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UM TURISTA NO AEROPORTO\nVocê pode se abrir para novas oportunidades.",
                     "style": "full-screen",
                     "finish": true
@@ -2281,29 +2614,35 @@
             "title": "6_02_01",
             "alternative_text": "",
             "image": "06_02_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "06_02_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "06_02_02"
+                }
+            ]
         },
         "06_02_02": {
             "title": "06_02_02",
             "alternative_text": "",
             "image": "06_02_002.jpg",
-            "steps": [{
-                "content": " Seus vizinhos te isolaram e você decide mudar de apartamento.",
-                "style": "full-screen",
-                "link_to": "6_02_03"
-            }]
+            "steps": [
+                {
+                    "content": " Seus vizinhos te isolaram e você decide mudar de apartamento.",
+                    "style": "full-screen",
+                    "link_to": "6_02_03"
+                }
+            ]
         },
         "6_02_03": {
             "title": "6_02_03",
             "alternative_text": "",
             "image": "06_02_03.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "06_02_04"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "06_02_04"
+                }
+            ]
         },
         "06_02_04": {
             "title": "6_02_04",
@@ -2311,7 +2650,8 @@
             "image": "06_02_04.jpg",
             "ending": "ENDING_BORBOLETA",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -2327,16 +2667,19 @@
             "title": "6_02_05",
             "alternative_text": "",
             "image": "06_02_05.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "06_02_06"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "06_02_06"
+                }
+            ]
         },
         "06_02_06": {
             "title": "6_02_06",
             "alternative_text": "",
             "image": "06_02_06.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UMA BORBOLETA SAINDO DO CASULO\nSe você enfrentar seus medos, vai se transformar.",
                     "style": "full-screen",
                     "finish": true
@@ -2352,29 +2695,35 @@
             "title": "6_03_01",
             "alternative_text": "",
             "image": "06_03_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "06_03_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "06_03_02"
+                }
+            ]
         },
         "06_03_02": {
             "title": "06_03_02",
             "alternative_text": "",
             "image": "06_03_002.jpg",
-            "steps": [{
-                "content": "Você não recebe sua comida de volta.\nSeus vizinhos te processam e você é despejado.",
-                "style": "full-screen",
-                "link_to": "6_03_03"
-            }]
+            "steps": [
+                {
+                    "content": "Você não recebe sua comida de volta.\nSeus vizinhos te processam e você é despejado.",
+                    "style": "full-screen",
+                    "link_to": "6_03_03"
+                }
+            ]
         },
         "6_03_03": {
             "title": "6_03_03",
             "alternative_text": "",
             "image": "06_01_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "06_03_04"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "06_03_04"
+                }
+            ]
         },
         "06_03_04": {
             "title": "6_03_04",
@@ -2382,7 +2731,8 @@
             "image": "06_03_04.jpg",
             "ending": "ENDING_TURISTA",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -2398,16 +2748,19 @@
             "title": "6_03_05",
             "alternative_text": "",
             "image": "06_01_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_03_06"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_03_06"
+                }
+            ]
         },
         "6_03_06": {
             "title": "6_03_06",
             "alternative_text": "",
             "image": "06_01_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UM TURISTA NO AEROPORTO\nVocê pode se abrir para novas oportunidades.",
                     "style": "full-screen",
                     "finish": true
@@ -2423,29 +2776,35 @@
             "title": "6_04_01",
             "alternative_text": "",
             "image": "06_04_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "06_04_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "06_04_02"
+                }
+            ]
         },
         "06_04_02": {
             "title": "06_04_02",
             "alternative_text": "",
             "image": "06_04_02.jpg",
-            "steps": [{
-                "content": "Seus vizinhos não aprovam sua atitude e te isolam.\nVocê muda de apartamento.",
-                "style": "full-screen",
-                "link_to": "6_04_03"
-            }]
+            "steps": [
+                {
+                    "content": "Seus vizinhos não aprovam sua atitude e te isolam.\nVocê muda de apartamento.",
+                    "style": "full-screen",
+                    "link_to": "6_04_03"
+                }
+            ]
         },
         "6_04_03": {
             "title": "6_04_03",
             "alternative_text": "",
             "image": "06_02_03.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "06_04_04"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "06_04_04"
+                }
+            ]
         },
         "06_04_04": {
             "title": "06_04_04",
@@ -2453,7 +2812,8 @@
             "image": "06_04_04.jpg",
             "ending": "ENDING_BORBOLETA",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -2469,16 +2829,19 @@
             "title": "6_04_05",
             "alternative_text": "",
             "image": "06_02_05.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_04_06"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_04_06"
+                }
+            ]
         },
         "6_04_06": {
             "title": "6_04_06",
             "alternative_text": "",
             "image": "06_02_06.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UMA BORBOLETA SAINDO DO CASULO\nSe você enfrentar seus medos, vai se transformar.",
                     "style": "full-screen",
                     "finish": true
@@ -2494,20 +2857,24 @@
             "title": "6_05_01",
             "alternative_text": "",
             "image": "06_03_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "06_05_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "06_05_02"
+                }
+            ]
         },
         "06_05_02": {
             "title": "06_05_02",
             "alternative_text": "",
             "image": "06_03_002.jpg",
-            "steps": [{
-                "content": "Fica mais difícil confiar nas pessoas. Você se isola.",
-                "style": "full-screen",
-                "link_to": "6_05_03"
-            }]
+            "steps": [
+                {
+                    "content": "Fica mais difícil confiar nas pessoas. Você se isola.",
+                    "style": "full-screen",
+                    "link_to": "6_05_03"
+                }
+            ]
         },
         "6_05_03": {
             "title": "6_05_03",
@@ -2515,7 +2882,8 @@
             "image": "06_05_03.jpg",
             "ending": "ENDING_BORBOLETA",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -2531,16 +2899,19 @@
             "title": "6_05_04",
             "alternative_text": "",
             "image": "06_02_05.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_05_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_05_05"
+                }
+            ]
         },
         "6_05_05": {
             "title": "6_05_05",
             "alternative_text": "",
             "image": "06_02_06.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UMA BORBOLETA SAINDO DO CASULO\nSe você enfrentar seus medos, vai se transformar.",
                     "style": "full-screen",
                     "finish": true
@@ -2556,20 +2927,24 @@
             "title": "6_06_01",
             "alternative_text": "",
             "image": "06_02_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "06_06_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "06_06_02"
+                }
+            ]
         },
         "06_06_02": {
             "title": "06_06_02",
             "alternative_text": "",
             "image": "06_02_002.jpg",
-            "steps": [{
-                "content": "Ela te reembolsa. Você se isola da comunidade. As pessoas não sabem se ajudar.",
-                "style": "full-screen",
-                "link_to": "6_06_03"
-            }]
+            "steps": [
+                {
+                    "content": "Ela te reembolsa. Você se isola da comunidade. As pessoas não sabem se ajudar.",
+                    "style": "full-screen",
+                    "link_to": "6_06_03"
+                }
+            ]
         },
         "6_06_03": {
             "title": "6_06_03",
@@ -2577,7 +2952,8 @@
             "image": "06_06_03.jpg",
             "ending": "ENDING_OCIDENTAL",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -2593,16 +2969,19 @@
             "title": "6_06_04",
             "alternative_text": "",
             "image": "06_06_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_06_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_06_05"
+                }
+            ]
         },
         "6_06_05": {
             "title": "6_06_05",
             "alternative_text": "",
             "image": "06_06_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UM OCIDENTAL NUMA LAVANDERIA ORIENTAL\nSomos todos iguais, não importa a diferença.",
                     "style": "full-screen",
                     "finish": true
@@ -2618,20 +2997,24 @@
             "title": "6_07_01",
             "alternative_text": "",
             "image": "06_04_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "06_07_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "06_07_02"
+                }
+            ]
         },
         "06_07_02": {
             "title": "06_07_02",
             "alternative_text": "",
             "image": "06_04_02.jpg",
-            "steps": [{
-                "content": "Por falta de confiança. Seus vizinhos te isolam.",
-                "style": "full-screen",
-                "link_to": "6_07_03"
-            }]
+            "steps": [
+                {
+                    "content": "Por falta de confiança. Seus vizinhos te isolam.",
+                    "style": "full-screen",
+                    "link_to": "6_07_03"
+                }
+            ]
         },
         "6_07_03": {
             "title": "6_07_03",
@@ -2639,7 +3022,8 @@
             "image": "06_07_03.jpg",
             "ending": "ENDING_OCIDENTAL",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -2655,16 +3039,19 @@
             "title": "6_07_04",
             "alternative_text": "",
             "image": "06_06_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_07_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_07_05"
+                }
+            ]
         },
         "6_07_05": {
             "title": "6_07_05",
             "alternative_text": "",
             "image": "06_06_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UM OCIDENTAL NUMA LAVANDERIA ORIENTAL\nSomos todos iguais, não importa a diferença.",
                     "style": "full-screen",
                     "finish": true
@@ -2680,20 +3067,24 @@
             "title": "6_08_01",
             "alternative_text": "",
             "image": "06_04_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "06_04_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "06_04_02"
+                }
+            ]
         },
         "6_08_02": {
             "title": "6_08_02",
             "alternative_text": "",
             "image": "06_02_002.jpg",
-            "steps": [{
-                "content": "O teste dá negativo. Os vizinhos te agradecem. Você continua isolado até o fim da quarentena.",
-                "style": "full-screen",
-                "link_to": "6_08_03"
-            }]
+            "steps": [
+                {
+                    "content": "O teste dá negativo. Os vizinhos te agradecem. Você continua isolado até o fim da quarentena.",
+                    "style": "full-screen",
+                    "link_to": "6_08_03"
+                }
+            ]
         },
         "6_08_03": {
             "title": "6_08_03",
@@ -2701,7 +3092,8 @@
             "image": "06_08_003.jpg",
             "ending": "ENDING_MEDITANDO",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -2717,16 +3109,19 @@
             "title": "6_08_04",
             "alternative_text": "",
             "image": "06_08_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_08_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_08_05"
+                }
+            ]
         },
         "6_08_05": {
             "title": "6_08_05",
             "alternative_text": "",
             "image": "06_08_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UMA MULHER MEDITANDO\nVocê encontra paz interior e aprende a escutar o tempo.",
                     "style": "full-screen",
                     "finish": true
@@ -2742,20 +3137,24 @@
             "title": "6_09_01",
             "alternative_text": "",
             "image": "06_02_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_09_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_09_02"
+                }
+            ]
         },
         "6_09_02": {
             "title": "6_09_02",
             "alternative_text": "",
             "image": "06_02_002.jpg",
-            "steps": [{
-                "content": "A pandemia muda o mundo e você tem dificuldade de se adaptar às mudanças",
-                "style": "full-screen",
-                "link_to": "6_09_03"
-            }]
+            "steps": [
+                {
+                    "content": "A pandemia muda o mundo e você tem dificuldade de se adaptar às mudanças",
+                    "style": "full-screen",
+                    "link_to": "6_09_03"
+                }
+            ]
         },
         "6_09_03": {
             "title": "6_09_03",
@@ -2763,7 +3162,8 @@
             "image": "06_09_003.jpg",
             "ending": "ENDING_LENDO",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -2779,16 +3179,19 @@
             "title": "6_09_04",
             "alternative_text": "",
             "image": "06_09_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_09_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_09_05"
+                }
+            ]
         },
         "6_09_05": {
             "title": "6_09_05",
             "alternative_text": "",
             "image": "06_09_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UM HOMEM LENDO DEZENAS DE LIVROS\nPara realmente mudar, você precisa deixar o passado para trás.",
                     "style": "full-screen",
                     "finish": true
@@ -2804,20 +3207,24 @@
             "title": "6_10_01",
             "alternative_text": "",
             "image": "05_10_0002.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_10_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_10_02"
+                }
+            ]
         },
         "6_10_02": {
             "title": "6_10_02",
             "alternative_text": "",
             "image": "05_10_0003.jpg",
-            "steps": [{
-                "content": "Você percebe que a ajuda mútua te fortaleceu.",
-                "style": "full-screen",
-                "link_to": "6_10_03"
-            }]
+            "steps": [
+                {
+                    "content": "Você percebe que a ajuda mútua te fortaleceu.",
+                    "style": "full-screen",
+                    "link_to": "6_10_03"
+                }
+            ]
         },
         "6_10_03": {
             "title": "6_10_03",
@@ -2825,7 +3232,8 @@
             "image": "06_010_003.jpg",
             "ending": "ENDING_ENFERMEIRA",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -2841,16 +3249,19 @@
             "title": "6_10_04",
             "alternative_text": "",
             "image": "06_10_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_10_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_10_05"
+                }
+            ]
         },
         "6_10_05": {
             "title": "6_10_05",
             "alternative_text": "",
             "image": "06_10_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UMA ENFERMEIRA DA CRUZ VERMELHA\nVocê sabe ajudar o outro. E isso te leva pra frente.",
                     "style": "full-screen",
                     "finish": true
@@ -2866,20 +3277,24 @@
             "title": "6_11_01",
             "alternative_text": "",
             "image": "06_011_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_11_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_11_02"
+                }
+            ]
         },
         "6_11_02": {
             "title": "6_11_02",
             "alternative_text": "",
             "image": "06_011_002.jpg",
-            "steps": [{
-                "content": "Seu condomínio é invadido e alguns carros roubados. Por isso, você prefere se isolar ainda mais em seu apartamento.",
-                "style": "full-screen",
-                "link_to": "6_11_03"
-            }]
+            "steps": [
+                {
+                    "content": "Seu condomínio é invadido e alguns carros roubados. Por isso, você prefere se isolar ainda mais em seu apartamento.",
+                    "style": "full-screen",
+                    "link_to": "6_11_03"
+                }
+            ]
         },
         "6_11_03": {
             "title": "6_11_03",
@@ -2887,7 +3302,8 @@
             "image": "06_011_003.jpg",
             "ending": "ENDING_OCIDENTAL",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -2903,16 +3319,19 @@
             "title": "6_11_04",
             "alternative_text": "",
             "image": "06_06_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_11_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_11_05"
+                }
+            ]
         },
         "6_11_05": {
             "title": "6_11_05",
             "alternative_text": "",
             "image": "06_06_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UM OCIDENTAL NUMA LAVANDERIA ORIENTAL\nSomos todos iguais, não importa a diferença.",
                     "style": "full-screen",
                     "finish": true
@@ -2928,29 +3347,35 @@
             "title": "6_12_01",
             "alternative_text": "",
             "image": "06_012_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_12_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_12_02"
+                }
+            ]
         },
         "6_12_02": {
             "title": "6_12_02",
             "alternative_text": "",
             "image": "05_10_0002.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_12_03"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_12_03"
+                }
+            ]
         },
         "6_12_03": {
             "title": "6_12_03",
             "alternative_text": "",
             "image": "06_012_03.jpg",
-            "steps": [{
-                "content": "Vocês todos ganham um bolo de presente do porteiro.\nO gesto parece unir a comunidade. ",
-                "style": "full-screen",
-                "link_to": "6_12_04"
-            }]
+            "steps": [
+                {
+                    "content": "Vocês todos ganham um bolo de presente do porteiro.\nO gesto parece unir a comunidade. ",
+                    "style": "full-screen",
+                    "link_to": "6_12_04"
+                }
+            ]
         },
         "6_12_04": {
             "title": "6_12_04",
@@ -2958,7 +3383,8 @@
             "image": "06_012_004.jpg",
             "ending": "ENDING_MEDITANDO",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -2974,16 +3400,19 @@
             "title": "6_12_05",
             "alternative_text": "",
             "image": "06_08_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_12_06"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_12_06"
+                }
+            ]
         },
         "6_12_06": {
             "title": "6_12_06",
             "alternative_text": "",
             "image": "06_08_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UMA MULHER MEDITANDO\nVocê encontra paz interior e aprende a escutar o tempo.",
                     "style": "full-screen",
                     "finish": true
@@ -2999,20 +3428,24 @@
             "title": "6_13_01",
             "alternative_text": "",
             "image": "06_013_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_13_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_13_02"
+                }
+            ]
         },
         "6_13_02": {
             "title": "6_13_02",
             "alternative_text": "",
             "image": "06_013_02.jpg",
-            "steps": [{
-                "content": "Você saiu do grupo sem fazer alvoroço e passou o resto da quarentena tentando se reestruturar.",
-                "style": "full-screen",
-                "link_to": "6_13_03"
-            }]
+            "steps": [
+                {
+                    "content": "Você saiu do grupo sem fazer alvoroço e passou o resto da quarentena tentando se reestruturar.",
+                    "style": "full-screen",
+                    "link_to": "6_13_03"
+                }
+            ]
         },
         "6_13_03": {
             "title": "6_13_03",
@@ -3020,7 +3453,8 @@
             "image": "06_013_003.jpg",
             "ending": "ENDING_MEDITANDO",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -3036,16 +3470,19 @@
             "title": "6_13_04",
             "alternative_text": "",
             "image": "06_08_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_13_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_13_05"
+                }
+            ]
         },
         "6_13_05": {
             "title": "6_13_05",
             "alternative_text": "",
             "image": "06_08_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UMA MULHER MEDITANDO\nVocê encontra paz interior e aprende a escutar o tempo.",
                     "style": "full-screen",
                     "finish": true
@@ -3061,20 +3498,24 @@
             "title": "6_14_01",
             "alternative_text": "",
             "image": "06_014_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_14_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_14_02"
+                }
+            ]
         },
         "6_14_02": {
             "title": "6_14_02",
             "alternative_text": "",
             "image": "06_014_002.jpg",
-            "steps": [{
-                "content": "A  ajuda mútua te fortaleceu para viver esse momento.",
-                "style": "full-screen",
-                "link_to": "6_14_03"
-            }]
+            "steps": [
+                {
+                    "content": "A  ajuda mútua te fortaleceu para viver esse momento.",
+                    "style": "full-screen",
+                    "link_to": "6_14_03"
+                }
+            ]
         },
         "6_14_03": {
             "title": "6_14_03",
@@ -3082,7 +3523,8 @@
             "image": "06_014_003.jpg",
             "ending": "ENDING_ENFERMEIRA",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -3098,16 +3540,19 @@
             "title": "6_14_04",
             "alternative_text": "",
             "image": "06_10_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_14_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_14_05"
+                }
+            ]
         },
         "6_14_05": {
             "title": "6_14_05",
             "alternative_text": "",
             "image": "06_10_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UMA ENFERMEIRA DA CRUZ VERMELHA\nVocê sabe ajudar o outro. E isso te leva pra frente.",
                     "style": "full-screen",
                     "finish": true
@@ -3123,20 +3568,24 @@
             "title": "6_15_01",
             "alternative_text": "",
             "image": "06_015_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_15_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_15_02"
+                }
+            ]
         },
         "6_15_02": {
             "title": "6_15_02",
             "alternative_text": "",
             "image": "06_015_002.jpg",
-            "steps": [{
-                "content": "O medo do futuro te paralisou.\nVocê dá um passo para trás para tentar se organizar.",
-                "style": "full-screen",
-                "link_to": "6_15_03"
-            }]
+            "steps": [
+                {
+                    "content": "O medo do futuro te paralisou.\nVocê dá um passo para trás para tentar se organizar.",
+                    "style": "full-screen",
+                    "link_to": "6_15_03"
+                }
+            ]
         },
         "6_15_03": {
             "title": "6_15_03",
@@ -3144,7 +3593,8 @@
             "image": "06_015_003.jpg",
             "ending": "ENDING_LENDO",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -3160,16 +3610,19 @@
             "title": "6_15_04",
             "alternative_text": "",
             "image": "06_09_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_15_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_15_05"
+                }
+            ]
         },
         "6_15_05": {
             "title": "6_15_05",
             "alternative_text": "",
             "image": "06_09_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UM HOMEM LENDO DEZENAS DE LIVROS\nPara realmente mudar, você precisa deixar o passado para trás.",
                     "style": "full-screen",
                     "finish": true
@@ -3185,20 +3638,24 @@
             "title": "6_16_01",
             "alternative_text": "",
             "image": "06_013_01.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_16_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_16_02"
+                }
+            ]
         },
         "6_16_02": {
             "title": "6_16_02",
             "alternative_text": "",
             "image": "06_013_02.jpg",
-            "steps": [{
-                "content": "Você cortou relações com alguns vizinhos.\nAs pessoas parecem não ter limites. ",
-                "style": "full-screen",
-                "link_to": "6_16_03"
-            }]
+            "steps": [
+                {
+                    "content": "Você cortou relações com alguns vizinhos.\nAs pessoas parecem não ter limites. ",
+                    "style": "full-screen",
+                    "link_to": "6_16_03"
+                }
+            ]
         },
         "6_16_03": {
             "title": "6_16_03",
@@ -3206,7 +3663,8 @@
             "image": "06_016_003.jpg",
             "ending": "ENDING_OCIDENTAL",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -3222,16 +3680,19 @@
             "title": "6_16_04",
             "alternative_text": "",
             "image": "06_06_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_16_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_16_05"
+                }
+            ]
         },
         "6_16_05": {
             "title": "6_16_05",
             "alternative_text": "",
             "image": "06_06_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UM OCIDENTAL NUMA LAVANDERIA ORIENTAL\nSomos todos iguais, não importa a diferença.",
                     "style": "full-screen",
                     "finish": true
@@ -3247,29 +3708,35 @@
             "title": "6_17_01",
             "alternative_text": "",
             "image": "06_014_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_17_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_17_02"
+                }
+            ]
         },
         "6_17_02": {
             "title": "6_17_02",
             "alternative_text": "",
             "image": "06_017_002.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_17_03"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_17_03"
+                }
+            ]
         },
         "6_17_03": {
             "title": "6_17_03",
             "alternative_text": "",
             "image": "06_017_003.jpg",
-            "steps": [{
-                "content": "A ajuda mútua te faz sonhar num mundo melhor.",
-                "style": "full-screen",
-                "link_to": "6_17_04"
-            }]
+            "steps": [
+                {
+                    "content": "A ajuda mútua te faz sonhar num mundo melhor.",
+                    "style": "full-screen",
+                    "link_to": "6_17_04"
+                }
+            ]
         },
         "6_17_04": {
             "title": "6_17_04",
@@ -3277,7 +3744,8 @@
             "image": "06_017_004.jpg",
             "ending": "ENDING_MEDITANDO",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -3293,16 +3761,19 @@
             "title": "6_17_05",
             "alternative_text": "",
             "image": "06_08_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_17_06"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_17_06"
+                }
+            ]
         },
         "6_17_06": {
             "title": "6_17_06",
             "alternative_text": "",
             "image": "06_08_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UMA MULHER MEDITANDO\nVocê encontra paz interior e aprende a escutar o tempo.",
                     "style": "full-screen",
                     "finish": true
@@ -3318,20 +3789,24 @@
             "title": "6_18_01",
             "alternative_text": "",
             "image": "06_015_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_18_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_18_02"
+                }
+            ]
         },
         "6_18_02": {
             "title": "6_18_02",
             "alternative_text": "",
             "image": "06_015_002.jpg",
-            "steps": [{
-                "content": "Você se mudou para um lugar menor.\nPara se reinventar, é preciso começar do zero.",
-                "style": "full-screen",
-                "link_to": "6_18_03"
-            }]
+            "steps": [
+                {
+                    "content": "Você se mudou para um lugar menor.\nPara se reinventar, é preciso começar do zero.",
+                    "style": "full-screen",
+                    "link_to": "6_18_03"
+                }
+            ]
         },
         "6_18_03": {
             "title": "6_18_03",
@@ -3339,7 +3814,8 @@
             "image": "06_018_003.jpg",
             "ending": "ENDING_CASA",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -3355,16 +3831,19 @@
             "title": "6_18_04",
             "alternative_text": "",
             "image": "06_018_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_18_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_18_05"
+                }
+            ]
         },
         "6_18_05": {
             "title": "6_18_05",
             "alternative_text": "",
             "image": "06_018_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UMA MULHER SAINDO DE CASA\nÉ hora de, com muita coragem, abrir-se para o desconhecido.",
                     "style": "full-screen",
                     "finish": true
@@ -3380,20 +3859,24 @@
             "title": "6_19_01",
             "alternative_text": "",
             "image": "06_017_002.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_19_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_19_02"
+                }
+            ]
         },
         "6_19_02": {
             "title": "6_19_02",
             "alternative_text": "",
             "image": "06_017_003.jpg",
-            "steps": [{
-                "content": "É possível se reinventar com a ajuda dos outros.",
-                "style": "full-screen",
-                "link_to": "6_19_03"
-            }]
+            "steps": [
+                {
+                    "content": "É possível se reinventar com a ajuda dos outros.",
+                    "style": "full-screen",
+                    "link_to": "6_19_03"
+                }
+            ]
         },
         "6_19_03": {
             "title": "6_19_03",
@@ -3401,7 +3884,8 @@
             "image": "06_019_003.jpg",
             "ending": "ENDING_ENFERMEIRA",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -3417,16 +3901,19 @@
             "title": "6_19_04",
             "alternative_text": "",
             "image": "06_10_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_19_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_19_05"
+                }
+            ]
         },
         "6_19_05": {
             "title": "6_19_05",
             "alternative_text": "",
             "image": "06_10_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UMA ENFERMEIRA DA CRUZ VERMELHA\nVocê sabe ajudar o outro. E isso te leva pra frente.",
                     "style": "full-screen",
                     "finish": true
@@ -3442,20 +3929,24 @@
             "title": "6_20_01",
             "alternative_text": "",
             "image": "06_015_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_20_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_20_02"
+                }
+            ]
         },
         "6_20_02": {
             "title": "6_20_02",
             "alternative_text": "",
             "image": "06_015_002.jpg",
-            "steps": [{
-                "content": "Ao fim da pandemia, você se mudou de prédio, sem emprego.\nMas à procura de um novo jeito de se relacionar.",
-                "style": "full-screen",
-                "link_to": "6_20_03"
-            }]
+            "steps": [
+                {
+                    "content": "Ao fim da pandemia, você se mudou de prédio, sem emprego.\nMas à procura de um novo jeito de se relacionar.",
+                    "style": "full-screen",
+                    "link_to": "6_20_03"
+                }
+            ]
         },
         "6_20_03": {
             "title": "6_20_03",
@@ -3463,7 +3954,8 @@
             "image": "06_020_003.jpg",
             "ending": "ENDING_CASA",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -3479,16 +3971,19 @@
             "title": "6_20_04",
             "alternative_text": "",
             "image": "06_018_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_20_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_20_05"
+                }
+            ]
         },
         "6_20_05": {
             "title": "6_20_05",
             "alternative_text": "",
             "image": "06_018_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UMA MULHER SAINDO DE CASA\nÉ hora de, com muita coragem, abrir-se para o desconhecido.",
                     "style": "full-screen",
                     "finish": true
@@ -3504,20 +3999,24 @@
             "title": "6_21_01",
             "alternative_text": "",
             "image": "06_021_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_21_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_21_02"
+                }
+            ]
         },
         "6_21_02": {
             "title": "6_21_02",
             "alternative_text": "",
             "image": "06_021_002.jpg",
-            "steps": [{
-                "content": "Depois da pandemia, você renasceu com uma nova carreira\nao descobrir o poder da colaboração.",
-                "style": "full-screen",
-                "link_to": "6_21_03"
-            }]
+            "steps": [
+                {
+                    "content": "Depois da pandemia, você renasceu com uma nova carreira\nao descobrir o poder da colaboração.",
+                    "style": "full-screen",
+                    "link_to": "6_21_03"
+                }
+            ]
         },
         "6_21_03": {
             "title": "6_21_03",
@@ -3525,7 +4024,8 @@
             "image": "06_021_003.jpg",
             "ending": "ENDING_LAGO",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -3541,16 +4041,19 @@
             "title": "6_21_04",
             "alternative_text": "",
             "image": "06_021_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_21_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_21_05"
+                }
+            ]
         },
         "6_21_05": {
             "title": "6_21_05",
             "alternative_text": "",
             "image": "06_021_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UM LAGO BANHADO PELO LUAR\nVocê está em equilíbrio. Use esse momento para reinventar metas, ritmos e sonhos.",
                     "style": "full-screen",
                     "finish": true
@@ -3566,20 +4069,24 @@
             "title": "6_22_01",
             "alternative_text": "",
             "image": "06_022_001.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_22_02"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_22_02"
+                }
+            ]
         },
         "6_22_02": {
             "title": "6_22_02",
             "alternative_text": "",
             "image": "06_022_002.jpg",
-            "steps": [{
-                "content": "Seu jeito de pensar criou um novo jeito de se relacionar:\nquando todos se ajudam, ninguém precisa de ajuda.",
-                "style": "full-screen",
-                "link_to": "6_22_03"
-            }]
+            "steps": [
+                {
+                    "content": "Seu jeito de pensar criou um novo jeito de se relacionar:\nquando todos se ajudam, ninguém precisa de ajuda.",
+                    "style": "full-screen",
+                    "link_to": "6_22_03"
+                }
+            ]
         },
         "6_22_03": {
             "title": "6_22_03",
@@ -3587,7 +4094,8 @@
             "image": "06_022_003.jpg",
             "ending": "ENDING_HOMEM",
             "state": "world-stats",
-            "steps": [{
+            "steps": [
+                {
                     "content": "dos jogadores escolheram como você",
                     "finish": true,
                     "style": "full-screen"
@@ -3603,16 +4111,19 @@
             "title": "6_22_04",
             "alternative_text": "",
             "image": "06_022_04.jpg",
-            "steps": [{
-                "style": "full-screen",
-                "link_to": "6_22_05"
-            }]
+            "steps": [
+                {
+                    "style": "full-screen",
+                    "link_to": "6_22_05"
+                }
+            ]
         },
         "6_22_05": {
             "title": "6_22_05",
             "alternative_text": "",
             "image": "06_022_05.jpg",
-            "steps": [{
+            "steps": [
+                {
                     "content": "VOCÊ É UM HOMEM NUMA LAGOA\nO equilíbrio durante a pandemia te renovou.\n Você está pronto para seguir em frente.",
                     "style": "full-screen",
                     "finish": true

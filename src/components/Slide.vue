@@ -5,11 +5,22 @@
         <img
           v-if="this.slide.language_image"
           class="bg-image"
-          :src="require(`../assets/slides/images/${this.language()}/${this.slide.image}`)"
+          :src="
+            require(`../assets/slides/images/${this.language()}/${
+              this.slide.image
+            }`)
+          "
         />
-        <img v-else class="bg-image" :src="require(`../assets/slides/images/${this.slide.image}`)" />
+        <img
+          v-else
+          class="bg-image"
+          :src="require(`../assets/slides/images/${this.slide.image}`)"
+        />
       </div>
       <div class="slide__content">
+        <div v-if="slide.form && slide.form == true">
+          <SlideForm @onFormSubmit="onFormSubmit" />
+        </div>
         <div id="slide__linkbox" :class="linkBoxClass">
           <a
             href
@@ -18,7 +29,10 @@
             :class="stepStyle(step)"
             @click.prevent="changeSlide(step)"
           >
-            <p v-if="slide.state&&slide.state == 'world-stats'" class="world-stats__text">
+            <p
+              v-if="slide.state && slide.state == 'world-stats'"
+              class="world-stats__text"
+            >
               <span class="bigger">
                 <RatioByEnding :ending="finalGame" />%
               </span>
@@ -35,19 +49,21 @@
 
 <script>
 import RatioByEnding from "./RatioByEnding";
+import SlideForm from "@/components/SlideForm";
 const anim = require("@/anim.js");
 
 export default {
   name: "Slide",
   props: ["slide"],
   components: {
-    RatioByEnding
+    RatioByEnding,
+    SlideForm,
   },
   data: () => ({
     errored: false,
     entry: null,
     lang: null,
-    result: null
+    result: null,
   }),
   computed: {
     finalGame: function() {
@@ -59,11 +75,14 @@ export default {
         smartphone: "smartphone",
         smartphone2: "smartphone2",
         "world-stats": "world-stats",
-        laptop: "laptop"
+        laptop: "laptop",
       }[this.slide.state];
-    }
+    },
   },
   methods: {
+    onFormSubmit() {
+      this.changeSlide(this.slide.steps[0]);
+    },
     changeSlide(step) {
       if (step.link_to) {
         this.$emit("goToSlide", step.link_to);
@@ -78,7 +97,7 @@ export default {
           smartphone: "smartphone__link",
           smartphone2: "smartphone2__link",
           "world-stats": "slide__default " + step.style,
-          laptop: "laptop__link"
+          laptop: "laptop__link",
         }[this.slide.state] || "slide__default " + step.style
       );
     },
@@ -87,8 +106,8 @@ export default {
     },
     leave(el, done) {
       anim.exitTransition(el, done);
-    }
-  }
+    },
+  },
 };
 </script>
 
