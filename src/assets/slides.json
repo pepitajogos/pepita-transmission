@@ -411,22 +411,12 @@
                 {
                     "content": "Posso fazer uma reserva financeira se eu vender para ela com lucro.",
                     "style": "right center",
-                    "link_to": "4_1_01form"
+                    "link_to": "4_1_01"
                 },
                 {
                     "content": "Voltar",
                     "style": "full-left",
                     "link_to": "3_1_04"
-                }
-            ]
-        },
-        "4_1_01form": {
-            "title": "4_1_01form",
-            "image": "form.jpg",
-            "form": true,
-            "steps": [
-                {
-                    "link_to": "4_1_01"
                 }
             ]
         },
@@ -438,22 +428,12 @@
                 {
                     "content": "Quero ajudar, mas não posso. Tenho medo de me contaminar.",
                     "style": "right center",
-                    "link_to": "4_2_01form"
+                    "link_to": "4_2_01"
                 },
                 {
                     "content": "Voltar",
                     "style": "full-left",
                     "link_to": "3_1_04"
-                }
-            ]
-        },
-        "4_2_01form": {
-            "title": "4_2_01form",
-            "image": "form.jpg",
-            "form": true,
-            "steps": [
-                {
-                    "link_to": "4_2_01"
                 }
             ]
         },
@@ -465,22 +445,12 @@
                 {
                     "content": "Vou doar. Acho difícil me contaminar",
                     "style": "right center",
-                    "link_to": "4_6_01form"
+                    "link_to": "4_6_01"
                 },
                 {
                     "content": "Voltar",
                     "style": "full-left",
                     "link_to": "3_1_04"
-                }
-            ]
-        },
-        "4_6_01form": {
-            "title": "4_6_01form",
-            "image": "form.jpg",
-            "form": true,
-            "steps": [
-                {
-                    "link_to": "4_6_01"
                 }
             ]
         },
@@ -559,7 +529,7 @@
                 {
                     "content": "",
                     "style": "full-right",
-                    "link_to": "4_6_01form"
+                    "link_to": "4_6_01"
                 }
             ]
         },
@@ -577,16 +547,6 @@
                 {
                     "content": "",
                     "style": "full-right",
-                    "link_to": "4_5_01form"
-                }
-            ]
-        },
-        "4_5_01form": {
-            "title": "4_5_01form",
-            "image": "form.jpg",
-            "form": true,
-            "steps": [
-                {
                     "link_to": "4_5_01"
                 }
             ]
@@ -674,22 +634,12 @@
                 {
                     "content": "Vou revender e recuperar parte do que perdi.",
                     "style": "right center",
-                    "link_to": "4_4_1form"
+                    "link_to": "4_4_1"
                 },
                 {
                     "content": "Voltar",
                     "style": "full-left",
                     "link_to": "3_3_06"
-                }
-            ]
-        },
-        "4_4_1form": {
-            "title": "4_4_1form",
-            "image": "form.jpg",
-            "form": true,
-            "steps": [
-                {
-                    "link_to": "4_4_1"
                 }
             ]
         },
@@ -701,7 +651,7 @@
                 {
                     "content": "Vou ver quem está precisando e doar o leite.",
                     "style": "right center",
-                    "link_to": "4_6_01form"
+                    "link_to": "4_6_01"
                 },
                 {
                     "content": "Voltar",
@@ -763,16 +713,6 @@
                 {
                     "content": "",
                     "style": "full-right",
-                    "link_to": "4_3_01form"
-                }
-            ]
-        },
-        "4_3_01form": {
-            "title": "4_3_01form",
-            "image": "form.jpg",
-            "form": true,
-            "steps": [
-                {
                     "link_to": "4_3_01"
                 }
             ]
@@ -791,7 +731,7 @@
                 {
                     "content": "",
                     "style": "full-right",
-                    "link_to": "4_6_01form"
+                    "link_to": "4_6_01"
                 }
             ]
         },
@@ -866,22 +806,12 @@
                 {
                     "content": "Como eu já estou saindo para os idosos,  faz sentido. Menos gente pode se contaminar.",
                     "style": "right center",
-                    "link_to": "4_7_01form"
+                    "link_to": "4_7_01"
                 },
                 {
                     "content": "Voltar",
                     "style": "full-left",
                     "link_to": "3_5_05"
-                }
-            ]
-        },
-        "4_7_01form": {
-            "title": "4_7_01form",
-            "image": "form.jpg",
-            "form": true,
-            "steps": [
-                {
-                    "link_to": "4_7_01"
                 }
             ]
         },
@@ -893,7 +823,7 @@
                 {
                     "content": "Talvez o cenário seja mais perigoso do que imaginei. Melhor eu parar de sair tanto.",
                     "style": "right center",
-                    "link_to": "4_6_01form"
+                    "link_to": "4_6_01"
                 },
                 {
                     "content": "Voltar",

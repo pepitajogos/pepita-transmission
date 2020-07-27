@@ -6,6 +6,10 @@ function stringLengthBetween(val, from, to) {
     && val.size() <= to;
 }
 
+function isEmailValid(val) {
+  return val is string
+    && val.matches('.+@[^.]+(?:[.][^.]+)+')
+}
 
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -20,6 +24,7 @@ service cloud.firestore {
         // only allowed fields
         && request.resource.data.keys().hasOnly([
           'uid',
+          'email',
           'name',
           'country',
           'story',
@@ -27,6 +32,9 @@ service cloud.firestore {
         ])
         // data validation
         && stringLengthBetween(request.resource.data.name, 3, 200)
+        && stringLengthBetween(request.resource.data.email, 3, 200)
+        && stringLengthBetween(request.resource.data.email, 3, 1000)
+        && isEmailValid(request.resource.data.email)
         && request.resource.data.created_at == request.time
       ;
     }
@@ -56,4 +64,3 @@ service cloud.firestore {
     }
   }
 }
-

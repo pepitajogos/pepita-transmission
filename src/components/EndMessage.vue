@@ -1,19 +1,39 @@
 <template>
   <article class="slide">
     <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
-      <div @click="goToPage(1)" v-show="page == 0">
+      <div style="position:absolute" v-show="page == 0">
         <div class="ending__image" :style="backgroundStyle('fg')">
           <div class="ending__center">
-            <div class="ending__full"></div>
-            <div class="slide__default right">{{ $t("Avançar") }}</div>
+            <div class="slide__default top-right-btn" @click="goToPage(1)">
+              {{ $t("Avançar") }}
+            </div>
           </div>
         </div>
       </div>
     </transition>
     <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
-      <div v-show="page == 1">
+      <div style="position:absolute" v-show="page == 1">
         <div class="background__image" :style="backgroundStyle('bg')">
-          <div class="slide__default home-btn" @click="returnToHome">
+          <div class="slide__default top-right-btn" @click="goToPage(2)">
+            {{ $t("Avançar") }}
+          </div>
+          <div class="ending__center">
+            <div class="ending__title bottom__padding">
+              {{ $t(this.userEndingMessage.title) }}
+            </div>
+            <div class="message__row">
+              <div class="ending__message">
+                {{ $t(this.userEndingMessage.message) }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+    <transition v-on:enter="enter" v-on:leave="leave" v-bind:css="false" appear>
+      <div style="position:absolute" v-show="page == 2">
+        <div class="background__image" :style="backgroundStyle('bg')">
+          <div class="slide__default top-right-btn" @click="returnToHome">
             <font-awesome-icon :icon="['fa', 'home']"></font-awesome-icon>
           </div>
           <div class="ending__center">
@@ -21,53 +41,62 @@
               {{ $t(this.userEndingMessage.title) }}
             </div>
             <div class="message__row">
-              <div class="message__column message__c1">
-                <div class="description__row bottom__padding">
-                  <div class="description__column description__label">
-                    {{ $t("Significado\nO que fazer\nComo") }}
-                  </div>
-                  <div class="description__column description__content">
-                    {{ $t(this.userEndingMessage.description) }}
-                  </div>
-                </div>
-                <div class="ending__message">{{ $t(this.userEndingMessage.message) }}</div>
+              <div class="share__title bottom__padding">
+                {{ $t("Conte para seus amigos quem é você!") }}
               </div>
-              <div class="message__column message__c2">
-                <div class="share__title bottom__padding">
-                  {{ $t("Conte para seus amigos quem é você!") }}
+              <div class="btn-group">
+                <ShareNetwork
+                  class="btn"
+                  v-for="network in networks"
+                  :network="network.network"
+                  :key="network.key"
+                  :style="{ backgroundColor: network.color }"
+                  :url="sharing.url"
+                  :title="network.title"
+                  :description="network.description"
+                  :quote="network.quote"
+                  :hashtags="sharing.hashtags"
+                >
+                  <font-awesome-icon :icon="network.icon"></font-awesome-icon>
+                  {{ network.name }}
+                </ShareNetwork>
+              </div>
+              <div class="column__frame">
+                <div class="stats__title bottom__padding">
+                  {{ $t("Como o mundo escolheu") }}
                 </div>
-                <div class="btn-group bottom__padding">
-                  <ShareNetwork
-                    class="btn"
-                    v-for="network in networks"
-                    :network="network.network"
-                    :key="network.key"
-                    :style="{ backgroundColor: network.color }"
-                    :url="sharing.url"
-                    :title="network.title"
-                    :description="network.description"
-                    :quote="network.quote"
-                    :hashtags="sharing.hashtags"
-                  >
-                    <font-awesome-icon :icon="network.icon"></font-awesome-icon>
-                    {{ network.name }}
-                  </ShareNetwork>
-                </div>
-                <div class="column__frame">
-                  <div class="stats__title bottom__padding">
-                    {{ $t("Como o mundo escolheu") }}
-                  </div>
-                  <ul class="table bottom__padding">
-                    <li
+                <table class="table bottom__padding">
+                  <tr>
+                    <td
                       class="table__text"
-                      v-for="ending in orderEndings.slice(0, 9)"
+                      v-for="ending in orderEndings.slice(0, 3)"
                       :key="ending.id"
                     >
                       <span class="table__numbers"> {{ ending[1] }}% </span>
                       {{ ending[0] }}
-                    </li>
-                  </ul>
-                </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="table__text"
+                      v-for="ending in orderEndings.slice(3, 6)"
+                      :key="ending.id"
+                    >
+                      <span class="table__numbers"> {{ ending[1] }}% </span>
+                      {{ ending[0] }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="table__text"
+                      v-for="ending in orderEndings.slice(6, 9)"
+                      :key="ending.id"
+                    >
+                      <span class="table__numbers"> {{ ending[1] }}% </span>
+                      {{ ending[0] }}
+                    </td>
+                  </tr>
+                </table>
               </div>
             </div>
           </div>
@@ -174,18 +203,18 @@ export default {
       this.page = page;
     },
     async getResults() {
-      // const mockEndingList = {
-      //   ENDING_BORBOLETA: 1,
-      //   ENDING_CASA: 1,
-      //   ENDING_ENFERMEIRA: 1,
-      //   ENDING_HOMEM: 1,
-      //   ENDING_LAGO: 1,
-      //   ENDING_LENDO: 1,
-      //   ENDING_MEDITANDO: 1,
-      //   ENDING_OCIDENTAL: 1,
-      //   ENDING_TURISTA: 1,
-      // };
-      const endingList = await data.getRatioByEnding();
+      const mockEndingList = {
+        ENDING_BORBOLETA: 1,
+        ENDING_CASA: 1,
+        ENDING_ENFERMEIRA: 1,
+        ENDING_HOMEM: 1,
+        ENDING_LAGO: 1,
+        ENDING_LENDO: 1,
+        ENDING_MEDITANDO: 1,
+        ENDING_OCIDENTAL: 1,
+        ENDING_TURISTA: 1,
+      };
+      const endingList = mockEndingList; // await data.getRatioByEnding();
       const percents = [];
       const listOfEnding = [];
 
@@ -233,24 +262,18 @@ export default {
   width: 100%;
   margin: 0 auto;
   padding: 0;
+  vertical-align: top !important;
 }
 .table__text {
-  @include font-scale(8, 18);
+  @include landscape-font-scale(12, 24);
   padding: 0.1em 0;
 }
-
 .table__numbers {
   font-weight: bold;
   display: inline-block;
 }
-
-.table {
-  td {
-    width: 1vw;
-  }
-}
 .ending__title {
-  @include font-scale(8, 50);
+  @include landscape-font-scale(25, 50);
   text-align: center;
   font-weight: bold;
   width: 80%;
@@ -260,7 +283,7 @@ export default {
   float: left;
   height: 100%;
   white-space: pre-line;
-  @include font-scale(4, 24);
+  @include landscape-font-scale(12, 24);
 }
 .description__label {
   text-align: right;
@@ -274,20 +297,21 @@ export default {
   overflow: auto;
 }
 .ending__message {
-  @include font-scale(8, 30);
+  @include landscape-font-scale(15, 30);
   font-family: $regular;
   white-space: pre-wrap;
 }
 .share__title {
-  @include font-scale(8, 28);
+  @include landscape-font-scale(14, 28);
   font-weight: bolder;
   text-transform: uppercase;
   text-align: center;
 }
 .stats__title {
-  @include font-scale(8, 24);
+  @include landscape-font-scale(12, 24);
   font-weight: bold;
   text-transform: uppercase;
+  text-align: center;
 }
 .message__row:after {
   content: "";
@@ -375,7 +399,7 @@ export default {
   width: 100vw;
 }
 .btn {
-  width: 100%;
+  width: 33.33%;
   border: none; /* Remove borders */
   color: white; /* White text */
   padding: 0.8em 0.5em; /* Some padding */
@@ -408,6 +432,11 @@ export default {
 .home-btn {
   top: 4%;
   left: 2%;
+  @include font-scale(8, 18);
+}
+.top-right-btn {
+  top: 4%;
+  right: 2%;
   @include font-scale(8, 18);
 }
 

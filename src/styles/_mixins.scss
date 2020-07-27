@@ -60,6 +60,16 @@
     font-size: #{$maxFont}px;
   }
 }
+@mixin landscape-font-scale($minFont, $maxFont) {
+  font-size: #{$minFont}px;
+
+  @media (min-width: 800px) and (max-width: 1024px){
+    font-size: calc(#{$minFont}px + (#{$maxFont} - #{$minFont}) * ( (100vw - 800px) / ( 1024 - 800)));
+  }
+  @media (min-width: 1024px){
+    font-size: #{$maxFont}px;
+  }
+}
 
 @mixin scrollbar($size, $primary, $secondary: lighten($primary, 25%), $url-track: "") {
 

@@ -2,16 +2,16 @@
   <article class="language">
     <ul class="language__list">
       <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('en')">English</a></li>
-      <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('es')">Español</a></li>
+      <!-- <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('es')">Español</a></li> -->
       <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('pt-br')">Português</a></li>
-      <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('it')">Italiano</a></li>
+      <!-- <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('it')">Italiano</a></li>
       <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('fr')">Français</a></li>
       <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('de')">Deutsch</a></li>
       <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('ar')">العربية</a></li>
       <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('zh-cn')">汉语</a></li>
       <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('ja')">日本語</a></li>
       <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('ru')">Русский</a></li>
-      <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('hi')">हिन्दी</a></li>
+      <li class="language__item"><a href="javascript:void(0);" class="language__link" @click="changeLang('hi')">हिन्दी</a></li> -->
     </ul>
   </article>
 </template>
